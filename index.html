@@ -420,88 +420,112 @@
   <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>05</span></div>
 </section>
 
-<!-- ================= SLIDE 6: STOCK DICAR ================= -->
+<!-- ================= SLIDE 6: STOCK DICAR · VENCIMIENTOS Y PRIORIDAD ================= -->
 <section class="slide">
   <div class="slide-header">
     <div>
-      <h1>Stock DICAR a la Fecha</h1>
-      <div class="sub">32 SKUs consolidados por lote · Snapshot actual del almacén</div>
+      <h1>Stock DICAR · Vencimientos y Prioridad de Reposición</h1>
+      <div class="sub">Snapshot del almacén · 34 SKUs activos · Cobertura y urgencia de recompra</div>
     </div>
     <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
   </div>
 
-  <div class="kpi-row" style="margin-bottom:16px;">
-    <div class="kpi">
-      <div class="label">SKUs con Stock</div>
-      <div class="value">32</div>
-      <div class="delta">de 47 SKUs del portafolio</div>
+  <div class="kpi-row" style="margin-bottom:12px;">
+    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fde8e8,#fad1d1); border-color:#f5b7b7;">
+      <div class="label" style="color:#a02020;">🔴 Crítico · Recompra urgente</div>
+      <div class="value" style="font-size:22px; color:#c0392b;">6</div>
+      <div class="delta" style="color:#a02020;">sin stock</div>
     </div>
-    <div class="kpi">
-      <div class="label">Unidades Totales</div>
-      <div class="value">11,314</div>
-      <div class="delta">suma consolidada por SKU</div>
+    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fff3e0,#ffe0b2); border-color:#f5c67a;">
+      <div class="label" style="color:#a05a00;">🟠 Bajo · Recompra prioritaria</div>
+      <div class="value" style="font-size:22px; color:#b8740f;">6</div>
+      <div class="delta" style="color:#a05a00;">≤100 und</div>
     </div>
-    <div class="kpi">
-      <div class="label">SKUs Sin Stock</div>
-      <div class="value">15</div>
-      <div class="delta down">oportunidad de reposición</div>
+    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fff8e1,#ffefc4); border-color:#f5d77e;">
+      <div class="label" style="color:#856404;">🟡 Reposición programada</div>
+      <div class="value" style="font-size:22px; color:#856404;">15</div>
+      <div class="delta" style="color:#856404;">en sugerido</div>
     </div>
-    <div class="kpi">
-      <div class="label">Vencimiento Más Cercano</div>
-      <div class="value">Ene-2027</div>
-      <div class="delta">DUTAZEX · METAPLUS · MYTEL</div>
+    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#d4f5e8,#b8ecd4); border-color:#7dd3a8;">
+      <div class="label" style="color:#0f6b44;">🟢 OK · Cobertura suficiente</div>
+      <div class="value" style="font-size:22px; color:#128a5b;">7</div>
+      <div class="delta" style="color:#0f6b44;">sin compra</div>
     </div>
   </div>
 
-  <div class="scroll-box" style="max-height:400px;">
+  <div style="background:linear-gradient(135deg,#fff3cd,#ffe082); border-left:5px solid #c0392b; border-radius:8px; padding:9px 14px; margin-bottom:12px; font-size:12px; color:#7a3b00;">
+    <b>⚠ Alerta de vencimientos:</b> 4 SKUs vencen en <b>Ene-2027</b> (DUTAZEX, METAPLUS F, METAPLUS 500, MYTEL 80) · 1 SKU vence en <b>Abr-2027</b> (GABATINEX). Priorizar rotación.
+  </div>
+
+  <div class="scroll-box" style="max-height:395px;">
     <table class="data">
       <thead>
         <tr>
-          <th style="width:38%;">Producto</th>
-          <th>Stock Actual</th>
+          <th style="width:36%;">Producto</th>
+          <th>Stock</th>
           <th>Lotes</th>
           <th>Vencimiento</th>
-          <th>Estado</th>
+          <th style="width:22%;">Estado / Acción</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>CARVELAN 6.25MG X 100 TAB</td><td>51</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>CARVELAN 12.5MG X 100 TAB</td><td>67</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>CELOMEX 200MG X 30 CAP</td><td>201</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>CLOPTOP 75MG X 30 TAB</td><td>99</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>DUTAZEX 0.5MG X 30 TAB</td><td>72</td><td>1</td><td>Ene-2027</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>GABATINEX 300MG X 30 CAP</td><td>222</td><td>1</td><td>Abr-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>GAXTROX 20MG X 30 CAP</td><td>284</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>GAXTROX 40MG X 30 CAP</td><td>916</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
-        <tr><td>METAPLUS F 1000MG X 30 TAB</td><td>16</td><td>1</td><td>Ene-2027</td><td><span class="stock-badge stock-crit">Crítico</span></td></tr>
-        <tr><td>METAPLUS 500MG X 50 TAB</td><td>184</td><td>1</td><td>Ene-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>MYTEL 80MG X 30 TAB</td><td>86</td><td>1</td><td>Ene-2027</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>ROSUMAX 10MG X 30 TAB</td><td>75</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>TAMSUNAX 0.4MG X 30 CAP</td><td>430</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>OSTECOX 90MG X 14 TAB</td><td>1,307</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
-        <tr><td>OSTECOX 60MG X 14 TAB</td><td>124</td><td>1</td><td>May-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>CIPROZONE 500MG X 100 TAB</td><td>93</td><td>1</td><td>Feb-2029</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>ITRACOZONE 100MG X 100 CAP</td><td>302</td><td>1</td><td>Ene-2029</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>OSTECOX 120MG X 7 TAB</td><td>391</td><td>2</td><td>Ago-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>SILDEZONE 50MG X 1 TAB</td><td>4,538</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
-        <tr><td>TADALAZONE 20MG X 4 TAB</td><td>295</td><td>1</td><td>Sep-2027</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>CELOMEX 200MG X 100 CAP</td><td>185</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>GAXTROX 40MG X 100 CAP</td><td>400</td><td>1</td><td>Jul-2028</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
-        <tr><td>CRYOFOMID 1000MG X 1 VIAL</td><td>52</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-crit">Bajo</span></td></tr>
-        <tr><td>REUMAX 100MG X 100 TAB</td><td>103</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>PREGAZONE 75MG X 50 CAP</td><td>68</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>VERTILUX 16MG X 50 TAB</td><td>243</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-ok">OK</span></td></tr>
-        <tr><td>LEXPRAM 10MG X 50 TAB</td><td>418</td><td>1</td><td>Mar-2029</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
-        <tr><td>LEVOTOPLEX 500MG X 50 TAB</td><td>584</td><td>1</td><td>Jul-2029</td><td><span class="stock-badge stock-high">Alto</span></td></tr>
+        <tr style="background:#fad1d1;"><td colspan="5" style="text-align:left; font-weight:800; color:#a02020; padding:7px 10px; background:#fde8e8;">🔴 CRÍTICO · Recompra urgente · 6 SKUs</td></tr>
+        <tr><td>BACICLUMAX CJA X 10 AMP</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+        <tr><td>FINARIX 5MG X 30 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+        <tr><td>FLUCOZONE 150MG X 2 CAP</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+        <tr><td>LEVOTOPLEX 750MG X 50 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+        <tr><td>OLANPREX 10MG X 30 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+        <tr><td>SILDEZONE 100MG X 1 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
+
+        <tr style="background:#ffe0b2;"><td colspan="5" style="text-align:left; font-weight:800; color:#a05a00; padding:7px 10px; background:#fff3e0;">🟠 BAJO · Recompra prioritaria · 6 SKUs</td></tr>
+        <tr><td>CIPROZONE 500MG X 100 TAB</td><td>93</td><td>1</td><td>Feb-2029</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+        <tr><td>CLOPTOP 75MG X 30 TAB</td><td>99</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+        <tr><td>CRYOFOMID 1000MG X 1 VIAL</td><td>52</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+        <tr><td>DUTAZEX 0.5MG X 30 TAB</td><td>72</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+        <tr><td>PREGAZONE 75MG X 50 CAP</td><td>68</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+        <tr><td>ROSUMAX 10MG X 30 TAB</td><td>75</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
+
+        <tr style="background:#ffefc4;"><td colspan="5" style="text-align:left; font-weight:800; color:#856404; padding:7px 10px; background:#fff8e1;">🟡 REPOSICIÓN · Programada en sugerido Nov–Dic · 15 SKUs</td></tr>
+        <tr><td>CELOMEX 200MG X 100 CAP</td><td>185</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>CELOMEX 200MG X 30 CAP</td><td>201</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>GABATINEX 300MG X 30 TAB</td><td>222</td><td>1</td><td>Abr-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>GAXTROX 20MG X 30 CAP</td><td>284</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>GAXTROX 40MG X 100 CAP</td><td>400</td><td>1</td><td>Jul-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>ITRACOZONE 100MG X 100 CAP</td><td>302</td><td>1</td><td>Ene-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>LEXPRAM 10MG X 50 TAB</td><td>418</td><td>1</td><td>Mar-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>OSTECOX 120MG X 7 TAB</td><td>391</td><td>2</td><td>Ago-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>OSTECOX 60MG X 14 TAB</td><td>124</td><td>1</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>OSTECOX 90MG X 14 TAB</td><td>1,307</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>REUMAX 100MG X 100 TAB</td><td>103</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>SILDEZONE 50MG X 1 TAB</td><td>4,538</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>TADALAZONE 20MG X 4 TAB</td><td>295</td><td>1</td><td>Sep-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>TAMSUNAX 0.4MG X 30 CAP</td><td>430</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+        <tr><td>VERTILUX 16MG X 50 TAB</td><td>243</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
+
+        <tr style="background:#b8ecd4;"><td colspan="5" style="text-align:left; font-weight:800; color:#0f6b44; padding:7px 10px; background:#d4f5e8;">🟢 OK · Cobertura suficiente · 7 SKUs</td></tr>
+        <tr><td>CARVELAN 6.25MG X 100 TAB</td><td>51</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>CARVELAN 12.5MG X 100 TAB</td><td>67</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>GAXTROX 40MG X 30 CAP</td><td>916</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>LEVOTOPLEX 500MG X 50 TAB</td><td>584</td><td>1</td><td>Jul-2029</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>METAPLUS 500MG X 50 TAB</td><td>184</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>METAPLUS F 1000MG X 30 TAB</td><td>16</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
+        <tr><td>MYTEL 80MG X 30 TAB</td><td>86</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
       </tbody>
     </table>
   </div>
-  <div class="note">Stock consolidado por SKU (lotes sumados). SKUs sin stock en DICAR: ARPIZEX 10/15, BACICLUMAX, CISTIX, DULOX 30/60, FINARIX, FLAZAFORTE, FLUCOZONE, KETOCLEAR, LEVOTOPLEX 750, OLANPREX, PANTOZEX, SILDEZONE 100, WALSARTEX.</div>
+
+  <div style="margin-top:8px; display:flex; gap:18px; font-size:11px; color:#5a6b82; flex-wrap:wrap;">
+    <div><span class="stock-badge stock-crit" style="margin-right:5px;">Crítico</span>Stock = 0 · recompra urgente</div>
+    <div><span class="stock-badge stock-crit" style="margin-right:5px;">Prioritaria</span>Stock ≤100 · recompra prioritaria</div>
+    <div><span class="stock-badge stock-high" style="margin-right:5px;">Reposición</span>En sugerido Nov–Dic</div>
+    <div><span class="stock-badge stock-ok" style="margin-right:5px;">Cobertura OK</span>Stock suficiente</div>
+    <div>⚠ Vence en ≤3 meses</div>
+  </div>
 
   <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>06</span></div>
 </section>
 
-<!-- ================= SLIDE 7: SUGERIDO DE COMPRA REAL ================= -->
+<!-- ================= SLIDE 7: SUGERIDO DE COMPRA ACTUALIZADO ================= -->
 <section class="slide">
   <div class="slide-header">
     <div>
@@ -514,13 +538,13 @@
   <div class="purchase-banner" style="padding:14px 22px; margin-bottom:14px;">
     <div>
       <div class="lbl">Inversión Total Sugerida</div>
-      <div class="big" style="font-size:30px;">S/ 726,757.72</div>
+      <div class="big" style="font-size:30px;">S/ 952,748.99</div>
     </div>
     <div style="display:flex; gap:28px; font-size:13px; line-height:1.7; opacity:.95;">
       <div>
         <div style="font-size:10.5px; text-transform:uppercase; letter-spacing:1px; opacity:.8;">Noviembre</div>
-        <div style="font-size:20px; font-weight:900;">S/ 571,898.10</div>
-        <div style="font-size:11px;">71,700 und · 22 SKUs</div>
+        <div style="font-size:20px; font-weight:900;">S/ 797,889.37</div>
+        <div style="font-size:11px;">74,700 und · 23 SKUs</div>
       </div>
       <div style="border-left:1px solid rgba(255,255,255,.35); padding-left:28px;">
         <div style="font-size:10.5px; text-transform:uppercase; letter-spacing:1px; opacity:.8;">Diciembre</div>
@@ -533,7 +557,7 @@
   <div class="grid2" style="gap:16px; align-items:start;">
     <!-- NOVIEMBRE -->
     <div>
-      <div class="launch-month-banner banner-nov" style="margin-bottom:10px; font-size:11px; padding:5px 14px;">📦 NOVIEMBRE 2026 · 22 SKUs</div>
+      <div class="launch-month-banner banner-nov" style="margin-bottom:10px; font-size:11px; padding:5px 14px;">📦 NOVIEMBRE 2026 · 23 SKUs</div>
       <div class="scroll-box" style="max-height:255px;">
         <table class="purchase">
           <thead>
@@ -555,6 +579,7 @@
             <tr><td>GABATINEX 300MG CAJA X 30 CAP</td><td>1,500</td><td>21.25</td><td>31,875.00</td></tr>
             <tr><td>GAXTROX 20MG X 30 CAP LIB RET</td><td>1,200</td><td>5.01</td><td>6,007.63</td></tr>
             <tr><td>GAXTROX 40MG X 100 CAP LIB RET</td><td>200</td><td>20.03</td><td>4,005.87</td></tr>
+            <tr style="background:#fff8e1;"><td><b>ITRACOZONE 100MG X 100 CAP</b></td><td><b>3,000</b></td><td><b>75.33</b></td><td><b>225,991.27</b></td></tr>
             <tr><td>LEVOTOPLEX 750 750MG CJA X 50 TAB REC</td><td>300</td><td>47.68</td><td>14,302.63</td></tr>
             <tr><td>LEXPRAM 10MG CJA X 50 TAB REC</td><td>1,000</td><td>36.76</td><td>36,761.46</td></tr>
             <tr><td>OSTECOX 120 120MG CJA X 7 TAB REC</td><td>5,000</td><td>8.82</td><td>44,118.61</td></tr>
@@ -571,9 +596,9 @@
           <tfoot>
             <tr>
               <td>TOTAL NOVIEMBRE</td>
-              <td>71,700</td>
+              <td>74,700</td>
               <td>—</td>
-              <td>S/ 571,898.10</td>
+              <td>S/ 797,889.37</td>
             </tr>
           </tfoot>
         </table>
@@ -622,8 +647,8 @@
 
   <div style="margin-top:10px; display:flex; align-items:center; justify-content:space-between; background:linear-gradient(135deg,#0a4d8c,#1a8fe3,#33c4a2); color:#fff; padding:10px 22px; border-radius:10px;">
     <div style="font-size:13px; font-weight:700; letter-spacing:.5px;">INVERSIÓN TOTAL SUGERIDA NOV + DIC 2026</div>
-    <div style="font-size:20px; font-weight:900; letter-spacing:1px;">S/ 726,757.72</div>
-    <div style="font-size:11px; opacity:.85;">132,200 und · 25 SKUs</div>
+    <div style="font-size:20px; font-weight:900; letter-spacing:1px;">S/ 952,748.99</div>
+    <div style="font-size:11px; opacity:.85;">135,200 und · 26 SKUs</div>
   </div>
 
   <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>07</span></div>
