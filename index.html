@@ -911,27 +911,48 @@
     border-collapse: separate; border-spacing: 0;
     font-size: 10.5px; white-space: nowrap;
   }
+
+  /* ===== HEADER: fila de meses ===== */
   .siem-table thead tr.mes-row th {
     background: #0a4d8c; color: #fff; font-weight: 800;
     padding: 7px 8px; text-align: center; font-size: 11px;
     border-right: 1px solid #1a5e9e; letter-spacing: .3px;
+    position: sticky;
+    top: 0;
+    z-index: 7;
   }
+
+  /* ===== HEADER: fila de subcolumnas ===== */
   .siem-table thead tr.sub-row th {
     background: #1a5e9e; color: #fff; font-weight: 700;
     padding: 4px 6px; text-align: center; font-size: 9px; letter-spacing: .2px;
     border-right: 1px solid #0a4d8c;
+    position: sticky;
+    z-index: 6;
+    /* el top se ajusta por JS según la altura real del mes-row */
   }
   .siem-table thead tr.sub-row th.sub:nth-child(5n+5) { background: #06345f; }
+
+  /* ===== Colores de la columna TOTAL PERIODO ===== */
   .siem-table .total-col { background: #33c4a2 !important; }
   .siem-table .total-sub { background: #128a5b !important; }
-  .siem-table .sticky-top { position: sticky; top: 0; z-index: 5; }
-  .siem-table thead tr.sub-row th.sticky-top { top: 28px; }
+
+  /* ===== Columna Producto: fija a la izquierda ===== */
   .siem-table th.sticky-prod {
-    position: sticky; left: 0; z-index: 8;
+    position: sticky;
+    left: 0;
+    z-index: 9;
     background: #0a4d8c; min-width: 220px; max-width: 220px;
     text-align: left; padding-left: 10px !important;
     box-shadow: 2px 0 4px rgba(0,0,0,.15);
   }
+  /* Esquina superior izquierda (mes-row y sub-row) por encima de todo */
+  .siem-table thead tr.mes-row th.sticky-prod,
+  .siem-table thead tr.sub-row th.sticky-prod {
+    z-index: 10;
+  }
+
+  /* ===== Body ===== */
   .siem-table tbody td {
     padding: 4px 6px; border-bottom: 1px solid #eef4fa;
     border-right: 1px solid #eef4fa; text-align: right; font-size: 10.5px;
@@ -955,6 +976,7 @@
   .pct-low  { background: #fad1d1; color: #a02020; }
   .pct-na   { background: #f0f0f0; color: #999; }
 
+  /* ===== Footer: TOTAL GENERAL fijo abajo ===== */
   .siem-table tfoot td {
     background: #0a4d8c; color: #fff; font-weight: 800;
     padding: 7px 6px; text-align: right; font-size: 11px;
@@ -1295,7 +1317,7 @@
   const headMes = document.getElementById('siem-head-mes');
   const headSub = document.getElementById('siem-head-sub');
 
-  let headMesHTML = '<th rowspan="2" class="sticky-prod sticky-top">Producto</th>';
+  let headMesHTML = '<th rowspan="2" class="sticky-prod">Producto</th>';
   headMesHTML += meses.map((m, i) => `<th colspan="5" class="mes-col" data-mes="${m}">${mesLabel[i]}</th>`).join('');
   headMesHTML += '<th colspan="5" class="total-col">TOTAL PERIODO</th>';
   headMes.innerHTML = headMesHTML;
@@ -1303,9 +1325,9 @@
   const subLabels = ['SI-U','SI-S/','SO-U','SO-S/','%'];
   let headSubHTML = '';
   for (let i = 0; i < meses.length; i++) {
-    headSubHTML += subLabels.map(l => `<th class="sticky-top sub" data-mes="${meses[i]}">${l}</th>`).join('');
+    headSubHTML += subLabels.map(l => `<th class="sub" data-mes="${meses[i]}">${l}</th>`).join('');
   }
-  headSubHTML += subLabels.map(l => `<th class="sticky-top sub total-sub">${l}</th>`).join('');
+  headSubHTML += subLabels.map(l => `<th class="sub total-sub">${l}</th>`).join('');
   headSub.innerHTML = headSubHTML;
 
   /* ============================================================
@@ -1314,7 +1336,6 @@
   function buildRow(p) {
     let cells = '';
     let totSI_U = 0, totSI_S = 0, totSO_U = 0, totSO_S = 0;
-    let hasSI = false, hasSO = false;
 
     for (let i = 0; i < meses.length; i++) {
       const siU = p.SI_U[i];
@@ -1322,10 +1343,10 @@
       const soU = p.SO_U[i];
       const soS = p.SO_S[i];
 
-      if (siU !== null && siU !== undefined) { totSI_U += siU; hasSI = true; }
-      if (siS !== null && siS !== undefined) { totSI_S += siS; hasSI = true; }
-      if (soU !== null && soU !== undefined) { totSO_U += soU; hasSO = true; }
-      if (soS !== null && soS !== undefined) { totSO_S += soS; hasSO = true; }
+      if (siU !== null && siU !== undefined) totSI_U += siU;
+      if (siS !== null && siS !== undefined) totSI_S += siS;
+      if (soU !== null && soU !== undefined) totSO_U += soU;
+      if (soS !== null && soS !== undefined) totSO_S += soS;
 
       const sinDatos = (siU === null && siS === null && soU === null && soS === null);
       if (sinDatos) {
@@ -1338,8 +1359,6 @@
       let pct = null;
       if (siS !== null && siS !== 0 && soS !== null) {
         pct = Math.round((soS / siS) * 100);
-      } else if (siS === 0 && soS !== null && soS !== 0) {
-        pct = null; // SI=0 con SO>0 → no calculable
       }
 
       const cls = pctClass(pct);
@@ -1350,7 +1369,6 @@
              + `<td data-mes="${meses[i]}"><span class="pct-badge ${cls}">${pctText(pct)}</span></td>`;
     }
 
-    // Totales del periodo
     let totPct = null;
     if (totSI_S !== 0) totPct = Math.round((totSO_S / totSI_S) * 100);
     const totCls = pctClass(totPct);
@@ -1420,14 +1438,35 @@
       '2026h2': m => m.startsWith('2026') && parseInt(m.split('-')[1]) >= 7
     };
     const rule = rules[f] || rules.todo;
-    document.querySelectorAll('[data-mes]').forEach(el => {
+    document.querySelectorAll('.siem-table [data-mes]').forEach(el => {
       el.style.display = rule(el.dataset.mes) ? '' : 'none';
     });
-    // El header mes-row agrupa 5 columnas: ocultar según su data-mes
+    // La fila de meses (mes-row) usa th.mes-col con data-mes
     document.querySelectorAll('.mes-col').forEach(th => {
       th.style.display = rule(th.dataset.mes) ? '' : 'none';
     });
+    // Recalcular top del sub-row tras cambios de layout
+    ajustarStickySubRow();
   };
+
+  /* ============================================================
+     AJUSTE DINÁMICO DEL STICKY DEL SUB-ROW
+     La fila sub-row debe pegarse justo debajo de la fila mes-row.
+     ============================================================ */
+  function ajustarStickySubRow() {
+    const mesRow = document.querySelector('.siem-table thead tr.mes-row');
+    const subHeaders = document.querySelectorAll('.siem-table thead tr.sub-row th');
+    if (!mesRow || !subHeaders.length) return;
+    // -1px para compensar el borde/redondeo subpíxel
+    const h = Math.round(mesRow.getBoundingClientRect().height) - 1;
+    subHeaders.forEach(th => { th.style.top = h + 'px'; });
+  }
+  ajustarStickySubRow();
+  window.addEventListener('resize', ajustarStickySubRow);
+  // Reajustar cuando terminen de cargar fuentes (puede cambiar la altura)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(ajustarStickySubRow);
+  }
 })();
 </script>
 
