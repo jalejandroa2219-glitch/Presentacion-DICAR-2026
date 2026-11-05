@@ -847,6 +847,590 @@
   <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>10</span></div>
 </section>
 
+<!-- ================= SLIDE 11 (NUEVO): SELL IN vs SELL OUT MENSUAL POR PRODUCTO ================= -->
+<section class="slide">
+  <div class="slide-header">
+    <div>
+      <h1>Sell In vs Sell Out Mensual por Producto</h1>
+      <div class="sub">Unidades y valores por mes · Cumplimiento % · Periodo Jun 2025 – Oct 2026</div>
+    </div>
+    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+  </div>
+
+  <!-- Filtro de rango -->
+  <div style="display:flex; gap:8px; margin-bottom:10px; align-items:center;">
+    <span style="font-size:12px; color:#5a6b82; font-weight:600;">Vista:</span>
+    <button onclick="filterMeses('todo')" class="filtro-btn active" data-filter="todo">Todo</button>
+    <button onclick="filterMeses('2025')" class="filtro-btn" data-filter="2025">2025</button>
+    <button onclick="filterMeses('2026h1')" class="filtro-btn" data-filter="2026h1">2026 H1</button>
+    <button onclick="filterMeses('2026h2')" class="filtro-btn" data-filter="2026h2">2026 H2</button>
+    <span style="margin-left:auto; font-size:11px; color:#888; font-style:italic;">← Scroll horizontal para ver más meses · Scroll vertical para ver más SKUs →</span>
+  </div>
+
+  <div class="scroll-box-siem" style="max-height:440px;">
+    <table class="siem-table">
+      <thead>
+        <tr class="mes-row" id="siem-head-mes"></tr>
+        <tr class="sub-row" id="siem-head-sub"></tr>
+      </thead>
+      <tbody id="siem-body"></tbody>
+      <tfoot>
+        <tr class="footer-row" id="siem-footer"></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div style="margin-top:8px; display:flex; gap:16px; font-size:11px; color:#5a6b82; flex-wrap:wrap;">
+    <div><span class="pct-badge pct-good">≥90%</span> Cumplimiento óptimo</div>
+    <div><span class="pct-badge pct-mid">70–89%</span> Revisar mix</div>
+    <div><span class="pct-badge pct-low">&lt;70%</span> Sobre-stock / baja rotación</div>
+    <div><span class="pct-badge pct-na">—</span> Sin movimiento en el mes</div>
+    <div style="margin-left:auto; font-style:italic;">Datos reales · Periodo Jun 2025 – Oct 2026</div>
+  </div>
+
+  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>11</span></div>
+</section>
+
+<style>
+  .filtro-btn {
+    padding: 5px 14px; border: 1px solid #d6e6f7; background: #fff;
+    color: #0a4d8c; font-size: 11px; font-weight: 700; border-radius: 20px;
+    cursor: pointer; transition: all .2s;
+  }
+  .filtro-btn:hover { background: #e6f1fb; }
+  .filtro-btn.active { background: #0a4d8c; color: #fff; border-color: #0a4d8c; }
+
+  .scroll-box-siem {
+    overflow: auto; border: 1px solid #d6e6f7; border-radius: 10px;
+    background: #fff; position: relative;
+  }
+  .scroll-box-siem::-webkit-scrollbar { height: 10px; width: 10px; }
+  .scroll-box-siem::-webkit-scrollbar-thumb { background: #b7cfe6; border-radius: 5px; }
+
+  .siem-table {
+    border-collapse: separate; border-spacing: 0;
+    font-size: 10.5px; white-space: nowrap;
+  }
+  .siem-table thead tr.mes-row th {
+    background: #0a4d8c; color: #fff; font-weight: 800;
+    padding: 7px 8px; text-align: center; font-size: 11px;
+    border-right: 1px solid #1a5e9e; letter-spacing: .3px;
+  }
+  .siem-table thead tr.sub-row th {
+    background: #1a5e9e; color: #fff; font-weight: 700;
+    padding: 4px 6px; text-align: center; font-size: 9px; letter-spacing: .2px;
+    border-right: 1px solid #0a4d8c;
+  }
+  .siem-table thead tr.sub-row th.sub:nth-child(5n+5) { background: #06345f; }
+  .siem-table .total-col { background: #33c4a2 !important; }
+  .siem-table .total-sub { background: #128a5b !important; }
+  .siem-table .sticky-top { position: sticky; top: 0; z-index: 5; }
+  .siem-table thead tr.sub-row th.sticky-top { top: 28px; }
+  .siem-table th.sticky-prod {
+    position: sticky; left: 0; z-index: 8;
+    background: #0a4d8c; min-width: 220px; max-width: 220px;
+    text-align: left; padding-left: 10px !important;
+    box-shadow: 2px 0 4px rgba(0,0,0,.15);
+  }
+  .siem-table tbody td {
+    padding: 4px 6px; border-bottom: 1px solid #eef4fa;
+    border-right: 1px solid #eef4fa; text-align: right; font-size: 10.5px;
+  }
+  .siem-table tbody td.prod-name {
+    position: sticky; left: 0; z-index: 3;
+    background: #f7fbff; font-weight: 700; color: #0a4d8c;
+    text-align: left; padding-left: 10px;
+    box-shadow: 2px 0 4px rgba(0,0,0,.08);
+    max-width: 220px; overflow: hidden; text-overflow: ellipsis;
+  }
+  .siem-table tbody tr:nth-child(even) td { background: #fafcfe; }
+  .siem-table tbody tr:nth-child(even) td.prod-name { background: #eef6ff; }
+
+  .pct-badge {
+    display: inline-block; padding: 2px 6px; border-radius: 4px;
+    font-weight: 800; font-size: 10px; min-width: 38px; text-align: center;
+  }
+  .pct-good { background: #d4f5e8; color: #0f6b44; }
+  .pct-mid  { background: #fff8e1; color: #856404; }
+  .pct-low  { background: #fad1d1; color: #a02020; }
+  .pct-na   { background: #f0f0f0; color: #999; }
+
+  .siem-table tfoot td {
+    background: #0a4d8c; color: #fff; font-weight: 800;
+    padding: 7px 6px; text-align: right; font-size: 11px;
+    position: sticky; bottom: 0; z-index: 6;
+  }
+  .siem-table tfoot td.prod-name {
+    position: sticky; left: 0; z-index: 8;
+    background: #0a4d8c; text-align: left; padding-left: 10px;
+    box-shadow: 2px 0 4px rgba(0,0,0,.2);
+  }
+  .siem-table tfoot td.total-sub { background: #128a5b; }
+  .neg { color: #c0392b; font-weight: 700; }
+</style>
+
+<script>
+(function() {
+  /* ============================================================
+     MESES DEL PERIODO (17)
+     ============================================================ */
+  const meses = [
+    '2025-06','2025-07','2025-08','2025-09','2025-10','2025-11','2025-12',
+    '2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07',
+    '2026-08','2026-09','2026-10'
+  ];
+  const mesLabel = ['Jun-25','Jul-25','Ago-25','Sep-25','Oct-25','Nov-25','Dic-25',
+                    'Ene-26','Feb-26','Mar-26','Abr-26','May-26','Jun-26','Jul-26',
+                    'Ago-26','Sep-26','Oct-26'];
+
+  /* ============================================================
+     DATA REAL POR PRODUCTO
+     Cada array tiene 17 posiciones (Jun-25 .. Oct-26).
+     null = sin dato / sin movimiento.
+     ============================================================ */
+  const productos = [
+    { name:'ARPIZEX 10MG X 30 TABLETAS.',
+      SI_U:[0,30,20,60,null,50,160,120,null,null,null,80,100,null,null,null,null],
+      SI_S:[172.95,293.13,311.07,775.80,null,618.78,2068.80,1551.61,null,null,null,1034.41,1293.02,null,null,null,null],
+      SO_U:[1,11,53,7,42,55,117,48,33,29,42,40,44,31,13,150,null],
+      SO_S:[13.56,149.16,712.20,106.48,618.78,646.50,1709.27,645.91,441.83,384.58,596.78,400.95,602.55,468.55,179.69,1293.01,null] },
+
+    { name:'ARPIZEX 15MG X 30 TABLETAS.',
+      SI_U:[0,40,48,2,-40,null,null,null,null,null,null,null,null,null,null,null,null],
+      SI_S:[243.15,549.49,948.99,36.72,-732.12,null,null,null,null,null,null,null,null,null,null,null,null],
+      SO_U:[2,19,34,0,0,null,null,null,null,null,null,null,null,null,null,null,null],
+      SO_S:[38.14,335.59,592.20,0,0,null,null,null,null,null,null,null,null,null,null,null,null] },
+
+    { name:'BACICLUMAX CJA X 10 AMPOLLAS BEBIBLES DE 5ML',
+      SI_U:[null,null,null,null,1000,null,null,1,-1,1000,4000,3000,0,250,null,null,null],
+      SI_S:[null,null,null,null,8640.00,null,null,10.17,-8.64,8644.00,34576.00,25932.00,0.14,null,null,null,null],
+      SO_U:[0,0,0,0,1000,0,0,2000,0,1000,3563,2865,3284,2898,793,null,null],
+      SO_S:[0,0,0,0,7367.22,0,0,17280.00,0,7288.00,26318.56,21331.71,24753.62,20221.80,6854.74,null,null] },
+
+    { name:'CARVELAN 12.5MG X 100 TABLETAS.',
+      SI_U:[null,30,30,69,-2,null,-9,60,null,18,540,0,100,-100,null,null,null],
+      SI_S:[null,528.57,1310.05,1535.04,-108.78,null,-575.85,3263.27,null,1055.72,16317.00,0,5438.56,-5438.56,null,null,null],
+      SO_U:[0,9,23,34,22,38,null,10,540,560,54,-201,106,127,103,21,null],
+      SO_S:[0,1226.95,1852.73,3752.91,1279.66,1906.25,null,585.28,16317.00,20288.41,3304.13,-4912.35,6011.75,6103.66,1630.69,767.80,null] },
+
+    { name:'CARVELAN 6.25MG X 100 TABLETAS',
+      SI_U:[null,30,42,99,null,55,40,67,110,50,100,248,null,200,120,89,42],
+      SI_S:[null,970.68,1453.30,4257.50,null,2346.19,2150.20,3028.47,1720.16,2686.36,4730.13,3915.10,2150.21,4896.93,4300.00,3246.22,1432.30],
+      SO_U:[0,6,36,13,null,50,78,67,94,116,100,200,209,260,150,null,183],
+      SO_S:[0,242.55,1453.30,506.86,null,2150.20,3028.47,2686.36,3915.10,4300.00,3246.22,4361.93,8600.84,8485.74,5160.51,6450.63,3263.39] },
+
+    { name:'CELOMEX 200MG CAJA X 100 CAP',
+      SI_U:[null,null,null,null,null,null,null,null,null,0,600,820,541,300,null,600,565],
+      SI_S:[null,null,null,null,null,null,null,null,null,0,14172.00,19367.58,12777.92,7085.73,null,14171.45,12884.53],
+      SO_U:[0,0,0,0,0,0,0,0,0,122,1298,398,463,430,519,353,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,2767.46,24513.60,8381.33,9643.75,8366.72,9922.49,7321.92,null] },
+
+    { name:'CELOMEX 200MG X 30 CAPSULAS.',
+      SI_U:[642,100,20,0,151,null,null,69,null,0,0,150,150,null,2,2,null],
+      SI_S:[6798.78,897.45,381.21,0,1795.39,null,null,868.02,null,0,0,1782.84,1782.84,null,27.96,27.97,null],
+      SO_U:[29,81,239,194,74,6,null,35,null,null,null,114,3,-22,2,null,null],
+      SO_S:[361.29,947.65,2532.58,1951.00,870.60,83.90,null,440.50,null,null,null,1184.24,41.95,-216.76,27.97,null,null] },
+
+    { name:'CIPROZONE 500MG X 100 TABLETAS RECUBIERTAS',
+      SI_U:[null,170,490,102,0,113,172,16,null,0,-21,14,7,0,500,340,null],
+      SI_S:[null,3897.02,7607.47,3155.88,0,3499.72,4666.89,494.75,null,0,-534.79,466.88,197.84,0,15488.71,9293.22,null],
+      SO_U:[0,90,271,220,106,null,null,null,0,null,null,null,0,0,73,-108,439],
+      SO_S:[0,2402.54,15860.38,5640.94,2722.66,null,null,null,0,null,null,null,0,0,1740.67,-3345.56,10498.20] },
+
+    { name:'CISTIX 50MG/50ML CONCENTRADO PARA SOLUCION PARA PERFUSION',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,0,16,1502,230,0],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,0,208.00,20993.30,3434.00,0],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,16,1502,230,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,240.00,25584.00,4040.00,0,null] },
+
+    { name:'CLOPTOP 75MG X 30 TABLETAS.',
+      SI_U:[15,85,0,null,null,20,0,null,30,-28,null,0,50,null,1,null,null],
+      SI_S:[707.70,2645.80,0,null,null,829.84,0,null,1166.94,-962.60,null,0,2074.58,null,77.80,null,null],
+      SO_U:[0,0,10,44,1,30,0,0,30,1,0,3,6,2,1,null,null],
+      SO_S:[0,0,475.40,1576.61,48.81,1180.51,0,0,1244.70,48.81,0,146.44,292.88,77.80,48.81,null,null] },
+
+    { name:'CRYOFOMID 1000MG CJA X 1 VIAL PVO P/ SOL INJ PERF',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,1012,500,325,0,0,50],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,15483.60,7650.00,6892.00,0,0,2521.20],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,1012,500,323,0,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,18216.00,9000.00,7093.00,0,0,null] },
+
+    { name:'CRYOFOMID 200 200 MG CJA X 1 VIAL PVO. P/ SOL. INJ. PERF',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,30,0,0,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,459.00,0,0,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,30,0,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,540.00,0,0,null] },
+
+    { name:'DULOX 30MG X 30 TABLETAS.',
+      SI_U:[165,70,100,197,null,100,240,120,50,350,-1,null,null,null,null,-19,122],
+      SI_S:[5228.85,1879.91,3911.29,7039.21,null,3573.20,8575.68,4115.64,1786.60,12505.50,-35.73,null,null,null,null,-722.71,3287.05],
+      SO_U:[19,96,150,44,83,185,114,112,229,180,165,34,0,0,0,122,null],
+      SO_S:[708.47,3482.71,5560.69,1510.50,2953.22,6547.43,4002.03,4115.64,7956.96,5575.61,5705.16,1141.01,0,0,0,3287.05,null] },
+
+    { name:'DULOX 60MG X 30 TABLETAS.',
+      SI_U:[15,50,90,-3,null,40,51,3,110,63,90,52,0,4,null,null,-4],
+      SI_S:[561.90,1587.29,4084.79,-126.64,null,1389.15,1947.10,148.98,4643.21,2796.34,3764.04,2542.35,0,178.71,null,null,-181.86],
+      SO_U:[15,0,41,38,32,51,3,110,63,100,52,0,4,0,0,0,120],
+      SO_S:[661.02,0,1795.24,1641.01,1389.15,1688.48,148.98,4643.21,2796.34,4221.00,2542.35,0,178.71,0,0,0,2532.71] },
+
+    { name:'DUTAZEX 0,5MG X 30 TABLETAS.',
+      SI_U:[73,120,106,216,96,null,0,68,715,240,-120,100,355,450,175,null,380],
+      SI_S:[1104.49,1538.64,2070.34,3655.80,1625.09,null,0,1090.43,11512.16,4062.72,-2031.36,1692.80,4571.77,5924.79,3113.83,null,3385.59],
+      SO_U:[57,42,127,144,54,79,68,1054,102,342,121,355,570,377,657,-497,null],
+      SO_S:[1014.43,625.16,2075.23,2397.92,997.83,1375.11,1090.43,9650.29,1719.17,3619.25,2004.15,4571.77,7617.58,5044.10,4924.87,-3084.11,null] },
+
+    { name:'FINARIX 5MG CJA X 30 TAB. REC.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,150,0,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4807.99,0,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,3813.00,0,null] },
+
+    { name:'FLAZAFORTE 30MG X 10 TABLETAS.',
+      SI_U:[190,240,150,150,250,288,180,893,960,null,null,1000,null,1088,null,-7,582],
+      SI_S:[2490.90,2666.42,2708.23,2225.85,3709.75,4273.63,2671.02,7123.22,8903.34,null,null,12210.90,null,9832.72,null,-97.17,5787.20],
+      SO_U:[153,149,267,161,250,171,117,205,889,273,696,981,1298,188,582,null,null],
+      SO_S:[2205.61,1748.16,3805.43,2378.49,3703.91,2585.61,1787.24,1953.40,10303.48,4303.25,10201.80,14838.98,15327.79,1591.47,5787.20,null,null] },
+
+    { name:'FLUCOZONE 150 150MG CJA X 2 CAPSULAS',
+      SI_U:[null,1500,1000,0,0,1949,968,4499,2977,-4,null,null,null,null,null,null,1],
+      SI_S:[null,2707.50,1685.56,3.00,0,4283.43,1652.45,9888.06,6540.50,-8.79,null,null,null,null,null,null,2.59],
+      SO_U:[0,500,839,982,1949,968,1060,1519,4907,1066,0,0,0,0,0,0,null],
+      SO_S:[0,974.58,1690.46,1690.46,4283.43,1652.45,1430.03,2569.88,6913.62,2015.27,0,0,0,240.88,0,0,null] },
+
+    { name:'GABATINEX 300MG X 30 TABLETAS.',
+      SI_U:[null,30,50,90,94,null,250,310,-1,200,52,null,446,164,5841,41,265],
+      SI_S:[null,477.97,1116.11,1912.50,1997.50,null,5312.50,2125.00,-21.25,4250.00,1001.04,null,4250.00,2125.00,19620.44,547.58,5731.79],
+      SO_U:[0,0,70,60,124,0,1,265,96,52,162,446,260,100,5464,268,null],
+      SO_S:[0,0,1469.16,1255.92,2390.72,0,25.00,4786.00,1590.30,1001.04,3034.75,7905.55,2350.00,2125.00,58055.00,3187.50,null] },
+
+    { name:'GAXTROX 20MG X 30 CAPSULAS.',
+      SI_U:[147,70,449,700,null,-2,120,300,232,null,69,184,203,538,290,null,11],
+      SI_S:[657.09,265.17,2220.09,3509.00,null,-8.94,600.72,1503.00,912.72,null,390.72,997.55,1061.22,2271.50,1444.19,null,0],
+      SO_U:[27,75,394,280,51,-2,338,67,177,69,50,300,250,746,null,75,675],
+      SO_S:[141.86,360.78,1942.32,1326.16,245.45,-8.94,1622.14,341.68,912.72,390.72,250.32,1501.91,1251.59,3734.74,null,417.11,2996.04] },
+
+    { name:'GAXTROX 40 40MG X 100 CAP LIB RET',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,196,-19,47,60,null,128,550],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,3925.88,-380.57,1105.29,1201.76,null,1365.23,8011.74],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,22,47,60,108,128,100,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,471.53,1105.29,1201.76,2326.20,1365.23,2002.93,null] },
+
+    { name:'GAXTROX 40MG X 30 CAPSULAS.',
+      SI_U:[608,29,279,500,null,-2,337,400,163,null,null,77,212,149,null,37,1034],
+      SI_S:[3720.96,177.48,1919.52,3439.50,null,-12.24,2313.31,2751.92,1262.85,null,null,614.27,1498.19,1080.33,null,289.65,7102.41],
+      SO_U:[76,73,565,212,131,-2,337,147,163,119,70,77,100,149,8,210,1024],
+      SO_S:[525.84,482.64,3948.28,1398.57,928.49,-12.24,2313.31,1093.86,1262.85,888.24,529.88,614.27,687.92,1080.33,63.94,1375.85,7044.34] },
+
+    { name:'ITRACOZONE 100MG X 100 CAPSULAS',
+      SI_U:[null,20,200,0,0,350,291,62,-8,4,null,0,409,null,0,367,1756],
+      SI_S:[null,988.98,7280.37,0,0,22439.55,18394.44,4000.67,-603.39,301.70,null,0,26222.22,null,0,24920.26,120463.65],
+      SO_U:[0,3,117,0,0,291,null,-8,4,0,null,409,392,17,500,300,1368],
+      SO_S:[0,181.77,7280.37,0,0,18394.44,null,-603.39,301.70,0,null,26222.22,26283.75,790.07,37665.21,22599.12,69153.33] },
+
+    { name:'KETOCLEAR 2% CHAMPÚ CJA X 1 FCO X 100 ML',
+      SI_U:[null,null,null,null,null,null,null,null,null,0,1000,491,1000,700,null,440,824],
+      SI_S:[null,null,null,null,null,null,null,null,null,0,17289.00,8488.92,17289.07,12102.35,null,6964.78,12744.86],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,491,786,1200,1170,828,12,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,8488.92,12688.07,19562.91,18993.10,13359.26,0,null] },
+
+    { name:'LEVOTOPLEX 500 500MG CJA X 50 TAB. REC.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,600],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,15162.00],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,600],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15162.00] },
+
+    { name:'LEVOTOPLEX 750 750MG CJA X 50 TAB. REC.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+
+    { name:'LEXPRAM 10 MG CJA X 50 TAB. REC.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,750,0,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,27571.09,0,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,7455.50,0,null] },
+
+    { name:'METAPLUS 500MG X 50 TABLETAS RECUBIERTAS.',
+      SI_U:[256,0,null,null,50,null,28,-46,null,3,null,5,20,123,2,null,21],
+      SI_S:[6017.00,0,null,null,1249.50,null,661.20,-981.10,null,88.20,null,145.80,419.40,1227.20,20.00,null,347.40],
+      SO_U:[5,2,131,-13,10,28,6,1,0,15,100,99,null,null,null,null,null],
+      SO_S:[158.20,66.10,2736.40,-208.40,258.00,661.20,164.40,23.40,0,225.00,1227.20,2499.00,20.00,2474.01,347.40,null,null] },
+
+    { name:'METAPLUS F 1000MG X 30 TABLETAS RECUBIERTAS.',
+      SI_U:[352,0,158,-8,222,-3,null,0,150,null,426,159,null,50,24,35,null],
+      SI_S:[4710.60,0,2545.38,-128.88,3585.08,-25.29,null,0,693.53,null,2772.35,1028.68,null,807.50,320.70,465.10,null],
+      SO_U:[21,52,223,186,-44,30,-34,110,41,7,0,27,58,108,null,null,null],
+      SO_S:[229.32,841.43,3480.40,2710.47,-398.70,535.20,-464.85,1771.70,693.53,66.90,0,264.95,630.17,969.13,null,null,null] },
+
+    { name:'MYTEL 80MG X 30 TABLETAS.',
+      SI_U:[30,130,180,0,40,98,0,null,710,null,126,243,71,204,72,161,null],
+      SI_S:[324.30,1190.93,2206.49,0,488.40,1199.38,0,null,8671.20,null,1554.00,2877.60,954.48,2140.28,869.73,932.75,null],
+      SO_U:[30,100,48,7,73,120,-2,29,413,213,100,450,200,null,325,null,null],
+      SO_S:[381.36,1144.07,560.25,147.23,888.31,1547.43,-130.04,413.63,5131.00,1705.27,1221.30,3663.88,2442.59,null,2441.60,null,null] },
+
+    { name:'NUMBICAINE 5 5mg/mL CJA X 1 AMP. SOL. INY.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+
+    { name:'OLANPREX 10MG X 30 TABLETAS.',
+      SI_U:[15,15,299,0,199,null,80,-56,null,36,null,0,0,0,0,0,null],
+      SI_S:[334.95,283.86,7121.84,0,5010.02,null,2014.40,-1135.12,null,1066.31,null,0,0,0,0,0,null],
+      SO_U:[1,19,179,-9,105,108,-56,101,36,2,0,0,0,0,0,null,null],
+      SO_S:[26.27,483.39,4010.66,-71.22,2451.09,2566.05,-1135.12,2580.98,1066.31,59.24,0,0,0,0,0,null,null] },
+
+    { name:'OSTECOX 120 120MG CJA X 7 TABLETAS RECUBIERTAS',
+      SI_U:[null,null,null,240,240,null,138,462,null,509,3900,850,null,2453,250,null,null],
+      SI_S:[null,null,null,2116.80,2116.80,null,1163.80,3887.58,null,4204.42,22059.25,4411.86,null,8673.49,882.37,null,null],
+      SO_U:[0,0,0,50,160,138,400,91,450,2170,1921,5740,999,null,null,null,null],
+      SO_S:[0,0,0,292.35,1120.38,1163.80,3528.74,681.55,3970.67,2647.11,11515.02,19431.22,1623.64,null,null,null,null] },
+
+    { name:'OSTECOX 60 60MG CJA X 14 TABLETAS RECUBIERTAS',
+      SI_U:[null,50,307,0,158,null,46,null,26,65,47,200,null,185,1,4,null],
+      SI_S:[null,383.05,2863.87,0,1513.80,null,434.58,null,272.81,460.63,529.74,1916.10,null,2046.47,0,45.08,null],
+      SO_U:[0,0,237,2,25,46,null,11,65,100,55,182,185,93,2,null,null],
+      SO_S:[0,0,1987.74,0.10,225.86,434.58,null,123.98,460.63,958.00,464.40,1989.03,2046.47,1037.80,45.08,null,null] },
+
+    { name:'OSTECOX 90 90MG CJA X 14 TABLETAS RECUBIERTAS',
+      SI_U:[null,120,599,-16,337,370,300,95,150,82,174,160,93,315,2400,-2,1096],
+      SI_S:[null,1006.78,6172.32,-166.59,2640.69,3132.00,1105.93,644.50,1566.25,1775.63,1266.01,1670.40,884.33,1839.14,11489.41,-10.44,8318.62],
+      SO_U:[0,62,239,61,370,176,95,150,82,174,160,211,93,314,565,787,1600],
+      SO_S:[0,609.49,2194.91,641.98,2640.69,1105.93,644.50,1566.25,1775.63,1266.01,1670.40,1921.41,884.33,2074.56,7788.56,1085.38,8355.93] },
+
+    { name:'PANTOZEX 40MG X 30 TABLETAS.',
+      SI_U:[330,170,548,270,244,221,200,300,1720,null,432,1185,520,693,-10,608,null],
+      SI_S:[4358.40,1308.13,5685.45,2762.42,2495.88,511.55,2046.20,3069.00,10230.00,null,3431.12,9040.82,4215.65,6035.15,-4896.55,5888.55,null],
+      SO_U:[18,59,862,267,132,428,80,253,959,473,600,34,700,44,580,null,null],
+      SO_S:[192.21,595.83,8014.01,2572.70,1379.90,3413.99,637.79,2703.45,9100.68,2309.65,6138.60,347.86,7161.70,0,5888.55,null,null] },
+
+    { name:'PREGAZONE 75 75MG CJA X 50 CAP.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,200,106,30,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,5744.00,2872.00,861.60,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,426,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,9169.58,0,null] },
+
+    { name:'REUMAX 100MG CAJA X 100 TAB. LIB. PROL.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,150,8,241,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,10510.91,0,12785.45,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,0,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12785.45,null] },
+
+    { name:'ROSUMAX 10mg X 30 TABLETAS.',
+      SI_U:[199,0,null,null,null,39,28,100,120,196,150,71,128,128,159,null,147],
+      SI_S:[4897.83,0,null,null,null,954.73,745.52,2204.00,2645.08,4744.64,3306.00,1587.24,2828.72,2666.85,3010.93,null,2842.86],
+      SO_U:[4,20,108,-15,26,39,null,28,100,84,120,18,22,100,60,null,0],
+      SO_S:[92.54,441.91,2126.94,-220.57,622.73,954.73,null,745.52,2204.00,2002.45,2645.08,456.54,570.50,1102.12,1322.54,null,0] },
+
+    { name:'ROSUMAX 20mg X 30 TABLETAS.',
+      SI_U:[595,14,111,null,285,null,117,null,430,0,126,173,114,0,null,null,0],
+      SI_S:[14399.00,338.80,3014.76,null,7739.74,null,3510.95,null,11678.61,0,3686.72,4645.13,3340.94,0,null,null,0],
+      SO_U:[81,341,187,102,40,117,118,428,150,63,100,100,null,-6,null,0,null],
+      SO_S:[1945.21,6841.35,4494.76,2850.78,1087.86,3510.95,3437.99,12079.36,4074.00,2020.17,2715.68,2715.68,null,-124.93,null,0,null] },
+
+    { name:'SILDEZONE 100 100MG CJA X 1 TABLETA RECUBIERTA',
+      SI_U:[null,null,null,1064,500,null,34500,1401,null,null,16448,18254,null,2072,null,null,null],
+      SI_S:[null,null,null,1149.12,540.00,null,37260.00,1253.73,null,null,12053.90,12724.08,null,1531.51,null,null,null],
+      SO_U:[0,0,0,1064,500,0,19059,0,12784,18000,18000,1866,2072,null,null,null,null],
+      SO_S:[0,0,0,914.56,360.17,0,13876.98,0,9215.02,9754.20,19508.40,1486.20,1531.51,null,null,null,null] },
+
+    { name:'SILDEZONE 50 50MG CJA X 1 TABLETA RECUBIERTA',
+      SI_U:[null,null,null,1064,500,null,19499,110,null,null,15890,22000,null,5422,9444,5500,null],
+      SI_S:[null,null,null,1074.64,505.00,null,19693.99,130.66,null,null,22235.40,6297.30,null,4042.60,5349.68,5558.58,null],
+      SO_U:[0,0,0,1064,500,0,8523,0,4208,15890,12346,9108,5422,9444,5500,null,null],
+      SO_S:[0,0,0,776.86,275.42,0,4801.82,0,2337.72,8283.83,6297.30,5155.56,4042.60,5349.68,5558.58,null,null] },
+
+    { name:'TADALAZONE 20 20 MG CJA X 4 TABLETAS RECUBIERTAS',
+      SI_U:[null,null,null,240,500,null,239,1500,null,200,1103,1125,2000,800,2432,null,null],
+      SI_S:[null,null,null,1920.00,4000.00,null,1172.62,12000.00,null,1600.00,6420.74,5567.83,8000.00,1342.24,8167.97,null,null],
+      SO_U:[0,0,0,0,512,239,652,262,1103,600,1125,2000,1361,1057,680,1000,null],
+      SO_S:[0,0,0,0,3571.88,1172.62,3636.87,1987.85,6420.74,4800.00,5567.83,8000.00,4756.29,1342.24,1599.51,3998.79,null] },
+
+    { name:'TAMSUNAX 0.4MG X 30 CAPSULAS.',
+      SI_U:[null,150,537,200,1013,299,null,233,1100,259,800,1900,null,710,1200,220,null],
+      SI_S:[null,1277.54,6094.38,2247.20,7323.55,2290.61,null,1974.94,12394.96,2453.04,5055.02,15778.00,null,4131.19,7645.91,2254.99,null],
+      SO_U:[0,50,447,121,299,null,565,259,1100,805,1165,710,1400,1600,1400,370,null],
+      SO_S:[0,532.20,4777.57,1262.96,2290.61,null,4616.82,1974.94,12394.96,6319.09,4131.19,9013.30,13992.06,7645.91,11215.55,6543.15,null] },
+
+    { name:'VERTILUX 16MG CJA X 50 TAB.',
+      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,200,0,324,null],
+      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,6317.57,0,7643.86,null],
+      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,324,381,null],
+      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,11213.70,0,null] },
+
+    { name:'WALSARTEX 80MG X 30 TABLETAS.',
+      SI_U:[15,null,260,0,50,45,null,null,60,null,32,55,11,-9,null,null,null],
+      SI_S:[324.15,null,5942.12,0,1214.00,1095.27,null,null,1372.87,null,743.56,1172.63,113.31,-225.00,null,null,null],
+      SO_U:[0,0,103,-25,0,77,-84,0,112,32,51,47,13,null,null,null,null],
+      SO_S:[0,0,2195.88,-527.55,0,2352.54,-1841.72,0,2235.89,743.56,1172.63,480.50,113.31,null,null,null,null] }
+  ];
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function fmtNum(v) {
+    if (v === null || v === undefined) return '—';
+    return v.toLocaleString('es-PE', {maximumFractionDigits: 0});
+  }
+  function fmtS(v) {
+    if (v === null || v === undefined) return '—';
+    const abs = Math.abs(v).toLocaleString('es-PE', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return (v < 0 ? '-S/ ' : 'S/ ') + abs;
+  }
+  function pctClass(pct) {
+    if (pct === null) return 'pct-na';
+    if (pct >= 90) return 'pct-good';
+    if (pct >= 70) return 'pct-mid';
+    return 'pct-low';
+  }
+  function pctText(pct) {
+    if (pct === null) return '—';
+    return pct + '%';
+  }
+
+  /* ============================================================
+     HEADER DINÁMICO
+     ============================================================ */
+  const headMes = document.getElementById('siem-head-mes');
+  const headSub = document.getElementById('siem-head-sub');
+
+  let headMesHTML = '<th rowspan="2" class="sticky-prod sticky-top">Producto</th>';
+  headMesHTML += meses.map((m, i) => `<th colspan="5" class="mes-col" data-mes="${m}">${mesLabel[i]}</th>`).join('');
+  headMesHTML += '<th colspan="5" class="total-col">TOTAL PERIODO</th>';
+  headMes.innerHTML = headMesHTML;
+
+  const subLabels = ['SI-U','SI-S/','SO-U','SO-S/','%'];
+  let headSubHTML = '';
+  for (let i = 0; i < meses.length; i++) {
+    headSubHTML += subLabels.map(l => `<th class="sticky-top sub" data-mes="${meses[i]}">${l}</th>`).join('');
+  }
+  headSubHTML += subLabels.map(l => `<th class="sticky-top sub total-sub">${l}</th>`).join('');
+  headSub.innerHTML = headSubHTML;
+
+  /* ============================================================
+     BODY
+     ============================================================ */
+  function buildRow(p) {
+    let cells = '';
+    let totSI_U = 0, totSI_S = 0, totSO_U = 0, totSO_S = 0;
+    let hasSI = false, hasSO = false;
+
+    for (let i = 0; i < meses.length; i++) {
+      const siU = p.SI_U[i];
+      const siS = p.SI_S[i];
+      const soU = p.SO_U[i];
+      const soS = p.SO_S[i];
+
+      if (siU !== null && siU !== undefined) { totSI_U += siU; hasSI = true; }
+      if (siS !== null && siS !== undefined) { totSI_S += siS; hasSI = true; }
+      if (soU !== null && soU !== undefined) { totSO_U += soU; hasSO = true; }
+      if (soS !== null && soS !== undefined) { totSO_S += soS; hasSO = true; }
+
+      const sinDatos = (siU === null && siS === null && soU === null && soS === null);
+      if (sinDatos) {
+        cells += '<td data-mes="'+meses[i]+'">—</td><td data-mes="'+meses[i]+'">—</td>'
+               + '<td data-mes="'+meses[i]+'">—</td><td data-mes="'+meses[i]+'">—</td>'
+               + '<td data-mes="'+meses[i]+'"><span class="pct-badge pct-na">—</span></td>';
+        continue;
+      }
+
+      let pct = null;
+      if (siS !== null && siS !== 0 && soS !== null) {
+        pct = Math.round((soS / siS) * 100);
+      } else if (siS === 0 && soS !== null && soS !== 0) {
+        pct = null; // SI=0 con SO>0 → no calculable
+      }
+
+      const cls = pctClass(pct);
+      cells += `<td data-mes="${meses[i]}" class="${siU < 0 ? 'neg' : ''}">${fmtNum(siU)}</td>`
+             + `<td data-mes="${meses[i]}" class="${siS < 0 ? 'neg' : ''}">${fmtS(siS)}</td>`
+             + `<td data-mes="${meses[i]}" class="${soU < 0 ? 'neg' : ''}">${fmtNum(soU)}</td>`
+             + `<td data-mes="${meses[i]}" class="${soS < 0 ? 'neg' : ''}">${fmtS(soS)}</td>`
+             + `<td data-mes="${meses[i]}"><span class="pct-badge ${cls}">${pctText(pct)}</span></td>`;
+    }
+
+    // Totales del periodo
+    let totPct = null;
+    if (totSI_S !== 0) totPct = Math.round((totSO_S / totSI_S) * 100);
+    const totCls = pctClass(totPct);
+
+    cells += `<td><b>${fmtNum(totSI_U)}</b></td>`
+           + `<td><b>${fmtS(totSI_S)}</b></td>`
+           + `<td><b>${fmtNum(totSO_U)}</b></td>`
+           + `<td><b>${fmtS(totSO_S)}</b></td>`
+           + `<td><span class="pct-badge ${totCls}">${pctText(totPct)}</span></td>`;
+
+    return `<tr><td class="prod-name" title="${p.name}">${p.name}</td>${cells}</tr>`;
+  }
+
+  document.getElementById('siem-body').innerHTML = productos.map(buildRow).join('');
+
+  /* ============================================================
+     FOOTER: TOTALES POR MES (suma de todos los productos)
+     ============================================================ */
+  const footer = document.getElementById('siem-footer');
+  let footCells = '';
+  let granSI_U = 0, granSI_S = 0, granSO_U = 0, granSO_S = 0;
+
+  for (let i = 0; i < meses.length; i++) {
+    let mSI_U = 0, mSI_S = 0, mSO_U = 0, mSO_S = 0;
+    let tiene = false;
+    for (const p of productos) {
+      if (p.SI_U[i] !== null && p.SI_U[i] !== undefined) { mSI_U += p.SI_U[i]; tiene = true; }
+      if (p.SI_S[i] !== null && p.SI_S[i] !== undefined) { mSI_S += p.SI_S[i]; tiene = true; }
+      if (p.SO_U[i] !== null && p.SO_U[i] !== undefined) { mSO_U += p.SO_U[i]; tiene = true; }
+      if (p.SO_S[i] !== null && p.SO_S[i] !== undefined) { mSO_S += p.SO_S[i]; tiene = true; }
+    }
+    granSI_U += mSI_U; granSI_S += mSI_S; granSO_U += mSO_U; granSO_S += mSO_S;
+
+    if (!tiene) {
+      footCells += `<td data-mes="${meses[i]}">—</td><td data-mes="${meses[i]}">—</td>`
+                 + `<td data-mes="${meses[i]}">—</td><td data-mes="${meses[i]}">—</td>`
+                 + `<td data-mes="${meses[i]}"><span class="pct-badge pct-na" style="background:#fff;color:#0a4d8c;">—</span></td>`;
+      continue;
+    }
+    let mpct = (mSI_S !== 0) ? Math.round((mSO_S / mSI_S) * 100) : null;
+    const mcls = pctClass(mpct);
+    footCells += `<td data-mes="${meses[i]}">${fmtNum(mSI_U)}</td>`
+               + `<td data-mes="${meses[i]}">${fmtS(mSI_S)}</td>`
+               + `<td data-mes="${meses[i]}">${fmtNum(mSO_U)}</td>`
+               + `<td data-mes="${meses[i]}">${fmtS(mSO_S)}</td>`
+               + `<td data-mes="${meses[i]}"><span class="pct-badge ${mcls}" style="background:#fff;color:#0a4d8c;">${pctText(mpct)}</span></td>`;
+  }
+
+  const granPct = (granSI_S !== 0) ? Math.round((granSO_S / granSI_S) * 100) : null;
+  footCells += `<td class="total-sub">${fmtNum(granSI_U)}</td>`
+             + `<td class="total-sub">${fmtS(granSI_S)}</td>`
+             + `<td class="total-sub">${fmtNum(granSO_U)}</td>`
+             + `<td class="total-sub">${fmtS(granSO_S)}</td>`
+             + `<td class="total-sub"><span class="pct-badge pct-good" style="background:#fff;color:#128a5b;">${pctText(granPct)}</span></td>`;
+
+  footer.innerHTML = `<td class="prod-name">TOTAL GENERAL</td>${footCells}`;
+
+  /* ============================================================
+     FILTRO POR RANGO
+     ============================================================ */
+  window.filterMeses = function(f) {
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+    const rules = {
+      'todo':   () => true,
+      '2025':   m => m.startsWith('2025'),
+      '2026h1': m => m.startsWith('2026') && parseInt(m.split('-')[1]) <= 6,
+      '2026h2': m => m.startsWith('2026') && parseInt(m.split('-')[1]) >= 7
+    };
+    const rule = rules[f] || rules.todo;
+    document.querySelectorAll('[data-mes]').forEach(el => {
+      el.style.display = rule(el.dataset.mes) ? '' : 'none';
+    });
+    // El header mes-row agrupa 5 columnas: ocultar según su data-mes
+    document.querySelectorAll('.mes-col').forEach(th => {
+      th.style.display = rule(th.dataset.mes) ? '' : 'none';
+    });
+  };
+})();
+</script>
+
 <script>
 Chart.register(ChartDataLabels);
 
