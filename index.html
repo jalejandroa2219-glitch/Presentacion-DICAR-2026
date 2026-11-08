@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSP Lifesciences Perú × DICAR · Business Review 2026</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CSP Lifesciences Perú × DIMEXA · Business Review 2026</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <style>
@@ -211,686 +212,604 @@
     body { background:#fff; }
     .slide { box-shadow:none; margin:0; border-radius:0; page-break-after:always; }
   }
+
+  /* Ajuste automático de contenido para evitar recortes en slides */
+  .slide.compact > :not(.slide-footer) { zoom: .94; }
+  .slide.ultra-compact > :not(.slide-footer) { zoom: .88; }
+  .slide.compact .slide-header { margin-bottom: 13px; padding-bottom: 10px; }
+  .slide.compact .slide-header h1 { font-size: 27px; }
+  .slide.compact .kpi-row { gap: 12px; margin-bottom: 13px; }
+  .slide.compact .kpi { padding: 11px 13px; }
+  .slide.compact .grid2 { gap: 15px !important; }
+  .slide.compact .section-title { margin-bottom: 8px; }
+  .slide.compact .slide-footer { bottom: 10px; }
+  .slide.ultra-compact .slide-header { margin-bottom: 9px; padding-bottom: 8px; }
+  .slide.ultra-compact .slide-header h1 { font-size: 24px; }
+  .slide.ultra-compact .kpi { padding: 8px 10px; }
+  .slide.ultra-compact .slide-footer { bottom: 8px; }
+
+
+  /* Correcciones específicas de maquetación: slide 7 y slide 11 */
+  .stock-slide { padding-bottom: 42px; }
+  .stock-slide .slide-header { margin-bottom: 12px; padding-bottom: 10px; }
+  .stock-slide .slide-header h1 { font-size: 27px; }
+  .stock-kpis { gap: 12px; margin-bottom: 12px !important; }
+  .stock-kpis .kpi { padding: 10px 13px; }
+  .stock-kpis .kpi .value { font-size: 23px; }
+  .stock-content-grid { display:grid; grid-template-columns: 1.05fr .95fr; gap:14px; align-items:stretch; }
+  .stock-card { min-width:0; border:1px solid #dce5ef; border-radius:11px; padding:11px 13px; background:#fff; }
+  .stock-card h3 { font-size:15px; color:#0a4d8c; margin-bottom:8px; }
+  .stock-slide table.data { font-size:11px; }
+  .stock-slide table.data thead th { padding:6px 7px; font-size:10.5px; }
+  .stock-slide table.data tbody td { padding:4px 7px; font-size:10.5px; }
+  .stock-sites td:first-child { width:56%; }
+  .stock-note { font-size:10.5px; line-height:1.35; color:#5a6b82; margin-top:7px; }
+  .stock-section-title { font-size:13px; margin:10px 0 6px; padding-left:8px; }
+  .stock-low td:first-child { text-align:left !important; }
+  .stock-low td:last-child { font-weight:800; }
+  .stock-reading p { font-size:12px; line-height:1.42; margin:0 0 9px; }
+  .stock-caveat { border-top:1px solid #e7eef5; padding-top:8px; margin-top:6px; color:#5a6b82; font-size:10.5px; line-height:1.4; }
+  .stock-scope { background:#f4f8fc; border-left:3px solid #33c4a2; padding:9px 10px; border-radius:6px; margin-top:12px; }
+  .stock-scope strong { display:block; color:#0a4d8c; font-size:11px; margin-bottom:4px; }
+  .stock-scope p { font-size:10.5px; line-height:1.4; color:#5a6b82; }
+
+  .siem-slide { padding-bottom:42px; }
+  .siem-slide .slide-header { margin-bottom:10px; padding-bottom:10px; }
+  .siem-slide .slide-header h1 { font-size:27px; }
+  .siem-slide .siem-period-summary { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:0 0 9px; }
+  .siem-period-summary > div { min-width:0; border:1px solid #dce8f3; background:#f5f9fd; border-radius:8px; padding:7px 9px; }
+  .siem-period-summary span { display:block; color:#61748a; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.3px; }
+  .siem-period-summary strong { display:block; color:#0a4d8c; font-size:13px; margin-top:3px; white-space:nowrap; }
+  .siem-slide .scroll-box-siem { height:390px; max-height:390px; overflow:auto; overscroll-behavior:contain; }
+  .siem-slide .siem-table { min-width:max-content; }
+  .siem-slide .siem-table th, .siem-slide .siem-table td { box-sizing:border-box; }
+  .siem-slide .siem-table tbody tr { height:25px; }
+  .siem-slide .siem-table tbody td.prod-name { min-width:220px; max-width:220px; }
+  .siem-slide .siem-legend { margin-top:7px !important; font-size:10px !important; }
+  .siem-slide .filtro-btn { padding:5px 12px; }
+  .siem-slide .slide-footer { bottom:10px; }
+  @media (max-width: 1320px) {
+    .slide { transform-origin:top center; }
+  }
+
+
+/* FINAL FIX: restore slide 7 as a real 16:9 slide and contain its content */
+.stock-slide {
+  width:1280px !important; height:720px !important;
+  margin:24px auto !important; padding:28px 34px 42px !important;
+  overflow:hidden !important; box-sizing:border-box !important;
+  background:#fff !important; border-radius:14px !important;
+  position:relative !important;
+}
+.stock-slide .slide-header { margin:0 0 13px !important; padding:0 0 10px !important; }
+.stock-slide .slide-header h1 { font-size:27px !important; line-height:1.15 !important; }
+.stock-slide .slide-header .sub { font-size:12px !important; line-height:1.3 !important; }
+.stock-slide .brand { font-size:11px !important; }
+.stock-slide .brand strong { font-size:14px !important; }
+.stock-slide .stock-kpis { display:flex !important; gap:10px !important; margin:0 0 11px !important; }
+.stock-slide .stock-kpis .kpi { padding:9px 12px !important; min-width:0 !important; }
+.stock-slide .stock-kpis .kpi .label { font-size:10px !important; }
+.stock-slide .stock-kpis .kpi .value { font-size:22px !important; line-height:1.15 !important; }
+.stock-slide .stock-kpis .kpi .delta { font-size:10px !important; }
+.stock-slide .stock-content-grid {
+  display:grid !important; grid-template-columns:1.06fr .94fr !important;
+  gap:12px !important; align-items:stretch !important;
+  height:485px !important; min-height:0 !important;
+}
+.stock-slide .stock-card {
+  min-width:0 !important; height:100% !important; box-sizing:border-box !important;
+  padding:10px 12px !important; overflow:hidden !important;
+}
+.stock-slide .stock-card h3 { font-size:14px !important; margin:0 0 7px !important; }
+.stock-slide table.data { width:100% !important; font-size:10px !important; }
+.stock-slide table.data thead th { padding:5px 7px !important; font-size:10px !important; }
+.stock-slide table.data tbody td { padding:4px 7px !important; font-size:10px !important; line-height:1.2 !important; }
+.stock-slide .stock-note { margin:5px 0 6px !important; font-size:9px !important; line-height:1.25 !important; }
+.stock-slide .stock-section-title { margin:7px 0 5px !important; padding:4px 0 4px 8px !important; font-size:11px !important; line-height:1.2 !important; }
+.stock-slide .stock-reading p { margin:0 0 8px !important; font-size:11px !important; line-height:1.35 !important; }
+.stock-slide .stock-caveat { margin:6px 0 0 !important; padding-top:7px !important; font-size:9px !important; line-height:1.3 !important; }
+.stock-slide .stock-scope { margin-top:9px !important; padding:7px 9px !important; }
+.stock-slide .stock-scope strong { font-size:10px !important; }
+.stock-slide .stock-scope p { font-size:9px !important; line-height:1.3 !important; }
+.stock-slide .slide-footer { bottom:10px !important; left:34px !important; right:34px !important; }
+
+/* Slide 11: predictable viewport, filters never push the table out of the slide */
+.siem-slide { box-sizing:border-box !important; padding:28px 38px 40px !important; overflow:hidden !important; }
+.siem-slide .slide-header { margin-bottom:9px !important; padding-bottom:9px !important; }
+.siem-slide .slide-header h1 { font-size:26px !important; }
+.siem-slide .slide-header .sub { font-size:12px !important; }
+.siem-slide .scroll-box-siem { height:395px !important; max-height:395px !important; overflow:auto !important; }
+.siem-slide .siem-period-summary { margin-bottom:8px !important; }
+.siem-slide .siem-period-summary > div { padding:6px 8px !important; }
+.siem-slide .siem-period-summary strong { font-size:12px !important; }
+.siem-slide .slide-footer { bottom:10px !important; }
+
+
+/* Pulido final: alineación del total al extremo derecho y legibilidad de Stock */
+.siem-slide .siem-table tfoot td.footer-spacer {
+  background:#f4f8fc !important;
+  color:transparent !important;
+  border-top:1px solid #d8e6f3 !important;
+  border-bottom:1px solid #d8e6f3 !important;
+  padding:0 !important;
+}
+.siem-slide .siem-table tfoot td.total-sub {
+  background:#e8f3fb !important;
+  color:#0a4d8c !important;
+  border-top:2px solid #0a4d8c !important;
+  border-bottom:1px solid #c9dced !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+.siem-slide .siem-table tfoot td.total-sub:last-child {
+  background:#a9e4d0 !important; /* CAMBIO: Verde claro para el % total */
+}
+.siem-slide .siem-table tfoot td.total-sub .pct-badge {
+  color:inherit;
+}
+
+/* NUEVO: Estilos para los totales mensuales (fila del footer) */
+.siem-slide .siem-table tfoot td.footer-total {
+  background: #f4f8fc !important;
+  color: #0a4d8c !important;
+  font-weight: 800 !important;
+  border-top: 2px solid #0a4d8c !important;
+  border-bottom: 1px solid #c9dced !important;
+  font-size: 10.5px !important;
+}
+
+/* Stock: recuperar jerarquía tipográfica y ocupar mejor el espacio disponible */
+.stock-slide .stock-content-grid { height:485px !important; }
+.stock-slide .stock-card { padding:16px 17px !important; }
+.stock-slide .stock-card h3 { font-size:17px !important; margin-bottom:12px !important; }
+.stock-slide table.data thead th { padding:8px 9px !important; font-size:12px !important; }
+.stock-slide table.data tbody td { padding:7px 9px !important; font-size:12px !important; line-height:1.3 !important; }
+.stock-slide .stock-note { margin:8px 0 12px !important; font-size:11px !important; line-height:1.45 !important; }
+.stock-slide .stock-section-title { margin:12px 0 8px !important; padding:6px 0 6px 10px !important; font-size:14px !important; }
+.stock-slide .stock-reading { display:flex !important; flex-direction:column !important; gap:14px !important; padding:5px 0 10px !important; }
+.stock-slide .stock-reading p { margin:0 !important; font-size:13px !important; line-height:1.55 !important; }
+.stock-slide .stock-caveat { margin:10px 0 0 !important; padding-top:10px !important; font-size:11px !important; line-height:1.5 !important; }
+.stock-slide .stock-scope { margin-top:15px !important; padding:12px 13px !important; }
+.stock-slide .stock-scope strong { font-size:12px !important; margin-bottom:6px !important; }
+.stock-slide .stock-scope p { font-size:11px !important; line-height:1.5 !important; }
+.stock-slide .stock-kpis .kpi .label { font-size:11px !important; }
+.stock-slide .stock-kpis .kpi .value { font-size:25px !important; }
+.stock-slide .stock-kpis .kpi .delta { font-size:11px !important; }
+
 </style>
 </head>
 <body>
-
 <!-- ================= SLIDE 1: PORTADA ================= -->
 <section class="slide cover">
-  <h1>CSP LIFESCIENCES PERÚ</h1>
-  <h2>Business Review &amp; Plan Comercial 2026</h2>
-  <div class="divider"></div>
-  <div class="meta">
-    Análisis Sell In / Sell Out &nbsp;•&nbsp; Stock DICAR<br>
-    Sugerido de Compra &nbsp;•&nbsp; Nuevas Moléculas 2026–2027
+<h1>CSP LIFESCIENCES PERÚ</h1>
+<h2>Business Review &amp; Plan Comercial 2026</h2>
+<div class="divider"></div>
+<div class="meta">
+    Análisis Sell In / Sell Out  •  Stock DIMEXA<br/>
+    Inventario y Reposición  •  Nuevas Moléculas 2026–2027
   </div>
-  <div class="cover-logos">
-    <div class="cover-logo-box">
-      <img src="https://i.imgur.com/bqX33ZT.png" alt="CSP Lifesciences"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div class="cover-logo-fallback">CSP LIFESCIENCES<br>PERÚ</div>
-    </div>
-    <div class="cover-partners"><span class="vs">×</span></div>
-    <div class="cover-logo-box">
-      <img src="https://drogueriadicar.com.pe/wp-content/uploads/2019/10/cropped-logo-dicar.png"
-           alt="DICAR"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div class="cover-logo-fallback">DROGUERIA Y<br>DISTRIBUIDORA DICAR S.A.C.</div>
-    </div>
-  </div>
-  <div style="margin-top:28px; font-size:13px; opacity:.7; letter-spacing:.5px;">
-    CSP LIFESCIENCES PERÚ &nbsp;·&nbsp; DROGUERIA Y DISTRIBUIDORA DICAR S.A.C.
+<div class="cover-logos">
+<div class="cover-logo-box">
+<img alt="CSP Lifesciences" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="https://i.imgur.com/bqX33ZT.png"/>
+<div class="cover-logo-fallback">CSP LIFESCIENCES<br/>PERÚ</div>
+</div>
+<div class="cover-partners"><span class="vs">×</span></div>
+<div class="cover-logo-box">
+<img alt="DIMEXA" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="https://dimexa.com.pe/wp-content/uploads/2022/06/firma_dimexa_2022.png"/>
+<div class="cover-logo-fallback">DIMEXA<br/>S.A.</div>
+</div>
+</div>
+<div style="margin-top:28px; font-size:13px; opacity:.7; letter-spacing:.5px;">
+    CSP LIFESCIENCES PERÚ  ·  DIMEXA S.A.
   </div>
 </section>
-
 <!-- ================= SLIDE 2: RESUMEN EJECUTIVO ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Resumen Ejecutivo</h1>
-      <div class="sub">Cifras clave del negocio con DICAR · Periodo Jun 2025 – Oct 2026</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
+<div class="slide-header">
+<div>
+<h1>Resumen Ejecutivo</h1>
+<div class="sub">Cifras clave del negocio con DIMEXA · Periodo Mar 2025 – Oct 2026</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="kpi-row">
+<div class="kpi">
+<div class="label">Sell In Total (Facturado)</div>
+<div class="value">S/ 5,354,030.77</div>
+<div class="delta up">▲ Mar 2025 – Oct 2026</div>
+</div>
+<div class="kpi">
+<div class="label">Sell Out Total (Venta distribuidor)</div>
+<div class="value">S/ 4,044,092.91</div>
+<div class="delta up">▲ Mar 2025 – Oct 2026</div>
+</div>
+<div class="kpi">
+<div class="label">Ratio de valor Sell Out / Sell In</div>
+<div class="value">75.5%</div>
+<div class="delta up">Sell Out / Sell In por valor acumulado</div>
+</div>
+<div class="kpi">
+<div class="label">SKUs Activos</div>
+<div class="value">43</div>
+<div class="delta up">▲ 26 SKUs con stock en DIMEXA</div>
+</div>
+</div>
+<div class="grid2" style="gap:18px;">
+<div>
+<div class="section-title">Hallazgos Clave</div>
+<ul style="font-size:14px; line-height:2; color:#33475f; padding-left:18px;">
+<li><b>Lectura comercial:</b> el archivo contiene información de DIMEXA; no permite comparar su desempeño de rotación frente a otros distribuidores.</li>
+<li><b>Sell Out / Sell In:</b> el Sell Out representa el 75.5% del Sell In acumulado en valor. La brecha es S/ 1,309,937.86.</li>
+<li><b>Mayores valores Sell In:</b> ITRACOZONE, TAMSUNAX, BACICLUMAX, CIPROZONE y FLAZAFORTE.</li>
+<li>La comparación mensual refleja distinta cobertura: Sell In desde marzo de 2025 y Sell Out desde abril de 2025.</li>
+<li>26 de 43 SKUs presentan stock disponible; 17 registran stock cero y 4 tienen stock positivo ≤100 unidades.</li>
+</ul>
+</div>
+<div>
+<div class="section-title">Oportunidad 2026–2027</div>
+<ul style="font-size:14px; line-height:2; color:#33475f; padding-left:18px;">
+<li>Lanzamiento de <b>9 nuevas moléculas</b> en Nov–Dic 2026.</li>
+<li>Nueva presentación <b>TAMSUNAX 0.4MG X 50 CAPS</b> (Dic 2026).</li>
+<li>No se calcula un sugerido de compra con estas hojas: faltan costos, forecast, lead times y MOQ.</li>
 
-  <div class="kpi-row">
-    <div class="kpi">
-      <div class="label">Sell In Total (Facturado)</div>
-      <div class="value">S/ 1,565,766</div>
-      <div class="delta up">▲ Jun 2025 – Oct 2026</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Sell Out Total (Rotación)</div>
-      <div class="value">S/ 1,573,709</div>
-      <div class="delta up">▲ Jun 2025 – Oct 2026</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Ratio Sell Out / Sell In</div>
-      <div class="value">100.5%</div>
-      <div class="delta up">▲ Rotación plena · sin sobre-stock</div>
-    </div>
-    <div class="kpi">
-      <div class="label">SKUs Activos</div>
-      <div class="value">47</div>
-      <div class="delta up">▲ 32 SKUs con stock en DICAR</div>
-    </div>
-  </div>
-
-  <div class="grid2" style="gap:18px;">
-    <div>
-      <div class="section-title">Hallazgos Clave</div>
-      <ul style="font-size:14px; line-height:2; color:#33475f; padding-left:18px;">
-        <li><b>DICAR</b> es el socio distribuidor con mayor rotación del portafolio CSP en Perú.</li>
-        <li>El <b>Sell Out</b> supera ligeramente al Sell In (<b>100.5%</b>), indicando descarga controlada de stock y demanda saludable.</li>
-        <li>Productos ancla: <b>ITRACOZONE, CELOMEX, CIPROZONE, GABATINEX</b> y <b>TAMSUNAX</b>.</li>
-        <li>Fuerte estacionalidad en <b>FLUCOZONE</b> y <b>FLAZAFORTE</b> (picos Q1–Q2).</li>
-        <li>32 SKUs con stock disponible a la fecha en almacén DICAR — base para el sugerido de compra.</li>
-      </ul>
-    </div>
-    <div>
-      <div class="section-title">Oportunidad 2026–2027</div>
-      <ul style="font-size:14px; line-height:2; color:#33475f; padding-left:18px;">
-        <li>Lanzamiento de <b>9 nuevas moléculas</b> en Nov–Dic 2026.</li>
-        <li>Nueva presentación <b>TAMSUNAX 0.4MG X 50 CAPS</b> (Dic 2026).</li>
-        <li>Pipeline 2027: <b>28 moléculas</b> en categorías de alta rotación.</li>
-        <li>Sugerido de compra con <b>fórmula de rotación histórica − stock actual</b>.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>02</span></div>
+</ul>
+</div>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>02</span></div>
 </section>
-
 <!-- ================= SLIDE 3: TABLA SELL IN / SELL OUT COMPLETA ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Sell In vs Sell Out por Producto</h1>
-      <div class="sub">Parrilla completa · Jun 2025 – Oct 2026 · Valores acumulados</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
+<div class="slide-header">
+<div>
+<h1>Sell In vs Sell Out por Producto</h1>
+<div class="sub">43 SKUs · Mar 2025 – Oct 2026 · Acumulado según hojas fuente; Sell Out disponible Abr 2025 – Oct 2026</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="scroll-box" style="max-height:520px;">
+<table class="data">
+<thead>
+<tr>
+<th style="width:26%;">Producto</th>
+<th>Sell In (Und)</th>
+<th>Sell In (S/)</th>
+<th>Sell Out (Und)</th>
+<th>Sell Out (S/)</th>
+<th>Sell Out / Sell In (S/)</th>
+<th>Tendencia</th>
+</tr>
+</thead>
+<tbody><tr><td>ARPIZEX 10MG X 30 TAB</td><td>862</td><td>S/ 15,290.78</td><td>1,056</td><td>S/ 14,445.98</td><td>94.5%</td><td class="up">Seguimiento</td></tr><tr><td>ARPIZEX 15 15MG X 30 TAB</td><td>1,603</td><td>S/ 38,436.52</td><td>1,998</td><td>S/ 40,198.62</td><td>104.6%</td><td class="up">Sell Out ≥ Sell In</td></tr><tr><td>BACICLUMAX 2000 MILLONES UFC/5ml CJA X 10 AMP</td><td>34,611</td><td>S/ 299,132.30</td><td>35,668</td><td>S/ 259,502.00</td><td>86.8%</td><td class="up">Seguimiento</td></tr><tr><td>CARVELAN 12.5MG CJA X 100 TAB REC</td><td>1,247</td><td>S/ 65,992.61</td><td>1,061</td><td>S/ 48,368.08</td><td>73.3%</td><td class="up">Seguimiento</td></tr><tr><td>CARVELAN 6.25MG CJA X 100 TAB REC</td><td>2,025</td><td>S/ 85,651.71</td><td>1,801</td><td>S/ 62,085.09</td><td>72.5%</td><td class="up">Seguimiento</td></tr><tr><td>CELOMEX 200 200 MG CJA X 30 CAP.</td><td>6,842</td><td>S/ 76,246.62</td><td>6,082</td><td>S/ 64,398.88</td><td>84.5%</td><td class="up">Seguimiento</td></tr><tr><td>CIPROZONE 500 MG CJA X 100 TAB. REC.</td><td>8,048</td><td>S/ 244,079.84</td><td>7,136</td><td>S/ 177,725.79</td><td>72.8%</td><td class="up">Seguimiento</td></tr><tr><td>CISTIX 50MG/50ML CONCENTRADO PARA SOLUCION PARA PERFUSION</td><td>11</td><td>S/ 371.58</td><td>11</td><td>S/ 236.39</td><td>63.6%</td><td class="down">Brecha de salida</td></tr><tr><td>CLOPTOP 75MG CJA X 30 TAB REC</td><td>530</td><td>S/ 46,011.63</td><td>868</td><td>S/ 31,645.00</td><td>68.8%</td><td class="down">Brecha de salida</td></tr><tr><td>CRYOFOMID 1000 1000 MG CJA X 1 VIAL  PVO. P/ SOL. INJ. PERF</td><td>166</td><td>S/ 5,330.62</td><td>166</td><td>S/ 5,859.12</td><td>109.9%</td><td class="up">Sell Out ≥ Sell In</td></tr><tr><td>DULOX 30 30MG CJA X 30 COMP GAS</td><td>2,359</td><td>S/ 105,693.75</td><td>2,789</td><td>S/ 103,788.58</td><td>98.2%</td><td class="up">Seguimiento</td></tr><tr><td>DULOX 60 60MG CJA X 30 COMP GAS</td><td>1,809</td><td>S/ 101,476.09</td><td>2,335</td><td>S/ 97,246.13</td><td>95.8%</td><td class="up">Seguimiento</td></tr><tr><td>DUTAZEX 0.5 MG CJA X 30 TAB. REC.</td><td>12,085</td><td>S/ 200,119.96</td><td>10,045</td><td>S/ 135,445.13</td><td>67.7%</td><td class="down">Brecha de salida</td></tr><tr><td>FINARIX 5MG CJA X 30 TAB. REC.</td><td>842</td><td>S/ 26,988.84</td><td>689</td><td>S/ 18,138.48</td><td>67.2%</td><td class="down">Brecha de salida</td></tr><tr><td>FLAZAFORTE 30MG CJA X 10 TAB</td><td>16,544</td><td>S/ 239,279.59</td><td>16,948</td><td>S/ 193,458.81</td><td>80.9%</td><td class="up">Seguimiento</td></tr><tr><td>FLUCOZONE 150, 150 MG CJA X 2 CAP.</td><td>81,574</td><td>S/ 178,934.98</td><td>89,918</td><td>S/ 126,960.91</td><td>71.0%</td><td class="up">Seguimiento</td></tr><tr><td>GABATINEX 300 300 MG CJA X 30 CAP.</td><td>4,650</td><td>S/ 97,294.56</td><td>4,233</td><td>S/ 65,474.77</td><td>67.3%</td><td class="down">Brecha de salida</td></tr><tr><td>GAXTROX 20 20 MG CJA X 30 CAP. LIB. RET.</td><td>12,367</td><td>S/ 59,100.81</td><td>10,904</td><td>S/ 54,645.69</td><td>92.5%</td><td class="up">Seguimiento</td></tr><tr><td>GAXTROX 40 40 MG CJA X 30 CAP. LIB. RET.</td><td>12,213</td><td>S/ 79,429.91</td><td>11,446</td><td>S/ 83,276.63</td><td>104.8%</td><td class="up">Sell Out ≥ Sell In</td></tr><tr><td>ITRACOZONE 100 MG CJA X 100 CAP.</td><td>10,074</td><td>S/ 693,466.36</td><td>10,165</td><td>S/ 657,063.45</td><td>94.7%</td><td class="up">Seguimiento</td></tr><tr><td>KETOCLEAR 2% CJA X 1 FCO X 100 ML</td><td>13,062</td><td>S/ 225,757.23</td><td>13,149</td><td>S/ 203,834.15</td><td>90.3%</td><td class="up">Seguimiento</td></tr><tr><td>LEVOTOPLEX 500 500MG CJA X 50 TAB. REC.</td><td>1,046</td><td>S/ 26,432.42</td><td>4</td><td>S/ 118.94</td><td>0.4%</td><td class="down">Brecha de salida</td></tr><tr><td>LEVOTOPLEX 750 750MG CJA X 50 TAB. REC.</td><td>450</td><td>S/ 21,454.80</td><td>500</td><td>S/ 19,073.95</td><td>88.9%</td><td class="up">Seguimiento</td></tr><tr><td>LEXPRAM 10 MG CJA X 50 TAB. REC.</td><td>2,540</td><td>S/ 93,374.12</td><td>1,501</td><td>S/ 45,424.32</td><td>48.6%</td><td class="down">Brecha de salida</td></tr><tr><td>METAPLUS 500 MG CJA 50 TAB. REC.</td><td>777</td><td>S/ 41,915.95</td><td>1,418</td><td>S/ 27,564.20</td><td>65.8%</td><td class="down">Brecha de salida</td></tr><tr><td>METAPLUS F 1000 MG CJA X 30 TAB. LIB. P.</td><td>7,863</td><td>S/ 128,946.49</td><td>7,704</td><td>S/ 83,047.61</td><td>64.4%</td><td class="down">Brecha de salida</td></tr><tr><td>MUPICARE 2% UNGÜENTO  CJA X 1 TBO X 15G</td><td>-3,373</td><td>S/ 36,610.16</td><td>12,223</td><td>S/ 70,796.94</td><td>193.4%</td><td class="up">Sell Out ≥ Sell In</td></tr><tr><td>MYTEL 80 80 MG CJA X 30 TAB. REC.</td><td>7,632</td><td>S/ 90,621.75</td><td>7,190</td><td>S/ 74,988.42</td><td>82.7%</td><td class="up">Seguimiento</td></tr><tr><td>OLANPREX 10MG X 30 TAB REC</td><td>1,189</td><td>S/ 42,249.68</td><td>1,701</td><td>S/ 44,584.26</td><td>105.5%</td><td class="up">Sell Out ≥ Sell In</td></tr><tr><td>OSTECOX 120 120 MG CJA x 7 TAB. REC.</td><td>25,734</td><td>S/ 227,051.70</td><td>22,569</td><td>S/ 107,421.75</td><td>47.3%</td><td class="down">Brecha de salida</td></tr><tr><td>OSTECOX 60 60 MG CJA X 14 TAB. REC.</td><td>2,137</td><td>S/ 20,295.42</td><td>1,769</td><td>S/ 13,571.17</td><td>66.9%</td><td class="down">Brecha de salida</td></tr><tr><td>OSTECOX 90 90 MG CJA X 14 TAB. REC.</td><td>15,365</td><td>S/ 159,799.35</td><td>13,479</td><td>S/ 82,981.58</td><td>51.9%</td><td class="down">Brecha de salida</td></tr><tr><td>PANTOZEX 40 MG CJA X 30 TAB. LIB. PRO.</td><td>23,987</td><td>S/ 236,113.37</td><td>24,836</td><td>S/ 224,393.16</td><td>95.0%</td><td class="up">Seguimiento</td></tr><tr><td>PREGAZONE 75 75MG CJA X 50 CAP.</td><td>1,071</td><td>S/ 30,759.12</td><td>1,067</td><td>S/ 26,003.54</td><td>84.5%</td><td class="up">Seguimiento</td></tr><tr><td>REUMAX 100MG CJA X 100 TAB. LIB. PROL.</td><td>510</td><td>S/ 35,737.09</td><td>135</td><td>S/ 7,893.05</td><td>22.1%</td><td class="down">Brecha de salida</td></tr><tr><td>ROSUMAX 10 10 MG CJA X 30 TAB. REC.</td><td>3,291</td><td>S/ 69,157.90</td><td>2,935</td><td>S/ 62,044.09</td><td>89.7%</td><td class="up">Seguimiento</td></tr><tr><td>ROSUMAX 20 20MG CJA X 30 TAB REC </td><td>7,000</td><td>S/ 186,489.05</td><td>7,070</td><td>S/ 176,675.04</td><td>94.7%</td><td class="up">Seguimiento</td></tr><tr><td>SILDEZONE 100 100 MG CJA x 1 TAB. REC.</td><td>161,789</td><td>S/ 175,215.95</td><td>164,892</td><td>S/ 119,998.93</td><td>68.5%</td><td class="down">Brecha de salida</td></tr><tr><td>SILDEZONE 50 50 MG CJA x 1 TAB. REC.</td><td>89,131</td><td>S/ 90,065.85</td><td>80,956</td><td>S/ 44,180.62</td><td>49.1%</td><td class="down">Brecha de salida</td></tr><tr><td>TADALAZONE 20 20 MG CJA x 4 TAB. REC.</td><td>17,734</td><td>S/ 141,868.27</td><td>16,811</td><td>S/ 79,663.89</td><td>56.2%</td><td class="down">Brecha de salida</td></tr><tr><td>TAMSUNAX 0.4 MG CAJA X 30 CAP DE LIB PRO</td><td>49,429</td><td>S/ 554,986.41</td><td>40,506</td><td>S/ 246,522.69</td><td>44.4%</td><td class="down">Brecha de salida</td></tr><tr><td>VERTILUX 16MG CJA X 50 TAB.</td><td>1,101</td><td>S/ 34,778.24</td><td>1,026</td><td>S/ 25,069.61</td><td>72.1%</td><td class="up">Seguimiento</td></tr><tr><td>WALSARTEX 80 MG CJA X 30 TAB. REC.</td><td>556</td><td>S/ 26,021.39</td><td>666</td><td>S/ 14,346.40</td><td>55.1%</td><td class="down">Brecha de salida</td></tr></tbody>
 
-  <div class="scroll-box" style="max-height:520px;">
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:26%;">Producto</th>
-          <th>Sell In (Und)</th>
-          <th>Sell In (S/)</th>
-          <th>Sell Out (Und)</th>
-          <th>Sell Out (S/)</th>
-          <th>Ratio</th>
-          <th>Tendencia</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>ARPIZEX 10MG X 30 TAB</td><td>770</td><td>9,440</td><td>626</td><td>8,542</td><td>90.5%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>ARPIZEX 15MG X 30 TAB</td><td>50</td><td>1,046</td><td>55</td><td>966</td><td>92.3%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>BACICLUMAX CJA X 10 AMP</td><td>12,042</td><td>101,918</td><td>16,609</td><td>122,124</td><td>119.8%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>CARVELAN 12.5MG X 100 TAB</td><td>830</td><td>26,304</td><td>860</td><td>40,819</td><td>155.2%</td><td class="up">▲ Muy alta</td></tr>
-        <tr><td>CARVELAN 6.25MG X 100 TAB</td><td>1,174</td><td>42,406</td><td>1,542</td><td>51,216</td><td>120.8%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>CELOMEX 200MG CAJA X 100 CAP</td><td>3,214</td><td>74,897</td><td>3,795</td><td>76,480</td><td>102.1%</td><td class="up">▲ Excelente</td></tr>
-        <tr><td>CELOMEX 200MG X 30 CAP</td><td>1,213</td><td>13,439</td><td>1,022</td><td>11,543</td><td>85.9%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>CIPROZONE 500MG X 100 TAB</td><td>1,607</td><td>47,849</td><td>1,387</td><td>35,904</td><td>75.0%</td><td class="down">▼ Revisar</td></tr>
-        <tr><td>CISTIX 50MG/50ML X 1 VIAL</td><td>1,748</td><td>24,635</td><td>1,748</td><td>29,864</td><td>121.2%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>CLOPTOP 75MG X 30 TAB</td><td>200</td><td>7,978</td><td>100</td><td>3,984</td><td>49.9%</td><td class="down">▼ Baja</td></tr>
-        <tr><td>CRYOFOMID 1000MG X 1 VIAL</td><td>1,887</td><td>32,547</td><td>1,835</td><td>34,309</td><td>105.4%</td><td class="up">▲ Excelente</td></tr>
-        <tr><td>CRYOFOMID 200MG X 1 VIAL</td><td>30</td><td>459</td><td>30</td><td>540</td><td>117.6%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>DULOX 30MG X 30 TAB</td><td>1,513</td><td>52,039</td><td>1,392</td><td>48,537</td><td>93.3%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>DULOX 60MG X 30 TAB</td><td>522</td><td>19,193</td><td>436</td><td>19,065</td><td>99.3%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>DUTAZEX 0.5MG X 30 TAB</td><td>3,285</td><td>42,159</td><td>2,918</td><td>41,139</td><td>97.6%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>FINARIX 5MG X 30 TAB</td><td>150</td><td>4,808</td><td>150</td><td>3,813</td><td>79.3%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>FLAZAFORTE 30MG X 10 TAB</td><td>4,883</td><td>57,399</td><td>6,879</td><td>83,842</td><td>146.1%</td><td class="up">▲ Muy alta</td></tr>
-        <tr><td>FLUCOZONE 150MG X 2 CAP</td><td>11,921</td><td>26,083</td><td>11,842</td><td>19,175</td><td>73.5%</td><td class="down">▼ Revisar</td></tr>
-        <tr><td>GABATINEX 300MG X 30 TAB</td><td>7,115</td><td>84,788</td><td>7,587</td><td>51,708</td><td>61.0%</td><td class="down">▼ Revisar</td></tr>
-        <tr><td>GAXTROX 20MG X 30 CAP</td><td>3,141</td><td>15,485</td><td>3,675</td><td>17,711</td><td>114.4%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>GAXTROX 40MG X 100 CAP</td><td>921</td><td>15,363</td><td>552</td><td>12,250</td><td>79.7%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>GAXTROX 40MG X 30 CAP</td><td>3,348</td><td>22,481</td><td>3,410</td><td>24,021</td><td>106.9%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>ITRACOZONE 100MG X 100 CAP</td><td>3,147</td><td>191,717</td><td>3,001</td><td>202,013</td><td>105.4%</td><td class="up">▲ Estrella</td></tr>
-        <tr><td>KETOCLEAR 2% CHAMPÚ 100ML</td><td>3,203</td><td>55,169</td><td>5,248</td><td>84,313</td><td>152.8%</td><td class="up">▲ Muy alta</td></tr>
-        <tr><td>LEVOTOPLEX 500MG X 50 TAB</td><td>600</td><td>15,162</td><td>600</td><td>15,162</td><td>100.0%</td><td class="up">▲ Excelente</td></tr>
-        <tr><td>LEVOTOPLEX 750MG X 50 TAB</td><td>0</td><td>0</td><td>0</td><td>0</td><td>—</td><td>— Sin movimiento</td></tr>
-        <tr><td>LEXPRAM 10MG X 50 TAB</td><td>775</td><td>27,571</td><td>700</td><td>19,851</td><td>72.0%</td><td class="down">▼ Revisar</td></tr>
-        <tr><td>METAPLUS 500MG X 50 TAB</td><td>505</td><td>12,240</td><td>313</td><td>5,351</td><td>43.7%</td><td class="down">▼ Baja</td></tr>
-        <tr><td>METAPLUS F 1000MG X 30 TAB</td><td>1,349</td><td>15,693</td><td>1,321</td><td>14,947</td><td>95.2%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>MYTEL 80MG X 30 TAB</td><td>2,263</td><td>23,850</td><td>1,908</td><td>21,377</td><td>89.6%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>OLANPREX 10MG X 30 TAB</td><td>608</td><td>14,765</td><td>486</td><td>12,038</td><td>81.5%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>OSTECOX 120MG X 7 TAB</td><td>8,500</td><td>41,734</td><td>12,523</td><td>52,593</td><td>126.0%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>OSTECOX 60MG X 14 TAB</td><td>817</td><td>7,635</td><td>979</td><td>9,635</td><td>126.2%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>OSTECOX 90MG X 14 TAB</td><td>6,635</td><td>41,781</td><td>5,911</td><td>34,591</td><td>82.8%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>PANTOZEX 40MG X 30 TAB</td><td>5,371</td><td>46,115</td><td>7,549</td><td>64,428</td><td>139.7%</td><td class="up">▲ Muy alta</td></tr>
-        <tr><td>PREGAZONE 75MG X 50 CAP</td><td>336</td><td>9,478</td><td>426</td><td>9,170</td><td>96.8%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>REUMAX 100MG X 100 TAB</td><td>158</td><td>10,511</td><td>241</td><td>12,785</td><td>121.6%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>ROSUMAX 10MG X 30 TAB</td><td>950</td><td>21,451</td><td>1,163</td><td>25,475</td><td>118.7%</td><td class="up">▲ Alta</td></tr>
-        <tr><td>ROSUMAX 20MG X 30 TAB</td><td>1,785</td><td>46,676</td><td>1,884</td><td>49,731</td><td>106.5%</td><td class="up">▲ Excelente</td></tr>
-        <tr><td>SILDEZONE 100MG X 1 TAB</td><td>63,064</td><td>68,212</td><td>73,448</td><td>53,416</td><td>78.3%</td><td class="up">▲ Estable</td></tr>
-        <tr><td>SILDEZONE 50MG X 1 TAB</td><td>53,985</td><td>53,110</td><td>61,193</td><td>33,409</td><td>62.9%</td><td class="down">▼ Revisar</td></tr>
-        <tr><td>TADALAZONE 20MG X 4 TAB</td><td>7,520</td><td>41,917</td><td>8,743</td><td>36,624</td><td>87.4%</td><td class="up">▲ Buena</td></tr>
-        <tr><td>TAMSUNAX 0.4MG X 30 CAP</td><td>10,690</td><td>72,157</td><td>13,888</td><td>77,498</td><td>107.4%</td><td class="up">▲ Estrella</td></tr>
-        <tr><td>VERTILUX 16MG X 50 TAB</td><td>581</td><td>17,531</td><td>324</td><td>7,644</td><td>43.6%</td><td class="down">▼ Baja</td></tr>
-        <tr><td>WALSARTEX 80MG X 30 TAB</td><td>383</td><td>8,576</td><td>430</td><td>9,268</td><td>108.1%</td><td class="up">▲ Buena</td></tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>TOTAL GENERAL</td>
-          <td>—</td>
-          <td>S/ 1,565,766</td>
-          <td>—</td>
-          <td>S/ 1,573,709</td>
-          <td>100.5%</td>
-          <td>—</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  <div class="note">Ratio = Sell Out / Sell In. &gt;100% descarga stock; &lt;70% sobre-stock o baja rotación. Los totales del pie reflejan el acumulado Jun 2025 – Oct 2026.</div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>03</span></div>
+<tfoot><tr><td>TOTAL GENERAL</td><td>640,483</td><td>S/ 5,354,030.77</td><td>639,799</td><td>S/ 4,044,092.91</td><td>75.5%</td><td>Sell Out / Sell In</td></tr></tfoot></table>
+</div>
+<div class="note">Ratio = Sell Out / Sell In. &gt;100% descarga stock; &lt;70% sobre-stock o baja rotación. Los totales del pie reflejan el acumulado Mar 2025 – Oct 2026.</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>03</span></div>
 </section>
-
 <!-- ================= SLIDE 4: GRÁFICA EVOLUCIÓN ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Evolución Mensual Sell In / Sell Out</h1>
-      <div class="sub">Comparativo de facturación vs rotación · Jun 2025 – Oct 2026</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-  <div class="chart-wrap">
-    <canvas id="chartEvol"></canvas>
-  </div>
-  <div class="note">Pase el cursor sobre las columnas para ver etiquetas de datos. La línea punteada representa el ratio de rotación (%).</div>
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>04</span></div>
+<div class="slide-header">
+<div>
+<h1>Evolución Mensual Sell In / Sell Out</h1>
+<div class="sub">Comparativo de valores facturados y vendidos al distribuidor · Sell In Mar-25–Oct-26; Sell Out Abr-25–Oct-26</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="chart-wrap">
+<canvas id="chartEvol"></canvas>
+</div>
+<div class="note">La línea punteada representa el ratio de valor Sell Out / Sell In (%).</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>04</span></div>
 </section>
-
 <!-- ================= SLIDE 5: TOP PRODUCTOS ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Top Productos · Evolución Sell In por Mes</h1>
-      <div class="sub">Productos ancla del portafolio con mayor facturación</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-  <div class="chart-wrap">
-    <canvas id="chartTop"></canvas>
-  </div>
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>05</span></div>
+<div class="slide-header">
+<div>
+<h1>Top Productos · Sell In Acumulado</h1>
+<div class="sub">Top 10 productos por valor Sell In acumulado · Ratio Sell Out / Sell In por valor</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="chart-wrap">
+<canvas id="chartTop"></canvas>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>05</span></div>
 </section>
-
-<!-- ================= SLIDE 6: STOCK DICAR · VENCIMIENTOS Y PRIORIDAD ================= -->
+<!-- ================= SLIDE 6: STOCK DIMEXA · VENCIMIENTOS Y PRIORIDAD ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Stock DICAR · Vencimientos y Prioridad de Reposición</h1>
-      <div class="sub">Snapshot del almacén · 34 SKUs activos · Cobertura y urgencia de recompra</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <div class="kpi-row" style="margin-bottom:12px;">
-    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fde8e8,#fad1d1); border-color:#f5b7b7;">
-      <div class="label" style="color:#a02020;">🔴 Crítico · Recompra urgente</div>
-      <div class="value" style="font-size:22px; color:#c0392b;">6</div>
-      <div class="delta" style="color:#a02020;">sin stock</div>
-    </div>
-    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fff3e0,#ffe0b2); border-color:#f5c67a;">
-      <div class="label" style="color:#a05a00;">🟠 Bajo · Recompra prioritaria</div>
-      <div class="value" style="font-size:22px; color:#b8740f;">6</div>
-      <div class="delta" style="color:#a05a00;">≤100 und</div>
-    </div>
-    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#fff8e1,#ffefc4); border-color:#f5d77e;">
-      <div class="label" style="color:#856404;">🟡 Reposición programada</div>
-      <div class="value" style="font-size:22px; color:#856404;">15</div>
-      <div class="delta" style="color:#856404;">en sugerido</div>
-    </div>
-    <div class="kpi" style="padding:10px 14px; background:linear-gradient(145deg,#d4f5e8,#b8ecd4); border-color:#7dd3a8;">
-      <div class="label" style="color:#0f6b44;">🟢 OK · Cobertura suficiente</div>
-      <div class="value" style="font-size:22px; color:#128a5b;">7</div>
-      <div class="delta" style="color:#0f6b44;">sin compra</div>
-    </div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#fff3cd,#ffe082); border-left:5px solid #c0392b; border-radius:8px; padding:9px 14px; margin-bottom:12px; font-size:12px; color:#7a3b00;">
-    <b>⚠ Alerta de vencimientos:</b> 4 SKUs vencen en <b>Ene-2027</b> (DUTAZEX, METAPLUS F, METAPLUS 500, MYTEL 80) · 1 SKU vence en <b>Abr-2027</b> (GABATINEX). Priorizar rotación.
-  </div>
-
-  <div class="scroll-box" style="max-height:395px;">
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:36%;">Producto</th>
-          <th>Stock</th>
-          <th>Lotes</th>
-          <th>Vencimiento</th>
-          <th style="width:22%;">Estado / Acción</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:#fad1d1;"><td colspan="5" style="text-align:left; font-weight:800; color:#a02020; padding:7px 10px; background:#fde8e8;">🔴 CRÍTICO · Recompra urgente · 6 SKUs</td></tr>
-        <tr><td>BACICLUMAX CJA X 10 AMP</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-        <tr><td>FINARIX 5MG X 30 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-        <tr><td>FLUCOZONE 150MG X 2 CAP</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-        <tr><td>LEVOTOPLEX 750MG X 50 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-        <tr><td>OLANPREX 10MG X 30 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-        <tr><td>SILDEZONE 100MG X 1 TAB</td><td>0</td><td>0</td><td>—</td><td><span class="stock-badge stock-crit">Recompra urgente</span></td></tr>
-
-        <tr style="background:#ffe0b2;"><td colspan="5" style="text-align:left; font-weight:800; color:#a05a00; padding:7px 10px; background:#fff3e0;">🟠 BAJO · Recompra prioritaria · 6 SKUs</td></tr>
-        <tr><td>CIPROZONE 500MG X 100 TAB</td><td>93</td><td>1</td><td>Feb-2029</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-        <tr><td>CLOPTOP 75MG X 30 TAB</td><td>99</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-        <tr><td>CRYOFOMID 1000MG X 1 VIAL</td><td>52</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-        <tr><td>DUTAZEX 0.5MG X 30 TAB</td><td>72</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-        <tr><td>PREGAZONE 75MG X 50 CAP</td><td>68</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-        <tr><td>ROSUMAX 10MG X 30 TAB</td><td>75</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-crit">Recompra prioritaria</span></td></tr>
-
-        <tr style="background:#ffefc4;"><td colspan="5" style="text-align:left; font-weight:800; color:#856404; padding:7px 10px; background:#fff8e1;">🟡 REPOSICIÓN · Programada en sugerido Nov–Dic · 15 SKUs</td></tr>
-        <tr><td>CELOMEX 200MG X 100 CAP</td><td>185</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>CELOMEX 200MG X 30 CAP</td><td>201</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>GABATINEX 300MG X 30 TAB</td><td>222</td><td>1</td><td>Abr-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>GAXTROX 20MG X 30 CAP</td><td>284</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>GAXTROX 40MG X 100 CAP</td><td>400</td><td>1</td><td>Jul-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>ITRACOZONE 100MG X 100 CAP</td><td>302</td><td>1</td><td>Ene-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>LEXPRAM 10MG X 50 TAB</td><td>418</td><td>1</td><td>Mar-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>OSTECOX 120MG X 7 TAB</td><td>391</td><td>2</td><td>Ago-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>OSTECOX 60MG X 14 TAB</td><td>124</td><td>1</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>OSTECOX 90MG X 14 TAB</td><td>1,307</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>REUMAX 100MG X 100 TAB</td><td>103</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>SILDEZONE 50MG X 1 TAB</td><td>4,538</td><td>1</td><td>Ago-2028</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>TADALAZONE 20MG X 4 TAB</td><td>295</td><td>1</td><td>Sep-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>TAMSUNAX 0.4MG X 30 CAP</td><td>430</td><td>2</td><td>May-2027</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-        <tr><td>VERTILUX 16MG X 50 TAB</td><td>243</td><td>1</td><td>May-2029</td><td><span class="stock-badge stock-high">Reposición</span></td></tr>
-
-        <tr style="background:#b8ecd4;"><td colspan="5" style="text-align:left; font-weight:800; color:#0f6b44; padding:7px 10px; background:#d4f5e8;">🟢 OK · Cobertura suficiente · 7 SKUs</td></tr>
-        <tr><td>CARVELAN 6.25MG X 100 TAB</td><td>51</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>CARVELAN 12.5MG X 100 TAB</td><td>67</td><td>1</td><td>Mar-2027</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>GAXTROX 40MG X 30 CAP</td><td>916</td><td>1</td><td>Ene-2028</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>LEVOTOPLEX 500MG X 50 TAB</td><td>584</td><td>1</td><td>Jul-2029</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>METAPLUS 500MG X 50 TAB</td><td>184</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>METAPLUS F 1000MG X 30 TAB</td><td>16</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-        <tr><td>MYTEL 80MG X 30 TAB</td><td>86</td><td>1</td><td>Ene-2027 ⚠</td><td><span class="stock-badge stock-ok">Cobertura OK</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div style="margin-top:8px; display:flex; gap:18px; font-size:11px; color:#5a6b82; flex-wrap:wrap;">
-    <div><span class="stock-badge stock-crit" style="margin-right:5px;">Crítico</span>Stock = 0 · recompra urgente</div>
-    <div><span class="stock-badge stock-crit" style="margin-right:5px;">Prioritaria</span>Stock ≤100 · recompra prioritaria</div>
-    <div><span class="stock-badge stock-high" style="margin-right:5px;">Reposición</span>En sugerido Nov–Dic</div>
-    <div><span class="stock-badge stock-ok" style="margin-right:5px;">Cobertura OK</span>Stock suficiente</div>
-    <div>⚠ Vence en ≤3 meses</div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>06</span></div>
+<div class="slide-header">
+<div>
+<h1>Stock DIMEXA · Distribución y Disponibilidad</h1>
+<div class="sub">Snapshot de inventario · 43 SKUs · Stock por almacén físico</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="kpi-row" style="margin-bottom:12px;">
+<div class="kpi"><div class="label">Stock total DIMEXA</div><div class="value">41,764</div><div class="delta">Unidades reportadas en la hoja STOCK</div></div>
+<div class="kpi"><div class="label">SKUs con stock cero</div><div class="value">17</div><div class="delta down">Sin disponibilidad</div></div>
+<div class="kpi"><div class="label">Stock bajo (≤100)</div><div class="value">4</div><div class="delta down">Revisar reposición</div></div>
+<div class="kpi"><div class="label">SKUs con disponibilidad</div><div class="value">26</div><div class="delta up">Con inventario</div></div>
+</div>
+<div class="note" style="margin:0 0 10px;">Fuente: hoja STOCK. Total general: 41,764 unidades; 26 SKUs con inventario, 17 sin stock y 4 con stock positivo ≤100 unidades. No se reportan lotes ni fechas de vencimiento.</div>
+<div class="scroll-box" style="max-height:440px;">
+<table class="data">
+<thead><tr><th style="width:31%;">Producto</th><th>Arequipa</th><th>Huancayo</th><th>Lima - LPA</th><th>Trujillo</th><th>Total DIMEXA</th><th>Estado</th></tr></thead>
+<tbody><tr><td>ARPIZEX 10MG X 30 TAB</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>ARPIZEX 15 15MG X 30 TAB</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>BACICLUMAX  CJA X 10 AMPOLLAS BEBIBLES DE 5ML</td><td>0</td><td>0</td><td>36</td><td>0</td><td>36</td><td><span class="stock-badge stock-high">Stock bajo</span></td></tr><tr><td>CARVELAN 12.5 12.5MG X 100 TAB REC</td><td>153</td><td>12</td><td>0</td><td>21</td><td>186</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>CARVELAN 6.25 6.25 MG X 100 TAB REC</td><td>269</td><td>16</td><td>0</td><td>4</td><td>289</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>CELOMEX 200 200MG X 30 CAPS</td><td>103</td><td>22</td><td>494</td><td>142</td><td>761</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>CIPROZONE 500MG X 100 TABLETAS RECUBIERTAS</td><td>171</td><td>62</td><td>338</td><td>490</td><td>1,061</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>CISTIX 50 MG/50ML CJA X 1 VIAL CONC P/ SOL P/ PERF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>CLOPTOP 75 MG X 30 TAB REC</td><td>32</td><td>69</td><td>135</td><td>44</td><td>280</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>CRYOFOMID 1000MG CJA X 1 VIAL PVO P/ SOL INJ PERF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>DULOX 30 30MG X 30 COMP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>DULOX 60 60MG X 30 COMP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>DUTAZEX 0.5MG X 30TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>FINARIX 5MG CJA X 30 TAB. REC.</td><td>82</td><td>0</td><td>17</td><td>54</td><td>153</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>FLAZAFORTE 30 MG X 10 TAB</td><td>0</td><td>34</td><td>0</td><td>1</td><td>35</td><td><span class="stock-badge stock-high">Stock bajo</span></td></tr><tr><td>FLUCOZONE 150 150MG X 2 CAPSULAS</td><td>0</td><td>0</td><td>12</td><td>0</td><td>12</td><td><span class="stock-badge stock-high">Stock bajo</span></td></tr><tr><td>GABATINEX 300 300 MG X 30 CAPS</td><td>28</td><td>0</td><td>15</td><td>474</td><td>517</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>GAXTROX 20 20MG X 30 CAPS DE LIB RET</td><td>322</td><td>43</td><td>253</td><td>172</td><td>790</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>GAXTROX 40 40MG X 30 CAPS DE LIB RET</td><td>267</td><td>28</td><td>299</td><td>18</td><td>612</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>ITRACOZONE 100MG X 100 CAPSULAS</td><td>76</td><td>0</td><td>454</td><td>134</td><td>664</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>KETOCLEAR 2% CHAMPÚ CJA X 1 FCO X  100 ML</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>LEVOTOPLEX 500 500MG CJA X 50 TAB. REC.</td><td>297</td><td>0</td><td>445</td><td>300</td><td>1,042</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>LEVOTOPLEX 750 750MG CJA X 50 TAB. REC.</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>LEXPRAM 10 MG CJA X 50 TAB. REC.</td><td>349</td><td>0</td><td>572</td><td>413</td><td>1,334</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>METAPLUS 500MG X 50 TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>METAPLUS F 1000MG X 30 TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>MUPICARE 2% CJA X 1 TUBO COLAPSIBLE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>MYTEL 80 80MG X 30 TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>OLANPREX 10MG X 30 TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>OSTECOX 120 120MG CJA X 7 TABLETAS RECUBIERTAS</td><td>377</td><td>0</td><td>1,459</td><td>2,886</td><td>4,722</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>OSTECOX 60 60MG X 14 TABLETAS RECUBIERTAS</td><td>30</td><td>48</td><td>135</td><td>213</td><td>426</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>OSTECOX 90 90MG X 14 TABLETAS RECUBIERTAS</td><td>146</td><td>36</td><td>994</td><td>1,613</td><td>2,789</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>PANTOZEX 40MG X 30 TAB</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>PREGAZONE 75 75MG CJA X 50 CAP.</td><td>95</td><td>0</td><td>50</td><td>0</td><td>145</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>REUMAX 100MG CJA X 100 TAB. LIB. PROL.</td><td>141</td><td>0</td><td>191</td><td>83</td><td>415</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>ROSUMAX 10 10 MG X 30 TAB REC</td><td>40</td><td>60</td><td>233</td><td>23</td><td>356</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>ROSUMAX 20 20MG X 30TAB REC</td><td>0</td><td>20</td><td>0</td><td>0</td><td>20</td><td><span class="stock-badge stock-high">Stock bajo</span></td></tr><tr><td>SILDEZONE 100 100MG CJA  X 1 TABLETA RECUBIERTA</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr><tr><td>SILDEZONE 50 50MG CJA X 1 TABLETA RECUBIERTA</td><td>2,621</td><td>286</td><td>2,435</td><td>5,923</td><td>11,265</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>TADALAZONE 20 20 MG CJA  X 4 TABLETAS RECUBIERTAS</td><td>963</td><td>0</td><td>1,991</td><td>227</td><td>3,181</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>TAMSUNAX 0.4MG X 30 CAPS</td><td>1,832</td><td>55</td><td>5,096</td><td>3,543</td><td>10,526</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>VERTILUX 16MG CJA X 50 TAB.</td><td>106</td><td>0</td><td>41</td><td>0</td><td>147</td><td><span class="stock-badge stock-ok">Disponible</span></td></tr><tr><td>WALSARTEX 80MG X 30 TAB REC</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span class="stock-badge stock-crit">Sin stock</span></td></tr></tbody>
+<tfoot><tr><td>TOTAL GENERAL</td><td>8,500</td><td>791</td><td>15,695</td><td>16,778</td><td>41,764</td><td>—</td></tr></tfoot>
+</table>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>06</span></div>
 </section>
-
 <!-- ================= SLIDE 7: SUGERIDO DE COMPRA ACTUALIZADO ================= -->
-<section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Sugerido de Compra · Nov – Dic 2026</h1>
-      <div class="sub">Basado en inventario real · Adicional a nuevos lanzamientos y TAMSUNAX 50 caps</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+
+<section class="slide stock-slide">
+<div class="slide-header">
+<div><h1>Stock y Prioridades de Reposición</h1>
+<div class="sub">Lectura del inventario DIMEXA y contraste con ventas acumuladas · Fuente: SELL IN, SELL OUT y STOCK</div></div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="kpi-row stock-kpis">
+<div class="kpi"><div class="label">Stock total DIMEXA</div><div class="value">41,764</div><div class="delta">Unidades reportadas</div></div>
+<div class="kpi"><div class="label">SKUs sin stock</div><div class="value">17</div><div class="delta down">Sin disponibilidad</div></div>
+<div class="kpi"><div class="label">SKUs con stock bajo</div><div class="value">4</div><div class="delta down">Hasta 100 unidades</div></div>
+<div class="kpi"><div class="label">SKUs con stock</div><div class="value">26</div><div class="delta up">Con inventario</div></div>
+</div>
+<div class="stock-content-grid">
+  <div class="stock-card">
+    <h3>Disponibilidad por sede</h3>
+    <table class="data stock-sites"><thead><tr><th>Sede</th><th>Unidades</th><th>% del stock</th></tr></thead><tbody>
+    <tr><td>Arequipa</td><td>8,500</td><td>20.4%</td></tr><tr><td>Huancayo</td><td>791</td><td>1.9%</td></tr><tr><td>Instituciones - Arequipa</td><td>0</td><td>0.0%</td></tr><tr><td>Lima - LPA</td><td>15,695</td><td>37.6%</td></tr><tr><td>Trujillo</td><td>16,778</td><td>40.2%</td></tr></tbody></table>
+    <p class="stock-note">El inventario se concentra en Trujillo y Lima - LPA. Las ubicaciones virtuales no agregan unidades al total disponible.</p>
+    <div class="section-title stock-section-title">SKUs con stock bajo (≤100 unidades)</div>
+    <table class="data stock-low"><thead><tr><th>Producto</th><th>Stock</th></tr></thead><tbody>
+    <tr><td>BACICLUMAX CJA X 10 AMPOLLAS BEBIBLES DE 5ML</td><td>36</td></tr>
+    <tr><td>FLAZAFORTE 30 MG X 10 TAB</td><td>35</td></tr>
+    <tr><td>FLUCOZONE 150 150MG X 2 CAPSULAS</td><td>12</td></tr>
+    <tr><td>ROSUMAX 20 20MG X 30TAB REC</td><td>20</td></tr></tbody></table>
   </div>
-
-  <div class="purchase-banner" style="padding:14px 22px; margin-bottom:14px;">
-    <div>
-      <div class="lbl">Inversión Total Sugerida</div>
-      <div class="big" style="font-size:30px;">S/ 952,748.99</div>
+  <div class="stock-card">
+    <h3>Lectura comercial</h3>
+    <div class="stock-reading">
+      <p>Sell In acumulado: <strong>S/ 5,354,030.77</strong> (640,483 unidades).</p>
+      <p>Sell Out acumulado: <strong>S/ 4,044,092.91</strong> (639,799 unidades).</p>
+      <p>Sell Out equivale al <strong>75.5%</strong> del Sell In en valor; la diferencia acumulada es <strong>S/ 1,309,937.86</strong>.</p>
     </div>
-    <div style="display:flex; gap:28px; font-size:13px; line-height:1.7; opacity:.95;">
-      <div>
-        <div style="font-size:10.5px; text-transform:uppercase; letter-spacing:1px; opacity:.8;">Noviembre</div>
-        <div style="font-size:20px; font-weight:900;">S/ 797,889.37</div>
-        <div style="font-size:11px;">74,700 und · 23 SKUs</div>
-      </div>
-      <div style="border-left:1px solid rgba(255,255,255,.35); padding-left:28px;">
-        <div style="font-size:10.5px; text-transform:uppercase; letter-spacing:1px; opacity:.8;">Diciembre</div>
-        <div style="font-size:20px; font-weight:900;">S/ 154,859.62</div>
-        <div style="font-size:11px;">60,500 und · 3 SKUs</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid2" style="gap:16px; align-items:start;">
-    <!-- NOVIEMBRE -->
-    <div>
-      <div class="launch-month-banner banner-nov" style="margin-bottom:10px; font-size:11px; padding:5px 14px;">📦 NOVIEMBRE 2026 · 23 SKUs</div>
-      <div class="scroll-box" style="max-height:255px;">
-        <table class="purchase">
-          <thead>
-            <tr>
-              <th style="width:42%;">Producto</th>
-              <th>Und</th>
-              <th>Costo</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>FLUCOZONE 150, 150MG CJA X 2 CAP</td><td>10,000</td><td>2.20</td><td>21,970.34</td></tr>
-            <tr><td>FINARIX 5MG CJA X 30 TAB REC</td><td>400</td><td>32.05</td><td>12,820.54</td></tr>
-            <tr><td>CELOMEX 200 200MG X 100 CAPSULAS</td><td>1,500</td><td>23.62</td><td>35,428.63</td></tr>
-            <tr><td>CELOMEX 200 200MG X 30 CAPSULAS</td><td>500</td><td>11.89</td><td>5,942.80</td></tr>
-            <tr><td>CIPROZONE 500MG X 100 TAB REC</td><td>2,000</td><td>30.98</td><td>61,954.84</td></tr>
-            <tr><td>CLOPTOP 75MG X 30 TAB REC</td><td>200</td><td>41.49</td><td>8,298.31</td></tr>
-            <tr><td>DUTAZEX 0,5MG X 30 TAB REC</td><td>200</td><td>16.93</td><td>3,385.59</td></tr>
-            <tr><td>GABATINEX 300MG CAJA X 30 CAP</td><td>1,500</td><td>21.25</td><td>31,875.00</td></tr>
-            <tr><td>GAXTROX 20MG X 30 CAP LIB RET</td><td>1,200</td><td>5.01</td><td>6,007.63</td></tr>
-            <tr><td>GAXTROX 40MG X 100 CAP LIB RET</td><td>200</td><td>20.03</td><td>4,005.87</td></tr>
-            <tr style="background:#fff8e1;"><td><b>ITRACOZONE 100MG X 100 CAP</b></td><td><b>3,000</b></td><td><b>75.33</b></td><td><b>225,991.27</b></td></tr>
-            <tr><td>LEVOTOPLEX 750 750MG CJA X 50 TAB REC</td><td>300</td><td>47.68</td><td>14,302.63</td></tr>
-            <tr><td>LEXPRAM 10MG CJA X 50 TAB REC</td><td>1,000</td><td>36.76</td><td>36,761.46</td></tr>
-            <tr><td>OSTECOX 120 120MG CJA X 7 TAB REC</td><td>5,000</td><td>8.82</td><td>44,118.61</td></tr>
-            <tr><td>OSTECOX 60 60MG CJA X 14 TAB REC</td><td>1,000</td><td>9.58</td><td>9,580.51</td></tr>
-            <tr><td>OSTECOX 90 90MG CJA X 14 TAB REC</td><td>3,500</td><td>10.44</td><td>36,557.20</td></tr>
-            <tr><td>PREGAZONE 75 75MG CJA X 50 CAP</td><td>1,500</td><td>28.72</td><td>43,079.99</td></tr>
-            <tr><td>REUMAX 100MG CJA X 100 TAB LIB PROL</td><td>500</td><td>70.07</td><td>35,036.36</td></tr>
-            <tr><td>ROSUMAX 10MG X 30 TAB REC</td><td>400</td><td>22.04</td><td>8,816.95</td></tr>
-            <tr><td>SILDEZONE 50 50MG CJA X 1 TAB REC</td><td>30,000</td><td>1.01</td><td>30,319.50</td></tr>
-            <tr><td>TADALAZONE 20 20MG CJA X 4 TAB REC</td><td>5,000</td><td>8.00</td><td>39,987.83</td></tr>
-            <tr><td>TAMSUNAX 0.4MG X 30 CAP LIB PROL</td><td>5,000</td><td>11.27</td><td>56,374.78</td></tr>
-            <tr><td>VERTILUX 16MG CJA X 50 TAB</td><td>800</td><td>31.59</td><td>25,272.71</td></tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>TOTAL NOVIEMBRE</td>
-              <td>74,700</td>
-              <td>—</td>
-              <td>S/ 797,889.37</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-
-    <!-- DICIEMBRE -->
-    <div>
-      <div class="launch-month-banner banner-dic" style="margin-bottom:10px; font-size:11px; padding:5px 14px;">📦 DICIEMBRE 2026 · 3 SKUs</div>
-      <div class="scroll-box" style="max-height:255px;">
-        <table class="purchase">
-          <thead>
-            <tr>
-              <th style="width:42%;">Producto</th>
-              <th>Und</th>
-              <th>Costo</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>BACICLUMAX 2000 MILLONES UFC/5ML CJA X 10 AMP</td><td>10,000</td><td>8.64</td><td>86,440.68</td></tr>
-            <tr><td>OLANPREX 10MG CJA X 30 TAB REC</td><td>500</td><td>28.46</td><td>14,231.44</td></tr>
-            <tr><td>SILDEZONE 100 100MG CJA X 1 TAB REC</td><td>50,000</td><td>1.08</td><td>54,187.50</td></tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>TOTAL DICIEMBRE</td>
-              <td>60,500</td>
-              <td>—</td>
-              <td>S/ 154,859.62</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-
-      <div style="margin-top:12px; background:linear-gradient(145deg,#f0fdf9,#e0f7ee); border:2px solid #33c4a2; border-radius:10px; padding:11px 14px;">
-        <div style="font-size:11.5px; font-weight:800; color:#128a5b; letter-spacing:.5px; margin-bottom:5px;">✨ ADICIONAL · LANZAMIENTOS NOV–DIC</div>
-        <div style="font-size:11px; color:#33475f; line-height:1.6;">
-          Adicional a:<br>
-          • 8 lanzamientos de nuevas moléculas en <b>Noviembre</b><br>
-          • Nueva presentación <b>TAMSUNAX 0.4MG X 50 CÁPSULAS</b> en <b>Diciembre</b>
-        </div>
-      </div>
+    <p class="stock-caveat">El ratio acumulado no equivale a rotación del inventario actual: compara valores de venta de periodos distintos y no incorpora stock inicial, antigüedad ni cobertura.</p>
+    <div class="stock-scope">
+      <strong>Alcance de la información</strong>
+      <p>Las hojas adjuntas no contienen costos unitarios, forecast, lead times, MOQ ni vencimientos. Por ello, este reporte no presenta un sugerido de compra ni alertas de caducidad calculadas; se requiere esa información para estimarlos con rigor.</p>
     </div>
   </div>
-
-  <div style="margin-top:10px; display:flex; align-items:center; justify-content:space-between; background:linear-gradient(135deg,#0a4d8c,#1a8fe3,#33c4a2); color:#fff; padding:10px 22px; border-radius:10px;">
-    <div style="font-size:13px; font-weight:700; letter-spacing:.5px;">INVERSIÓN TOTAL SUGERIDA NOV + DIC 2026</div>
-    <div style="font-size:20px; font-weight:900; letter-spacing:1px;">S/ 952,748.99</div>
-    <div style="font-size:11px; opacity:.85;">135,200 und · 26 SKUs</div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>07</span></div>
+</div>
 </section>
-
 <!-- ================= SLIDE 8: NUEVAS MOLÉCULAS ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Nuevos Lanzamientos · Noviembre – Diciembre 2026</h1>
-      <div class="sub">9 moléculas + nueva presentación TAMSUNAX 50 cápsulas</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <div class="grid2" style="gap:22px;">
-    <div>
-      <div class="launch-month-banner banner-nov">🚀 NOVIEMBRE 2026 · 8 LANZAMIENTOS</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-        <div class="molecule-card" style="animation-delay:.05s;">
-          <span class="cat">🧒</span>
-          <div class="name">BIONIÑO <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Lactobacillus Reuteri</div>
-          <div class="pres">Gotas</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.15s;">
-          <span class="cat">💊</span>
-          <div class="name">OXIVIT E 400 <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Vitamina E 400 UI</div>
-          <div class="pres">Cápsulas Blandas</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.25s;">
-          <span class="cat">🥗</span>
-          <div class="name">HIGAFORTE PLUS <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Suplemento Dietético</div>
-          <div class="pres">Cápsulas Blandas</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.35s;">
-          <span class="cat">⚡</span>
-          <div class="name">ENERCAPS PLUS <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Suplemento Dietético</div>
-          <div class="pres">Cápsulas Blandas</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.45s;">
-          <span class="cat">🫃</span>
-          <div class="name">ESOFLUX 20 <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Esomeprazol 20mg</div>
-          <div class="pres">Comprimido</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.55s;">
-          <span class="cat">🫃</span>
-          <div class="name">ESOFLUX 40 <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Esomeprazol 40mg</div>
-          <div class="pres">Comprimido</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.65s;">
-          <span class="cat">🦠</span>
-          <div class="name">BOULARDEX C <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Saccharomyces Boulardii</div>
-          <div class="pres">Cápsula</div>
-        </div>
-        <div class="molecule-card" style="animation-delay:.75s;">
-          <span class="cat">🦠</span>
-          <div class="name">BOULARDEX <span class="tag-new">NUEVO</span></div>
-          <div class="molec">Saccharomyces Boulardii</div>
-          <div class="pres">Sobre</div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="launch-month-banner banner-dic">✨ DICIEMBRE 2026 · NUEVA PRESENTACIÓN</div>
-      <div class="molecule-card new-launch" style="animation-delay:.9s; padding:22px 24px;">
-        <span class="cat" style="font-size:28px;">🏆</span>
-        <div class="name" style="font-size:22px;">TAMSUNAX 0.4MG X 50 CÁPSULAS</div>
-        <div class="molec" style="font-size:15px; margin-top:8px;">Tamsulosina 0.4 mg</div>
-        <div class="pres" style="font-size:15px; margin-top:6px;">Cápsula de liberación prolongada · Caja x 50</div>
-        <div style="margin-top:14px; font-size:12.5px; color:#33475f; line-height:1.8;">
-          <b style="color:#0a4d8c;">¿Por qué es clave?</b><br>
-          TAMSUNAX 0.4MG X 30 CAP es uno de los productos estrella del portafolio (Sell Out &gt; 13,888 unidades, rotación 107%). La nueva presentación x 50 cápsulas permite:<br>
-          • Mayor ticket promedio por pedido<br>
-          • Menor frecuencia de compra (eficiencia logística)<br>
-          • Mejor cobertura para pacientes crónicos<br>
+<div class="slide-header">
+<div>
+<h1>Nuevos Lanzamientos · Noviembre – Diciembre 2026</h1>
+<div class="sub">9 moléculas + nueva presentación TAMSUNAX 50 cápsulas</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="grid2" style="gap:22px;">
+<div>
+<div class="launch-month-banner banner-nov">🚀 NOVIEMBRE 2026 · 8 LANZAMIENTOS</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<div class="molecule-card" style="animation-delay:.05s;">
+<span class="cat">🧒</span>
+<div class="name">BIONIÑO <span class="tag-new">NUEVO</span></div>
+<div class="molec">Lactobacillus Reuteri</div>
+<div class="pres">Gotas</div>
+</div>
+<div class="molecule-card" style="animation-delay:.15s;">
+<span class="cat">💊</span>
+<div class="name">OXIVIT E 400 <span class="tag-new">NUEVO</span></div>
+<div class="molec">Vitamina E 400 UI</div>
+<div class="pres">Cápsulas Blandas</div>
+</div>
+<div class="molecule-card" style="animation-delay:.25s;">
+<span class="cat">🥗</span>
+<div class="name">HIGAFORTE PLUS <span class="tag-new">NUEVO</span></div>
+<div class="molec">Suplemento Dietético</div>
+<div class="pres">Cápsulas Blandas</div>
+</div>
+<div class="molecule-card" style="animation-delay:.35s;">
+<span class="cat">⚡</span>
+<div class="name">ENERCAPS PLUS <span class="tag-new">NUEVO</span></div>
+<div class="molec">Suplemento Dietético</div>
+<div class="pres">Cápsulas Blandas</div>
+</div>
+<div class="molecule-card" style="animation-delay:.45s;">
+<span class="cat">🫃</span>
+<div class="name">ESOFLUX 20 <span class="tag-new">NUEVO</span></div>
+<div class="molec">Esomeprazol 20mg</div>
+<div class="pres">Comprimido</div>
+</div>
+<div class="molecule-card" style="animation-delay:.55s;">
+<span class="cat">🫃</span>
+<div class="name">ESOFLUX 40 <span class="tag-new">NUEVO</span></div>
+<div class="molec">Esomeprazol 40mg</div>
+<div class="pres">Comprimido</div>
+</div>
+<div class="molecule-card" style="animation-delay:.65s;">
+<span class="cat">🦠</span>
+<div class="name">BOULARDEX C <span class="tag-new">NUEVO</span></div>
+<div class="molec">Saccharomyces Boulardii</div>
+<div class="pres">Cápsula</div>
+</div>
+<div class="molecule-card" style="animation-delay:.75s;">
+<span class="cat">🦠</span>
+<div class="name">BOULARDEX <span class="tag-new">NUEVO</span></div>
+<div class="molec">Saccharomyces Boulardii</div>
+<div class="pres">Sobre</div>
+</div>
+</div>
+</div>
+<div>
+<div class="launch-month-banner banner-dic">✨ DICIEMBRE 2026 · NUEVA PRESENTACIÓN</div>
+<div class="molecule-card new-launch" style="animation-delay:.9s; padding:22px 24px;">
+<span class="cat" style="font-size:28px;">🏆</span>
+<div class="name" style="font-size:22px;">TAMSUNAX 0.4MG X 50 CÁPSULAS</div>
+<div class="molec" style="font-size:15px; margin-top:8px;">Tamsulosina 0.4 mg</div>
+<div class="pres" style="font-size:15px; margin-top:6px;">Cápsula de liberación prolongada · Caja x 50</div>
+<div style="margin-top:14px; font-size:12.5px; color:#33475f; line-height:1.8;">
+<b style="color:#0a4d8c;">¿Por qué es clave?</b><br/>TAMSUNAX 0.4MG X 30 CAP registra 40,506 unidades de Sell Out y S/ 246,522.69 en valor, frente a 49,429 unidades de Sell In. El ratio de valor Sell Out / Sell In es 44.4%. La nueva presentación x 50 cápsulas es una iniciativa de portafolio; su impacto comercial deberá medirse con los resultados posteriores al lanzamiento.<br/>
+          • Mayor ticket promedio por pedido<br/>
+          • Menor frecuencia de compra (eficiencia logística)<br/>
+          • Mejor cobertura para pacientes crónicos<br/>
           • Incremento de margen por unidad
         </div>
+</div>
+<div class="section-title" style="margin-top:20px;">Categorías Objetivo</div>
+<div style="font-size:13px; line-height:2; color:#33475f; padding-left:6px;">
+<span class="pill" style="background:#e0f7ee; color:#128a5b;">Gastro</span> ESOFLUX 20/40 · BOULARDEX C/S<br/>
+<span class="pill" style="background:#e0f7ee; color:#128a5b;">Pediatría</span> BIONIÑO<br/>
+<span class="pill" style="background:#e0f7ee; color:#128a5b;">Nutrición</span> OXIVIT E 400 · HIGAFORTE PLUS · ENERCAPS PLUS<br/>
+<span class="pill" style="background:#e0f7ee; color:#128a5b;">Urología</span> TAMSUNAX 0.4MG X 50
       </div>
-      <div class="section-title" style="margin-top:20px;">Categorías Objetivo</div>
-      <div style="font-size:13px; line-height:2; color:#33475f; padding-left:6px;">
-        <span class="pill" style="background:#e0f7ee; color:#128a5b;">Gastro</span> ESOFLUX 20/40 · BOULARDEX C/S<br>
-        <span class="pill" style="background:#e0f7ee; color:#128a5b;">Pediatría</span> BIONIÑO<br>
-        <span class="pill" style="background:#e0f7ee; color:#128a5b;">Nutrición</span> OXIVIT E 400 · HIGAFORTE PLUS · ENERCAPS PLUS<br>
-        <span class="pill" style="background:#e0f7ee; color:#128a5b;">Urología</span> TAMSUNAX 0.4MG X 50
-      </div>
-    </div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>08</span></div>
+</div>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>08</span></div>
 </section>
-
 <!-- ================= SLIDE 9: PIPELINE 2027 ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Pipeline 2027 · Nuevas Moléculas en Camino</h1>
-      <div class="sub">28 nuevas moléculas en categorías de alta rotación</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <div class="scroll-box" style="max-height:540px;">
-    <table class="data">
-      <thead>
-        <tr>
-          <th style="width:5%;">#</th>
-          <th style="width:24%;">Molécula</th>
-          <th style="width:14%;">Presentación</th>
-          <th style="width:15%;">Marca</th>
-          <th>Categoría Terapéutica</th>
-          <th>Potencial</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Claritromicina 500 mg</td><td>Tabletas</td><td><b>KLARITHROM</b></td><td>Antibiótico · Macrólido</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>2</td><td>Azitromicina 500mg</td><td>Tableta Recubierta</td><td><b>AZIBIOTIC</b></td><td>Antibiótico · Macrólido</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>3</td><td>Tamsulosina 0.4 + Dutasteride 0.5</td><td>Cápsula</td><td><b>TAMSUNAX DUO</b></td><td>Urología · HBP</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
-        <tr><td>4</td><td>Naproxeno Sódico 550mg</td><td>Tableta Recubierta</td><td><b>NAPRO-RAP</b></td><td>AINE · Dolor</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>5</td><td>Vitamina E 1000 UI</td><td>Cápsula Blanda</td><td><b>OXIVIT E 1000</b></td><td>Nutrición</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>6</td><td>Levocetirizina 5mg</td><td>Tableta Recubierta</td><td><b>LEVOALERGIN</b></td><td>Antialérgico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>7</td><td>Amoxicilina 500 + Ácido Clavulánico 125</td><td>Tableta Recubierta</td><td><b>CURAVEX 500+125</b></td><td>Antibiótico · Penicilina</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
-        <tr><td>8</td><td>Amoxicilina 875 + Ácido Clavulánico 125</td><td>Tableta Recubierta</td><td><b>CURAVEX 875+125</b></td><td>Antibiótico · Penicilina</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
-        <tr><td>9</td><td>Acetilcisteína 600 mg</td><td>Sobre</td><td><b>MUKORAPID 600</b></td><td>Mucolítico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>10</td><td>Acetilcisteína 200 mg</td><td>Sobre</td><td><b>MUKORAPID 200</b></td><td>Mucolítico</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>11</td><td>Ácido Tranexámico 250 mg</td><td>Tableta</td><td><b>HEMOSTOP</b></td><td>Hemostático</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>12</td><td>Fenazopiridina 200 mg</td><td>Tableta Recubierta</td><td><b>URILIV</b></td><td>Urología · Analgésico</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>13</td><td>Diclofenaco 2% Gel</td><td>Gel</td><td><b>GOLVEX FORTE</b></td><td>AINE · Tópico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>14</td><td>Paracetamol 500 + Fenilefrina 5 + Clorfenamina 2</td><td>Tableta Recubierta</td><td><b>RESFRI-NEXT C</b></td><td>Respiratorio · Resfrío</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
-        <tr><td>15</td><td>Paracetamol 500 + Cafeína 65</td><td>Tableta Recubierta</td><td><b>CAFEDOL CP</b></td><td>Analgésico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>16</td><td>Simeticona 80 mg</td><td>Tableta Masticable</td><td><b>GAS-OFF</b></td><td>Gastro · Antiflatulento</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>17</td><td>Diclofenaco Potásico 50 mg</td><td>Tableta Lib. Ret.</td><td><b>GOLVEX</b></td><td>AINE · Dolor</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>18</td><td>Dextrometorfano 10 + Fenilefrina 5 + Paracetamol 325</td><td>Tableta Recubierta</td><td><b>REFRI-NEXT D</b></td><td>Respiratorio · Antitusivo</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>19</td><td>Loperamida 2 mg</td><td>Tableta Recubierta</td><td><b>LEPERCOL</b></td><td>Gastro · Antidiarreico</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>20</td><td>Paracetamol 325 + Clorfenamina 2 + Dextrometorfano 10 + Fenilefrina 5</td><td>Tableta Recubierta</td><td><b>REFRI-NEXT F</b></td><td>Respiratorio · Resfrío</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>21</td><td>Gentamicina 0.10g + Clotrimazol 1.00g + Betametasona 0.05g</td><td>Crema</td><td><b>PIELCARE</b></td><td>Dermatológico</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>22</td><td>Cetirizina 10 mg</td><td>Tableta Recubierta</td><td><b>HISTALERIA</b></td><td>Antialérgico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>23</td><td>Nitazoxanida 500 mg</td><td>Tableta Recubierta</td><td><b>INTEST CLEAN</b></td><td>Gastro · Antiparasitario</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>24</td><td>Orfenadrina 35 + Paracetamol 450</td><td>Tableta</td><td><b>RELAXEN</b></td><td>Relajante Muscular</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>25</td><td>Cafeína 100 + Ergotamina 1 + Paracetamol 300</td><td>Tableta</td><td><b>CAFEDOL MIGRAÑA</b></td><td>Analgésico · Migraña</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>26</td><td>Metronidazol 500 + Nistatina 100,000 UI</td><td>Tableta</td><td><b>GINASTIN-F</b></td><td>Ginecológico</td><td><span class="pill">Medio</span></td></tr>
-        <tr><td>27</td><td>Paracetamol 500 + Ibuprofeno 150</td><td>Tableta</td><td><b>DOLPREX</b></td><td>Analgésico</td><td><span class="pill">Alto</span></td></tr>
-        <tr><td>28</td><td>Clorzoxazona 250 + Paracetamol 300</td><td>Tableta</td><td><b>RELAXEN PLUS</b></td><td>Relajante Muscular</td><td><span class="pill">Medio</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="note">Pipeline 2027 · Categorías foco: antibióticos, respiratorio, urología, gastro y dolor. Sinergia directa con el portafolio actual y la red DICAR.</div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>09</span></div>
+<div class="slide-header">
+<div>
+<h1>Pipeline 2027 · Nuevas Moléculas en Camino</h1>
+<div class="sub">28 nuevas moléculas en categorías de alta rotación</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="scroll-box" style="max-height:540px;">
+<table class="data">
+<thead>
+<tr>
+<th style="width:5%;">#</th>
+<th style="width:24%;">Molécula</th>
+<th style="width:14%;">Presentación</th>
+<th style="width:15%;">Marca</th>
+<th>Categoría Terapéutica</th>
+<th>Potencial</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Claritromicina 500 mg</td><td>Tabletas</td><td><b>KLARITHROM</b></td><td>Antibiótico · Macrólido</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>2</td><td>Azitromicina 500mg</td><td>Tableta Recubierta</td><td><b>AZIBIOTIC</b></td><td>Antibiótico · Macrólido</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>3</td><td>Tamsulosina 0.4 + Dutasteride 0.5</td><td>Cápsula</td><td><b>TAMSUNAX DUO</b></td><td>Urología · HBP</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
+<tr><td>4</td><td>Naproxeno Sódico 550mg</td><td>Tableta Recubierta</td><td><b>NAPRO-RAP</b></td><td>AINE · Dolor</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>5</td><td>Vitamina E 1000 UI</td><td>Cápsula Blanda</td><td><b>OXIVIT E 1000</b></td><td>Nutrición</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>6</td><td>Levocetirizina 5mg</td><td>Tableta Recubierta</td><td><b>LEVOALERGIN</b></td><td>Antialérgico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>7</td><td>Amoxicilina 500 + Ácido Clavulánico 125</td><td>Tableta Recubierta</td><td><b>CURAVEX 500+125</b></td><td>Antibiótico · Penicilina</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
+<tr><td>8</td><td>Amoxicilina 875 + Ácido Clavulánico 125</td><td>Tableta Recubierta</td><td><b>CURAVEX 875+125</b></td><td>Antibiótico · Penicilina</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
+<tr><td>9</td><td>Acetilcisteína 600 mg</td><td>Sobre</td><td><b>MUKORAPID 600</b></td><td>Mucolítico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>10</td><td>Acetilcisteína 200 mg</td><td>Sobre</td><td><b>MUKORAPID 200</b></td><td>Mucolítico</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>11</td><td>Ácido Tranexámico 250 mg</td><td>Tableta</td><td><b>HEMOSTOP</b></td><td>Hemostático</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>12</td><td>Fenazopiridina 200 mg</td><td>Tableta Recubierta</td><td><b>URILIV</b></td><td>Urología · Analgésico</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>13</td><td>Diclofenaco 2% Gel</td><td>Gel</td><td><b>GOLVEX FORTE</b></td><td>AINE · Tópico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>14</td><td>Paracetamol 500 + Fenilefrina 5 + Clorfenamina 2</td><td>Tableta Recubierta</td><td><b>RESFRI-NEXT C</b></td><td>Respiratorio · Resfrío</td><td><span class="pill" style="background:#c0392b; color:#fff;">Muy Alto</span></td></tr>
+<tr><td>15</td><td>Paracetamol 500 + Cafeína 65</td><td>Tableta Recubierta</td><td><b>CAFEDOL CP</b></td><td>Analgésico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>16</td><td>Simeticona 80 mg</td><td>Tableta Masticable</td><td><b>GAS-OFF</b></td><td>Gastro · Antiflatulento</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>17</td><td>Diclofenaco Potásico 50 mg</td><td>Tableta Lib. Ret.</td><td><b>GOLVEX</b></td><td>AINE · Dolor</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>18</td><td>Dextrometorfano 10 + Fenilefrina 5 + Paracetamol 325</td><td>Tableta Recubierta</td><td><b>REFRI-NEXT D</b></td><td>Respiratorio · Antitusivo</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>19</td><td>Loperamida 2 mg</td><td>Tableta Recubierta</td><td><b>LEPERCOL</b></td><td>Gastro · Antidiarreico</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>20</td><td>Paracetamol 325 + Clorfenamina 2 + Dextrometorfano 10 + Fenilefrina 5</td><td>Tableta Recubierta</td><td><b>REFRI-NEXT F</b></td><td>Respiratorio · Resfrío</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>21</td><td>Gentamicina 0.10g + Clotrimazol 1.00g + Betametasona 0.05g</td><td>Crema</td><td><b>PIELCARE</b></td><td>Dermatológico</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>22</td><td>Cetirizina 10 mg</td><td>Tableta Recubierta</td><td><b>HISTALERIA</b></td><td>Antialérgico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>23</td><td>Nitazoxanida 500 mg</td><td>Tableta Recubierta</td><td><b>INTEST CLEAN</b></td><td>Gastro · Antiparasitario</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>24</td><td>Orfenadrina 35 + Paracetamol 450</td><td>Tableta</td><td><b>RELAXEN</b></td><td>Relajante Muscular</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>25</td><td>Cafeína 100 + Ergotamina 1 + Paracetamol 300</td><td>Tableta</td><td><b>CAFEDOL MIGRAÑA</b></td><td>Analgésico · Migraña</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>26</td><td>Metronidazol 500 + Nistatina 100,000 UI</td><td>Tableta</td><td><b>GINASTIN-F</b></td><td>Ginecológico</td><td><span class="pill">Medio</span></td></tr>
+<tr><td>27</td><td>Paracetamol 500 + Ibuprofeno 150</td><td>Tableta</td><td><b>DOLPREX</b></td><td>Analgésico</td><td><span class="pill">Alto</span></td></tr>
+<tr><td>28</td><td>Clorzoxazona 250 + Paracetamol 300</td><td>Tableta</td><td><b>RELAXEN PLUS</b></td><td>Relajante Muscular</td><td><span class="pill">Medio</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">Pipeline 2027 · Categorías foco: antibióticos, respiratorio, urología, gastro y dolor. Sinergia directa con el portafolio actual y la red DIMEXA.</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>09</span></div>
 </section>
-
 <!-- ================= SLIDE 10: PRÓXIMOS PASOS ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Próximos Pasos &amp; Acuerdos</h1>
-      <div class="sub">Plan de acción conjunto CSP Lifesciences × DICAR</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <div class="grid2" style="gap:26px; margin-top:10px;">
-    <div>
-      <div class="section-title">Compromisos CSP</div>
-      <ul style="font-size:14.5px; line-height:2.2; color:#33475f; padding-left:18px;">
-        <li>✓ Lanzamiento oficial de <b>9 moléculas + TAMSUNAX 50 caps</b> en Nov–Dic 2026.</li>
-        <li>✓ Plan de trade marketing y material POP para nuevas moléculas.</li>
-        <li>✓ Capacitación al equipo de ventas DICAR.</li>
-        <li>✓ Revisión trimestral de rotación y ajuste de mix.</li>
-        <li>✓ Soporte en gestión de pedidos y logística de lanzamientos.</li>
-      </ul>
-    </div>
-    <div>
-      <div class="section-title">Compromisos DICAR</div>
-      <ul style="font-size:14.5px; line-height:2.2; color:#33475f; padding-left:18px;">
-        <li>✓ <b>Aprobación del sugerido de compra Noviembre 2026</b>.</li>
-        <li>✓ Confirmación de mix y cronograma de entregas de lanzamientos Nov–Dic.</li>
-        <li>✓ Priorización de lanzamientos en fuerza de ventas.</li>
-        <li>✓ Reporte mensual de Sell Out por producto.</li>
-        <li>✓ Objetivo conjunto de rotación &gt; 90% en top 20 SKUs.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div style="margin-top:26px; background:linear-gradient(135deg,#0a4d8c,#1a8fe3,#33c4a2); border-radius:14px; padding:22px 30px; color:#fff; text-align:center;">
-    <div style="font-size:22px; font-weight:800; letter-spacing:.5px;">Un solo equipo, un solo objetivo: crecer juntos.</div>
-    <div style="font-size:14px; margin-top:8px; opacity:.9;">CSP Lifesciences Perú · DICAR · Business Review 2026</div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>10</span></div>
+<div class="slide-header">
+<div>
+<h1>Próximos Pasos &amp; Acuerdos</h1>
+<div class="sub">Plan de acción conjunto CSP Lifesciences × DIMEXA</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="grid2" style="gap:26px; margin-top:10px;">
+<div>
+<div class="section-title">Compromisos CSP</div>
+<ul style="font-size:14.5px; line-height:2.2; color:#33475f; padding-left:18px;">
+<li>✓ Lanzamiento oficial de <b>9 moléculas + TAMSUNAX 50 caps</b> en Nov–Dic 2026.</li>
+<li>✓ Plan de trade marketing y material POP para nuevas moléculas.</li>
+<li>✓ Capacitación al equipo de ventas DIMEXA.</li>
+<li>✓ Revisión trimestral del ratio Sell Out / Sell In y ajuste de mix.</li>
+<li>✓ Soporte en gestión de pedidos y logística de lanzamientos.</li>
+</ul>
+</div>
+<div>
+<div class="section-title">Compromisos DIMEXA</div>
+<ul style="font-size:14.5px; line-height:2.2; color:#33475f; padding-left:18px;">
+<li>✓ Validación del plan de reposición una vez incorporados forecast, costos, lead times y MOQ.</li>
+<li>✓ Confirmación de mix y cronograma de entregas de lanzamientos Nov–Dic.</li>
+<li>✓ Priorización de lanzamientos en fuerza de ventas.</li>
+<li>✓ Reporte mensual de Sell Out por producto.</li>
+<li>✓ Objetivo comercial: ratio Sell Out / Sell In ≥90% en el top 20 de SKUs, medido por valor.</li>
+</ul>
+</div>
+</div>
+<div style="margin-top:26px; background:linear-gradient(135deg,#0a4d8c,#1a8fe3,#33c4a2); border-radius:14px; padding:22px 30px; color:#fff; text-align:center;">
+<div style="font-size:22px; font-weight:800; letter-spacing:.5px;">Un solo equipo, un solo objetivo: crecer juntos.</div>
+<div style="font-size:14px; margin-top:8px; opacity:.9;">CSP Lifesciences Perú · DIMEXA · Business Review 2026</div>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>10</span></div>
 </section>
-
 <!-- ================= SLIDE 11 (NUEVO): SELL IN vs SELL OUT MENSUAL POR PRODUCTO ================= -->
-<section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Sell In vs Sell Out Mensual por Producto</h1>
-      <div class="sub">Unidades y valores por mes · Cumplimiento % · Periodo Jun 2025 – Oct 2026</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <!-- Filtro de rango -->
-  <div style="display:flex; gap:8px; margin-bottom:10px; align-items:center;">
-    <span style="font-size:12px; color:#5a6b82; font-weight:600;">Vista:</span>
-    <button onclick="filterMeses('todo')" class="filtro-btn active" data-filter="todo">Todo</button>
-    <button onclick="filterMeses('2025')" class="filtro-btn" data-filter="2025">2025</button>
-    <button onclick="filterMeses('2026h1')" class="filtro-btn" data-filter="2026h1">2026 H1</button>
-    <button onclick="filterMeses('2026h2')" class="filtro-btn" data-filter="2026h2">2026 H2</button>
-    <span style="margin-left:auto; font-size:11px; color:#888; font-style:italic;">← Scroll horizontal para ver más meses · Scroll vertical para ver más SKUs →</span>
-  </div>
-
-  <div class="scroll-box-siem" style="max-height:440px;">
-    <table class="siem-table">
-      <thead>
-        <tr class="mes-row" id="siem-head-mes"></tr>
-        <tr class="sub-row" id="siem-head-sub"></tr>
-      </thead>
-      <tbody id="siem-body"></tbody>
-      <tfoot>
-        <tr class="footer-row" id="siem-footer"></tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <div style="margin-top:8px; display:flex; gap:16px; font-size:11px; color:#5a6b82; flex-wrap:wrap;">
-    <div><span class="pct-badge pct-good">≥90%</span> Cumplimiento óptimo</div>
-    <div><span class="pct-badge pct-mid">70–89%</span> Revisar mix</div>
-    <div><span class="pct-badge pct-low">&lt;70%</span> Sobre-stock / baja rotación</div>
-    <div><span class="pct-badge pct-na">—</span> Sin movimiento en el mes</div>
-    <div style="margin-left:auto; font-style:italic;">Datos reales · Periodo Jun 2025 – Oct 2026</div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>11</span></div>
+<section class="slide siem-slide">
+<div class="slide-header">
+<div>
+<h1>Sell In vs Sell Out Mensual por Producto</h1>
+<div class="sub">Unidades y valores por mes · Ratio de valor Sell Out / Sell In · Cobertura real según cada hoja fuente</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<!-- Filtro de rango -->
+<div style="display:flex; gap:8px; margin-bottom:10px; align-items:center;">
+<span style="font-size:12px; color:#5a6b82; font-weight:600;">Vista:</span>
+<button class="filtro-btn active" data-filter="todo" onclick="filterMeses('todo')">Todo</button>
+<button class="filtro-btn" data-filter="2025" onclick="filterMeses('2025')">2025</button>
+<button class="filtro-btn" data-filter="2026h1" onclick="filterMeses('2026h1')">2026 H1</button>
+<button class="filtro-btn" data-filter="2026h2" onclick="filterMeses('2026h2')">2026 H2</button>
+<span style="margin-left:auto; font-size:11px; color:#888; font-style:italic;">← Scroll horizontal para ver más meses · Scroll vertical para ver más SKUs →</span>
+</div>
+<div class="siem-period-summary" id="siem-period-summary">
+  <div><span>Sell In · valor</span><strong id="siem-sum-si">—</strong></div>
+  <div><span>Sell Out · valor</span><strong id="siem-sum-so">—</strong></div>
+  <div><span>Sell In · unidades</span><strong id="siem-sum-siu">—</strong></div>
+  <div><span>Sell Out · unidades</span><strong id="siem-sum-sou">—</strong></div>
+  <div><span>Sell Out / Sell In</span><strong id="siem-sum-ratio">—</strong></div>
+</div>
+<div class="scroll-box-siem">
+<table class="siem-table">
+<thead>
+<tr class="mes-row" id="siem-head-mes"></tr>
+<tr class="sub-row" id="siem-head-sub"></tr>
+</thead>
+<tbody id="siem-body"></tbody>
+<tfoot>
+<tr class="footer-row" id="siem-footer"></tr>
+</tfoot>
+</table>
+</div>
+<div class="siem-legend" style="margin-top:8px; display:flex; gap:16px; font-size:11px; color:#5a6b82; flex-wrap:wrap;">
+<div><span class="pct-badge pct-good">≥90%</span> Sell Out / Sell In ≥90%</div>
+<div><span class="pct-badge pct-mid">70–89%</span> Seguimiento: 70–89%</div>
+<div><span class="pct-badge pct-low">&lt;70%</span> Brecha: menor a 70%</div>
+<div><span class="pct-badge pct-na">—</span> Sin dato para el mes</div>
+<div style="margin-left:auto; font-style:italic;">Sell In: Mar-25 a Oct-26 · Sell Out: Abr-25 a Oct-26</div>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>11</span></div>
 </section>
-
 <style>
   .filtro-btn {
     padding: 5px 14px; border: 1px solid #d6e6f7; background: #fff;
@@ -935,7 +854,7 @@
 
   /* ===== Colores de la columna TOTAL PERIODO ===== */
   .siem-table .total-col { background: #33c4a2 !important; }
-  .siem-table .total-sub { background: #128a5b !important; }
+  .siem-table .total-sub { background: #a9e4d0 !important; color: #0a4d8c !important; }
 
   /* ===== Columna Producto: fija a la izquierda ===== */
   .siem-table th.sticky-prod {
@@ -987,310 +906,60 @@
     background: #0a4d8c; text-align: left; padding-left: 10px;
     box-shadow: 2px 0 4px rgba(0,0,0,.2);
   }
-  .siem-table tfoot td.total-sub { background: #128a5b; }
+  .siem-table tfoot td.total-sub { background: #a9e4d0 !important; color: #0a4d8c !important;}
   .neg { color: #c0392b; font-weight: 700; }
 </style>
-
-<script>
-(function() {
-  /* ============================================================
-     MESES DEL PERIODO (17)
-     ============================================================ */
-  const meses = [
-    '2025-06','2025-07','2025-08','2025-09','2025-10','2025-11','2025-12',
-    '2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07',
-    '2026-08','2026-09','2026-10'
-  ];
-  const mesLabel = ['Jun-25','Jul-25','Ago-25','Sep-25','Oct-25','Nov-25','Dic-25',
-                    'Ene-26','Feb-26','Mar-26','Abr-26','May-26','Jun-26','Jul-26',
-                    'Ago-26','Sep-26','Oct-26'];
-
-  /* ============================================================
-     DATA REAL POR PRODUCTO
-     Cada array tiene 17 posiciones (Jun-25 .. Oct-26).
-     null = sin dato / sin movimiento.
-     ============================================================ */
+<script>(function() {
+  // Periodo exacto disponible en el Excel: Sell In Mar-2025 a Oct-2026;
+  // Sell Out Abr-2025 a Oct-2026 (los meses fuera de cobertura se muestran como sin dato).
+  const meses = ["2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"];
+  const mesLabel = ["Mar-25", "Abr-25", "May-25", "Jun-25", "Jul-25", "Ago-25", "Sep-25", "Oct-25", "Nov-25", "Dic-25", "Ene-26", "Feb-26", "Mar-26", "Abr-26", "May-26", "Jun-26", "Jul-26", "Ago-26", "Sep-26", "Oct-26"];
   const productos = [
-    { name:'ARPIZEX 10MG X 30 TABLETAS.',
-      SI_U:[0,30,20,60,null,50,160,120,null,null,null,80,100,null,null,null,null],
-      SI_S:[172.95,293.13,311.07,775.80,null,618.78,2068.80,1551.61,null,null,null,1034.41,1293.02,null,null,null,null],
-      SO_U:[1,11,53,7,42,55,117,48,33,29,42,40,44,31,13,150,null],
-      SO_S:[13.56,149.16,712.20,106.48,618.78,646.50,1709.27,645.91,441.83,384.58,596.78,400.95,602.55,468.55,179.69,1293.01,null] },
-
-    { name:'ARPIZEX 15MG X 30 TABLETAS.',
-      SI_U:[0,40,48,2,-40,null,null,null,null,null,null,null,null,null,null,null,null],
-      SI_S:[243.15,549.49,948.99,36.72,-732.12,null,null,null,null,null,null,null,null,null,null,null,null],
-      SO_U:[2,19,34,0,0,null,null,null,null,null,null,null,null,null,null,null,null],
-      SO_S:[38.14,335.59,592.20,0,0,null,null,null,null,null,null,null,null,null,null,null,null] },
-
-    { name:'BACICLUMAX CJA X 10 AMPOLLAS BEBIBLES DE 5ML',
-      SI_U:[null,null,null,null,1000,null,null,1,-1,1000,4000,3000,0,250,null,null,null],
-      SI_S:[null,null,null,null,8640.00,null,null,10.17,-8.64,8644.00,34576.00,25932.00,0.14,null,null,null,null],
-      SO_U:[0,0,0,0,1000,0,0,2000,0,1000,3563,2865,3284,2898,793,null,null],
-      SO_S:[0,0,0,0,7367.22,0,0,17280.00,0,7288.00,26318.56,21331.71,24753.62,20221.80,6854.74,null,null] },
-
-    { name:'CARVELAN 12.5MG X 100 TABLETAS.',
-      SI_U:[null,30,30,69,-2,null,-9,60,null,18,540,0,100,-100,null,null,null],
-      SI_S:[null,528.57,1310.05,1535.04,-108.78,null,-575.85,3263.27,null,1055.72,16317.00,0,5438.56,-5438.56,null,null,null],
-      SO_U:[0,9,23,34,22,38,null,10,540,560,54,-201,106,127,103,21,null],
-      SO_S:[0,1226.95,1852.73,3752.91,1279.66,1906.25,null,585.28,16317.00,20288.41,3304.13,-4912.35,6011.75,6103.66,1630.69,767.80,null] },
-
-    { name:'CARVELAN 6.25MG X 100 TABLETAS',
-      SI_U:[null,30,42,99,null,55,40,67,110,50,100,248,null,200,120,89,42],
-      SI_S:[null,970.68,1453.30,4257.50,null,2346.19,2150.20,3028.47,1720.16,2686.36,4730.13,3915.10,2150.21,4896.93,4300.00,3246.22,1432.30],
-      SO_U:[0,6,36,13,null,50,78,67,94,116,100,200,209,260,150,null,183],
-      SO_S:[0,242.55,1453.30,506.86,null,2150.20,3028.47,2686.36,3915.10,4300.00,3246.22,4361.93,8600.84,8485.74,5160.51,6450.63,3263.39] },
-
-    { name:'CELOMEX 200MG CAJA X 100 CAP',
-      SI_U:[null,null,null,null,null,null,null,null,null,0,600,820,541,300,null,600,565],
-      SI_S:[null,null,null,null,null,null,null,null,null,0,14172.00,19367.58,12777.92,7085.73,null,14171.45,12884.53],
-      SO_U:[0,0,0,0,0,0,0,0,0,122,1298,398,463,430,519,353,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,2767.46,24513.60,8381.33,9643.75,8366.72,9922.49,7321.92,null] },
-
-    { name:'CELOMEX 200MG X 30 CAPSULAS.',
-      SI_U:[642,100,20,0,151,null,null,69,null,0,0,150,150,null,2,2,null],
-      SI_S:[6798.78,897.45,381.21,0,1795.39,null,null,868.02,null,0,0,1782.84,1782.84,null,27.96,27.97,null],
-      SO_U:[29,81,239,194,74,6,null,35,null,null,null,114,3,-22,2,null,null],
-      SO_S:[361.29,947.65,2532.58,1951.00,870.60,83.90,null,440.50,null,null,null,1184.24,41.95,-216.76,27.97,null,null] },
-
-    { name:'CIPROZONE 500MG X 100 TABLETAS RECUBIERTAS',
-      SI_U:[null,170,490,102,0,113,172,16,null,0,-21,14,7,0,500,340,null],
-      SI_S:[null,3897.02,7607.47,3155.88,0,3499.72,4666.89,494.75,null,0,-534.79,466.88,197.84,0,15488.71,9293.22,null],
-      SO_U:[0,90,271,220,106,null,null,null,0,null,null,null,0,0,73,-108,439],
-      SO_S:[0,2402.54,15860.38,5640.94,2722.66,null,null,null,0,null,null,null,0,0,1740.67,-3345.56,10498.20] },
-
-    { name:'CISTIX 50MG/50ML CONCENTRADO PARA SOLUCION PARA PERFUSION',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,0,16,1502,230,0],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,0,208.00,20993.30,3434.00,0],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,16,1502,230,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,240.00,25584.00,4040.00,0,null] },
-
-    { name:'CLOPTOP 75MG X 30 TABLETAS.',
-      SI_U:[15,85,0,null,null,20,0,null,30,-28,null,0,50,null,1,null,null],
-      SI_S:[707.70,2645.80,0,null,null,829.84,0,null,1166.94,-962.60,null,0,2074.58,null,77.80,null,null],
-      SO_U:[0,0,10,44,1,30,0,0,30,1,0,3,6,2,1,null,null],
-      SO_S:[0,0,475.40,1576.61,48.81,1180.51,0,0,1244.70,48.81,0,146.44,292.88,77.80,48.81,null,null] },
-
-    { name:'CRYOFOMID 1000MG CJA X 1 VIAL PVO P/ SOL INJ PERF',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,1012,500,325,0,0,50],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,15483.60,7650.00,6892.00,0,0,2521.20],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,1012,500,323,0,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,18216.00,9000.00,7093.00,0,0,null] },
-
-    { name:'CRYOFOMID 200 200 MG CJA X 1 VIAL PVO. P/ SOL. INJ. PERF',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,30,0,0,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,459.00,0,0,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,30,0,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,540.00,0,0,null] },
-
-    { name:'DULOX 30MG X 30 TABLETAS.',
-      SI_U:[165,70,100,197,null,100,240,120,50,350,-1,null,null,null,null,-19,122],
-      SI_S:[5228.85,1879.91,3911.29,7039.21,null,3573.20,8575.68,4115.64,1786.60,12505.50,-35.73,null,null,null,null,-722.71,3287.05],
-      SO_U:[19,96,150,44,83,185,114,112,229,180,165,34,0,0,0,122,null],
-      SO_S:[708.47,3482.71,5560.69,1510.50,2953.22,6547.43,4002.03,4115.64,7956.96,5575.61,5705.16,1141.01,0,0,0,3287.05,null] },
-
-    { name:'DULOX 60MG X 30 TABLETAS.',
-      SI_U:[15,50,90,-3,null,40,51,3,110,63,90,52,0,4,null,null,-4],
-      SI_S:[561.90,1587.29,4084.79,-126.64,null,1389.15,1947.10,148.98,4643.21,2796.34,3764.04,2542.35,0,178.71,null,null,-181.86],
-      SO_U:[15,0,41,38,32,51,3,110,63,100,52,0,4,0,0,0,120],
-      SO_S:[661.02,0,1795.24,1641.01,1389.15,1688.48,148.98,4643.21,2796.34,4221.00,2542.35,0,178.71,0,0,0,2532.71] },
-
-    { name:'DUTAZEX 0,5MG X 30 TABLETAS.',
-      SI_U:[73,120,106,216,96,null,0,68,715,240,-120,100,355,450,175,null,380],
-      SI_S:[1104.49,1538.64,2070.34,3655.80,1625.09,null,0,1090.43,11512.16,4062.72,-2031.36,1692.80,4571.77,5924.79,3113.83,null,3385.59],
-      SO_U:[57,42,127,144,54,79,68,1054,102,342,121,355,570,377,657,-497,null],
-      SO_S:[1014.43,625.16,2075.23,2397.92,997.83,1375.11,1090.43,9650.29,1719.17,3619.25,2004.15,4571.77,7617.58,5044.10,4924.87,-3084.11,null] },
-
-    { name:'FINARIX 5MG CJA X 30 TAB. REC.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,150,0,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,4807.99,0,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,3813.00,0,null] },
-
-    { name:'FLAZAFORTE 30MG X 10 TABLETAS.',
-      SI_U:[190,240,150,150,250,288,180,893,960,null,null,1000,null,1088,null,-7,582],
-      SI_S:[2490.90,2666.42,2708.23,2225.85,3709.75,4273.63,2671.02,7123.22,8903.34,null,null,12210.90,null,9832.72,null,-97.17,5787.20],
-      SO_U:[153,149,267,161,250,171,117,205,889,273,696,981,1298,188,582,null,null],
-      SO_S:[2205.61,1748.16,3805.43,2378.49,3703.91,2585.61,1787.24,1953.40,10303.48,4303.25,10201.80,14838.98,15327.79,1591.47,5787.20,null,null] },
-
-    { name:'FLUCOZONE 150 150MG CJA X 2 CAPSULAS',
-      SI_U:[null,1500,1000,0,0,1949,968,4499,2977,-4,null,null,null,null,null,null,1],
-      SI_S:[null,2707.50,1685.56,3.00,0,4283.43,1652.45,9888.06,6540.50,-8.79,null,null,null,null,null,null,2.59],
-      SO_U:[0,500,839,982,1949,968,1060,1519,4907,1066,0,0,0,0,0,0,null],
-      SO_S:[0,974.58,1690.46,1690.46,4283.43,1652.45,1430.03,2569.88,6913.62,2015.27,0,0,0,240.88,0,0,null] },
-
-    { name:'GABATINEX 300MG X 30 TABLETAS.',
-      SI_U:[null,30,50,90,94,null,250,310,-1,200,52,null,446,164,5841,41,265],
-      SI_S:[null,477.97,1116.11,1912.50,1997.50,null,5312.50,2125.00,-21.25,4250.00,1001.04,null,4250.00,2125.00,19620.44,547.58,5731.79],
-      SO_U:[0,0,70,60,124,0,1,265,96,52,162,446,260,100,5464,268,null],
-      SO_S:[0,0,1469.16,1255.92,2390.72,0,25.00,4786.00,1590.30,1001.04,3034.75,7905.55,2350.00,2125.00,58055.00,3187.50,null] },
-
-    { name:'GAXTROX 20MG X 30 CAPSULAS.',
-      SI_U:[147,70,449,700,null,-2,120,300,232,null,69,184,203,538,290,null,11],
-      SI_S:[657.09,265.17,2220.09,3509.00,null,-8.94,600.72,1503.00,912.72,null,390.72,997.55,1061.22,2271.50,1444.19,null,0],
-      SO_U:[27,75,394,280,51,-2,338,67,177,69,50,300,250,746,null,75,675],
-      SO_S:[141.86,360.78,1942.32,1326.16,245.45,-8.94,1622.14,341.68,912.72,390.72,250.32,1501.91,1251.59,3734.74,null,417.11,2996.04] },
-
-    { name:'GAXTROX 40 40MG X 100 CAP LIB RET',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,196,-19,47,60,null,128,550],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,3925.88,-380.57,1105.29,1201.76,null,1365.23,8011.74],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,22,47,60,108,128,100,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,471.53,1105.29,1201.76,2326.20,1365.23,2002.93,null] },
-
-    { name:'GAXTROX 40MG X 30 CAPSULAS.',
-      SI_U:[608,29,279,500,null,-2,337,400,163,null,null,77,212,149,null,37,1034],
-      SI_S:[3720.96,177.48,1919.52,3439.50,null,-12.24,2313.31,2751.92,1262.85,null,null,614.27,1498.19,1080.33,null,289.65,7102.41],
-      SO_U:[76,73,565,212,131,-2,337,147,163,119,70,77,100,149,8,210,1024],
-      SO_S:[525.84,482.64,3948.28,1398.57,928.49,-12.24,2313.31,1093.86,1262.85,888.24,529.88,614.27,687.92,1080.33,63.94,1375.85,7044.34] },
-
-    { name:'ITRACOZONE 100MG X 100 CAPSULAS',
-      SI_U:[null,20,200,0,0,350,291,62,-8,4,null,0,409,null,0,367,1756],
-      SI_S:[null,988.98,7280.37,0,0,22439.55,18394.44,4000.67,-603.39,301.70,null,0,26222.22,null,0,24920.26,120463.65],
-      SO_U:[0,3,117,0,0,291,null,-8,4,0,null,409,392,17,500,300,1368],
-      SO_S:[0,181.77,7280.37,0,0,18394.44,null,-603.39,301.70,0,null,26222.22,26283.75,790.07,37665.21,22599.12,69153.33] },
-
-    { name:'KETOCLEAR 2% CHAMPÚ CJA X 1 FCO X 100 ML',
-      SI_U:[null,null,null,null,null,null,null,null,null,0,1000,491,1000,700,null,440,824],
-      SI_S:[null,null,null,null,null,null,null,null,null,0,17289.00,8488.92,17289.07,12102.35,null,6964.78,12744.86],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,491,786,1200,1170,828,12,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,8488.92,12688.07,19562.91,18993.10,13359.26,0,null] },
-
-    { name:'LEVOTOPLEX 500 500MG CJA X 50 TAB. REC.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,600],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,15162.00],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,600],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15162.00] },
-
-    { name:'LEVOTOPLEX 750 750MG CJA X 50 TAB. REC.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-
-    { name:'LEXPRAM 10 MG CJA X 50 TAB. REC.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,750,0,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,27571.09,0,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,250,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,7455.50,0,null] },
-
-    { name:'METAPLUS 500MG X 50 TABLETAS RECUBIERTAS.',
-      SI_U:[256,0,null,null,50,null,28,-46,null,3,null,5,20,123,2,null,21],
-      SI_S:[6017.00,0,null,null,1249.50,null,661.20,-981.10,null,88.20,null,145.80,419.40,1227.20,20.00,null,347.40],
-      SO_U:[5,2,131,-13,10,28,6,1,0,15,100,99,null,null,null,null,null],
-      SO_S:[158.20,66.10,2736.40,-208.40,258.00,661.20,164.40,23.40,0,225.00,1227.20,2499.00,20.00,2474.01,347.40,null,null] },
-
-    { name:'METAPLUS F 1000MG X 30 TABLETAS RECUBIERTAS.',
-      SI_U:[352,0,158,-8,222,-3,null,0,150,null,426,159,null,50,24,35,null],
-      SI_S:[4710.60,0,2545.38,-128.88,3585.08,-25.29,null,0,693.53,null,2772.35,1028.68,null,807.50,320.70,465.10,null],
-      SO_U:[21,52,223,186,-44,30,-34,110,41,7,0,27,58,108,null,null,null],
-      SO_S:[229.32,841.43,3480.40,2710.47,-398.70,535.20,-464.85,1771.70,693.53,66.90,0,264.95,630.17,969.13,null,null,null] },
-
-    { name:'MYTEL 80MG X 30 TABLETAS.',
-      SI_U:[30,130,180,0,40,98,0,null,710,null,126,243,71,204,72,161,null],
-      SI_S:[324.30,1190.93,2206.49,0,488.40,1199.38,0,null,8671.20,null,1554.00,2877.60,954.48,2140.28,869.73,932.75,null],
-      SO_U:[30,100,48,7,73,120,-2,29,413,213,100,450,200,null,325,null,null],
-      SO_S:[381.36,1144.07,560.25,147.23,888.31,1547.43,-130.04,413.63,5131.00,1705.27,1221.30,3663.88,2442.59,null,2441.60,null,null] },
-
-    { name:'NUMBICAINE 5 5mg/mL CJA X 1 AMP. SOL. INY.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-
-    { name:'OLANPREX 10MG X 30 TABLETAS.',
-      SI_U:[15,15,299,0,199,null,80,-56,null,36,null,0,0,0,0,0,null],
-      SI_S:[334.95,283.86,7121.84,0,5010.02,null,2014.40,-1135.12,null,1066.31,null,0,0,0,0,0,null],
-      SO_U:[1,19,179,-9,105,108,-56,101,36,2,0,0,0,0,0,null,null],
-      SO_S:[26.27,483.39,4010.66,-71.22,2451.09,2566.05,-1135.12,2580.98,1066.31,59.24,0,0,0,0,0,null,null] },
-
-    { name:'OSTECOX 120 120MG CJA X 7 TABLETAS RECUBIERTAS',
-      SI_U:[null,null,null,240,240,null,138,462,null,509,3900,850,null,2453,250,null,null],
-      SI_S:[null,null,null,2116.80,2116.80,null,1163.80,3887.58,null,4204.42,22059.25,4411.86,null,8673.49,882.37,null,null],
-      SO_U:[0,0,0,50,160,138,400,91,450,2170,1921,5740,999,null,null,null,null],
-      SO_S:[0,0,0,292.35,1120.38,1163.80,3528.74,681.55,3970.67,2647.11,11515.02,19431.22,1623.64,null,null,null,null] },
-
-    { name:'OSTECOX 60 60MG CJA X 14 TABLETAS RECUBIERTAS',
-      SI_U:[null,50,307,0,158,null,46,null,26,65,47,200,null,185,1,4,null],
-      SI_S:[null,383.05,2863.87,0,1513.80,null,434.58,null,272.81,460.63,529.74,1916.10,null,2046.47,0,45.08,null],
-      SO_U:[0,0,237,2,25,46,null,11,65,100,55,182,185,93,2,null,null],
-      SO_S:[0,0,1987.74,0.10,225.86,434.58,null,123.98,460.63,958.00,464.40,1989.03,2046.47,1037.80,45.08,null,null] },
-
-    { name:'OSTECOX 90 90MG CJA X 14 TABLETAS RECUBIERTAS',
-      SI_U:[null,120,599,-16,337,370,300,95,150,82,174,160,93,315,2400,-2,1096],
-      SI_S:[null,1006.78,6172.32,-166.59,2640.69,3132.00,1105.93,644.50,1566.25,1775.63,1266.01,1670.40,884.33,1839.14,11489.41,-10.44,8318.62],
-      SO_U:[0,62,239,61,370,176,95,150,82,174,160,211,93,314,565,787,1600],
-      SO_S:[0,609.49,2194.91,641.98,2640.69,1105.93,644.50,1566.25,1775.63,1266.01,1670.40,1921.41,884.33,2074.56,7788.56,1085.38,8355.93] },
-
-    { name:'PANTOZEX 40MG X 30 TABLETAS.',
-      SI_U:[330,170,548,270,244,221,200,300,1720,null,432,1185,520,693,-10,608,null],
-      SI_S:[4358.40,1308.13,5685.45,2762.42,2495.88,511.55,2046.20,3069.00,10230.00,null,3431.12,9040.82,4215.65,6035.15,-4896.55,5888.55,null],
-      SO_U:[18,59,862,267,132,428,80,253,959,473,600,34,700,44,580,null,null],
-      SO_S:[192.21,595.83,8014.01,2572.70,1379.90,3413.99,637.79,2703.45,9100.68,2309.65,6138.60,347.86,7161.70,0,5888.55,null,null] },
-
-    { name:'PREGAZONE 75 75MG CJA X 50 CAP.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,200,106,30,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,5744.00,2872.00,861.60,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,426,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,9169.58,0,null] },
-
-    { name:'REUMAX 100MG CAJA X 100 TAB. LIB. PROL.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,150,8,241,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,10510.91,0,12785.45,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,150,0,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12785.45,null] },
-
-    { name:'ROSUMAX 10mg X 30 TABLETAS.',
-      SI_U:[199,0,null,null,null,39,28,100,120,196,150,71,128,128,159,null,147],
-      SI_S:[4897.83,0,null,null,null,954.73,745.52,2204.00,2645.08,4744.64,3306.00,1587.24,2828.72,2666.85,3010.93,null,2842.86],
-      SO_U:[4,20,108,-15,26,39,null,28,100,84,120,18,22,100,60,null,0],
-      SO_S:[92.54,441.91,2126.94,-220.57,622.73,954.73,null,745.52,2204.00,2002.45,2645.08,456.54,570.50,1102.12,1322.54,null,0] },
-
-    { name:'ROSUMAX 20mg X 30 TABLETAS.',
-      SI_U:[595,14,111,null,285,null,117,null,430,0,126,173,114,0,null,null,0],
-      SI_S:[14399.00,338.80,3014.76,null,7739.74,null,3510.95,null,11678.61,0,3686.72,4645.13,3340.94,0,null,null,0],
-      SO_U:[81,341,187,102,40,117,118,428,150,63,100,100,null,-6,null,0,null],
-      SO_S:[1945.21,6841.35,4494.76,2850.78,1087.86,3510.95,3437.99,12079.36,4074.00,2020.17,2715.68,2715.68,null,-124.93,null,0,null] },
-
-    { name:'SILDEZONE 100 100MG CJA X 1 TABLETA RECUBIERTA',
-      SI_U:[null,null,null,1064,500,null,34500,1401,null,null,16448,18254,null,2072,null,null,null],
-      SI_S:[null,null,null,1149.12,540.00,null,37260.00,1253.73,null,null,12053.90,12724.08,null,1531.51,null,null,null],
-      SO_U:[0,0,0,1064,500,0,19059,0,12784,18000,18000,1866,2072,null,null,null,null],
-      SO_S:[0,0,0,914.56,360.17,0,13876.98,0,9215.02,9754.20,19508.40,1486.20,1531.51,null,null,null,null] },
-
-    { name:'SILDEZONE 50 50MG CJA X 1 TABLETA RECUBIERTA',
-      SI_U:[null,null,null,1064,500,null,19499,110,null,null,15890,22000,null,5422,9444,5500,null],
-      SI_S:[null,null,null,1074.64,505.00,null,19693.99,130.66,null,null,22235.40,6297.30,null,4042.60,5349.68,5558.58,null],
-      SO_U:[0,0,0,1064,500,0,8523,0,4208,15890,12346,9108,5422,9444,5500,null,null],
-      SO_S:[0,0,0,776.86,275.42,0,4801.82,0,2337.72,8283.83,6297.30,5155.56,4042.60,5349.68,5558.58,null,null] },
-
-    { name:'TADALAZONE 20 20 MG CJA X 4 TABLETAS RECUBIERTAS',
-      SI_U:[null,null,null,240,500,null,239,1500,null,200,1103,1125,2000,800,2432,null,null],
-      SI_S:[null,null,null,1920.00,4000.00,null,1172.62,12000.00,null,1600.00,6420.74,5567.83,8000.00,1342.24,8167.97,null,null],
-      SO_U:[0,0,0,0,512,239,652,262,1103,600,1125,2000,1361,1057,680,1000,null],
-      SO_S:[0,0,0,0,3571.88,1172.62,3636.87,1987.85,6420.74,4800.00,5567.83,8000.00,4756.29,1342.24,1599.51,3998.79,null] },
-
-    { name:'TAMSUNAX 0.4MG X 30 CAPSULAS.',
-      SI_U:[null,150,537,200,1013,299,null,233,1100,259,800,1900,null,710,1200,220,null],
-      SI_S:[null,1277.54,6094.38,2247.20,7323.55,2290.61,null,1974.94,12394.96,2453.04,5055.02,15778.00,null,4131.19,7645.91,2254.99,null],
-      SO_U:[0,50,447,121,299,null,565,259,1100,805,1165,710,1400,1600,1400,370,null],
-      SO_S:[0,532.20,4777.57,1262.96,2290.61,null,4616.82,1974.94,12394.96,6319.09,4131.19,9013.30,13992.06,7645.91,11215.55,6543.15,null] },
-
-    { name:'VERTILUX 16MG CJA X 50 TAB.',
-      SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,200,0,324,null],
-      SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,6317.57,0,7643.86,null],
-      SO_U:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,324,381,null],
-      SO_S:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,11213.70,0,null] },
-
-    { name:'WALSARTEX 80MG X 30 TABLETAS.',
-      SI_U:[15,null,260,0,50,45,null,null,60,null,32,55,11,-9,null,null,null],
-      SI_S:[324.15,null,5942.12,0,1214.00,1095.27,null,null,1372.87,null,743.56,1172.63,113.31,-225.00,null,null,null],
-      SO_U:[0,0,103,-25,0,77,-84,0,112,32,51,47,13,null,null,null,null],
-      SO_S:[0,0,2195.88,-527.55,0,2352.54,-1841.72,0,2235.89,743.56,1172.63,480.50,113.31,null,null,null,null] }
+    { name:"ARPIZEX 10MG X 30 TAB", SI_U:[400.0,250.0,60.0,50.0,-350.0,null,150.0,null,24.0,30.0,22.0,48.0,12.0,126.0,null,20.0,32.0,24.0,-36.0,null], SI_S:[6048.8,3780.5,907.32,576.2,-1756.8,null,1939.5,null,310.32,387.9,174.86,620.64,155.16,1629.18,null,258.6,413.76,310.32,-465.48,null], SO_U:[null,184.0,11.0,188.0,14.0,144.0,-41.0,50.0,218.0,2.0,61.0,35.0,77.0,8.0,45.0,58.0,2.0,20.0,-18.0,-2.0], SO_S:[null,3029.93,160.21,2612.56,146.41,1888.46,-636.69,730.51,2587.78,30.42,920.07,494.4,887.73,102.81,637.49,694.39,120.7,268.82,-199.6,-30.42] },
+    { name:"ARPIZEX 15 15MG X 30 TAB", SI_U:[400.0,350.0,570.0,290.0,-426.0,null,72.0,347.0,null,null,null,null,null,null,null,null,null,null,null,null], SI_S:[8729.6,7638.4,12439.68,4698.29,-2735.9,null,1317.82,6348.63,null,null,null,null,null,null,null,null,null,null,null,null], SO_U:[null,396.0,316.0,454.0,216.0,61.0,144.0,418.0,2.0,null,null,0.0,null,null,null,null,null,null,-9.0,null], SO_S:[null,9384.88,6290.59,8863.0,3744.1,1296.91,2493.63,8093.55,169.32,null,null,0.0,null,null,null,null,null,null,-137.36,null] },
+    { name:"BACICLUMAX 2000 MILLONES UFC/5ml CJA X 10 AMP", SI_U:[null,null,null,null,null,null,null,7108.0,1707.0,-84.0,null,null,2850.0,932.0,-6.0,7000.0,6406.0,2244.0,6454.0,null], SI_S:[null,null,null,null,null,null,null,61413.12,14748.48,-725.76,null,null,24624.0,8056.84,-51.86,60508.0,55373.46,19397.21,55788.81,null], SO_U:[null,null,null,null,null,null,null,5752.0,2652.0,326.0,-114.0,114.0,2173.0,1505.0,98.0,7239.0,1502.0,5640.0,3447.0,5334.0], SO_S:[null,null,null,null,null,null,null,40312.44,20729.91,2524.94,-793.67,831.61,15718.45,10175.34,776.92,57307.47,11397.87,33469.99,25494.11,41556.62] },
+    { name:"CARVELAN 12.5MG CJA X 100 TAB REC", SI_U:[null,null,null,null,300.0,-1.0,100.0,30.0,78.0,44.0,null,null,120.0,54.0,248.0,184.0,60.0,null,30.0,null], SI_S:[null,null,null,null,14479.5,-48.27,5440.0,1631.7,4242.42,2393.16,null,null,6526.8,2936.82,13488.56,10006.95,3263.4,null,1631.57,null], SO_U:[null,null,null,null,11.0,136.0,51.0,80.0,21.0,7.0,71.0,75.0,31.0,88.0,284.0,70.0,21.0,63.0,18.0,34.0], SO_S:[null,null,null,null,590.56,7069.62,2696.16,4719.81,1284.56,447.8,3966.87,4026.01,1439.29,4604.71,10856.06,1653.03,1153.13,2197.15,575.76,1087.56] },
+    { name:"CARVELAN 6.25MG CJA X 100 TAB REC", SI_U:[null,null,null,null,296.0,120.0,-64.0,155.0,30.0,54.0,60.0,108.0,60.0,120.0,397.0,494.0,150.0,45.0,null,null], SI_S:[null,null,null,null,11300.39,5160.6,-2752.45,6665.62,1290.0,2322.0,2580.0,4644.0,2580.0,5160.51,17071.73,21244.09,6450.0,1935.22,null,null], SO_U:[null,null,null,null,107.0,55.0,61.0,95.0,123.0,66.0,88.0,68.0,47.0,109.0,487.0,130.0,183.0,54.0,56.0,72.0], SO_S:[null,null,null,null,4379.9,2557.87,2697.53,4277.35,4188.91,2671.53,3924.19,2955.19,2087.49,4842.63,14091.73,2965.98,6156.98,1782.32,1834.57,670.92] },
+    { name:"CELOMEX 200 200 MG CJA X 30 CAP.", SI_U:[911.0,351.0,656.0,1631.0,360.0,360.0,151.0,1084.0,-223.0,null,null,342.0,320.0,180.0,539.0,160.0,20.0,null,null,null], SI_S:[9643.85,3715.68,6944.41,17265.77,3810.96,4276.08,1796.16,12888.76,-2651.47,null,null,4066.38,3804.8,2139.4,6406.34,1901.7,237.8,null,null,null], SO_U:[null,1134.0,268.0,1475.0,105.0,292.0,257.0,1164.0,-734.0,190.0,79.0,370.0,94.0,589.0,287.0,147.0,52.0,59.0,237.0,17.0], SO_S:[null,12836.92,3093.96,15042.46,1172.75,3261.78,2867.34,9824.85,-4928.14,1797.81,1066.04,3798.52,1149.3,5345.38,2439.18,1614.87,702.51,655.24,2342.17,315.94] },
+    { name:"CIPROZONE 500 MG CJA X 100 TAB. REC.", SI_U:[null,null,null,null,1440.0,2438.0,103.0,1395.0,-786.0,null,null,null,null,null,873.0,null,null,875.0,1200.0,510.0], SI_S:[null,null,null,null,38939.04,75983.89,3181.66,43203.3,-24342.42,null,null,null,null,null,27037.72,null,null,27105.25,37172.91,15798.49], SO_U:[null,null,null,null,1078.0,596.0,1540.0,178.0,677.0,null,295.0,213.0,13.0,null,493.0,316.0,-1.0,1008.0,381.0,349.0], SO_S:[null,null,null,null,27820.08,15888.76,37188.61,4845.29,16663.69,null,8408.76,5003.11,377.51,null,11953.41,7745.5,-28.11,23753.79,9477.91,8627.48] },
+    { name:"CISTIX 50MG/50ML CONCENTRADO PARA SOLUCION PARA PERFUSION", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11.0,null,null], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,371.58,null,null], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11.0,null,null], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,236.39,null,null] },
+    { name:"CLOPTOP 75MG CJA X 30 TAB REC", SI_U:[51.0,584.0,null,0.0,-625.0,12.0,null,60.0,60.0,null,null,72.0,30.0,60.0,null,76.0,150.0,null,null,null], SI_S:[2405.93,27550.2,null,0.0,-5519.91,497.81,null,2489.52,2489.52,null,null,2987.28,1244.7,2489.49,null,3153.36,6223.73,null,null,null], SO_U:[null,21.0,86.0,26.0,6.0,80.0,75.0,85.0,59.0,28.0,39.0,21.0,40.0,12.0,108.0,55.0,65.0,10.0,22.0,30.0], SO_S:[null,1100.22,4073.46,906.6,197.7,3275.28,2663.0,2752.95,2271.12,1085.47,1881.7,950.5,488.05,559.08,4051.51,1079.67,1853.08,428.58,988.57,1038.45] },
+    { name:"CRYOFOMID 1000 1000 MG CJA X 1 VIAL  PVO. P/ SOL. INJ. PERF", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,100.0,0.0,null,null,null,36.0,null,30.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,2585.0,0.0,null,null,null,930.62,null,1815.0], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,100.0,null,null,2.0,34.0,null,30.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,1992.43,null,null,149.98,1605.08,null,2111.63] },
+    { name:"DULOX 30 30MG CJA X 30 COMP GAS", SI_U:[null,550.0,null,228.0,-295.0,210.0,318.0,90.0,312.0,12.0,450.0,162.0,322.0,null,null,null,null,null,null,null], SI_S:[null,30901.75,null,7225.1,534.69,7505.61,11361.97,3215.88,11148.14,428.79,16078.5,5788.26,11505.06,null,null,null,null,null,null,null], SO_U:[null,32.0,180.0,224.0,164.0,297.0,179.0,268.0,193.0,329.0,121.0,246.0,201.0,189.0,173.0,55.0,54.0,6.0,-61.0,null], SO_S:[null,2009.57,8599.58,7935.62,5496.22,10075.08,6376.32,9830.6,6984.79,10819.35,4747.13,8297.38,7521.18,6829.34,6934.23,2030.52,2100.47,252.24,-2025.52,null] },
+    { name:"DULOX 60 60MG CJA X 30 COMP GAS", SI_U:[null,550.0,null,6.0,-370.0,170.0,233.0,null,28.0,null,192.0,192.0,518.0,190.0,100.0,null,null,null,null,null], SI_S:[null,44374.55,null,224.71,-11631.39,7176.04,9835.4,null,1181.86,null,8104.32,8104.32,21864.78,8020.31,4221.19,null,null,null,null,null], SO_U:[null,16.0,109.0,127.0,178.0,179.0,86.0,128.0,55.0,76.0,279.0,228.0,96.0,511.0,228.0,23.0,4.0,34.0,-16.0,-6.0], SO_S:[null,1461.75,7059.81,4979.47,7402.87,6384.65,3601.22,5637.67,2570.66,3550.11,10986.65,9339.35,4272.68,18289.58,9889.28,1120.49,198.14,1688.5,-894.74,-292.01] },
+    { name:"DUTAZEX 0.5 MG CJA X 30 TAB. REC.", SI_U:[null,1300.0,263.0,540.0,360.0,227.0,653.0,1048.0,204.0,24.0,748.0,2060.0,779.0,980.0,739.0,360.0,1000.0,800.0,null,null], SI_S:[null,19658.6,3977.09,8165.88,5443.92,3842.82,11053.55,17740.56,3453.6,406.32,12647.14,34875.8,13188.47,16589.42,12511.57,6094.07,16928.78,13542.37,null,null], SO_U:[null,482.0,469.0,603.0,161.0,571.0,801.0,453.0,323.0,442.0,742.0,917.0,349.0,903.0,819.0,591.0,736.0,962.0,-143.0,7.0], SO_S:[null,7894.6,7114.73,9116.97,2654.32,9472.76,12650.16,7411.88,5444.07,6720.86,11188.96,13147.06,4609.06,9410.39,9807.01,6873.31,7628.09,9821.4,-2760.25,145.31] },
+    { name:"FINARIX 5MG CJA X 30 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,632.0,210.0,null], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,20257.65,6731.19,null], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,416.0,5.0,268.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11012.03,263.79,6862.66] },
+    { name:"FLAZAFORTE 30MG CJA X 10 TAB", SI_U:[1000.0,600.0,1683.0,337.0,-8.0,1034.0,364.0,599.0,331.0,325.0,1534.0,4440.0,2400.0,120.0,520.0,897.0,368.0,null,null,null], SI_S:[13116.0,7869.6,22074.22,4420.09,-104.93,15339.39,5403.38,8888.56,4911.94,4822.92,22764.56,65889.6,35616.0,1780.68,7716.27,13310.57,5460.74,null,null,null], SO_U:[null,868.0,799.0,1602.0,357.0,657.0,649.0,496.0,673.0,244.0,2116.0,1843.0,1922.0,791.0,1404.0,2732.0,3.0,26.0,-169.0,104.0], SO_S:[null,12472.4,10977.39,16327.59,4766.97,9030.53,9625.61,6404.6,8882.35,2593.92,25078.58,15804.86,19570.65,8328.71,17725.28,25842.9,59.63,419.59,-2267.9,1815.15] },
+    { name:"FLUCOZONE 150, 150 MG CJA X 2 CAP.", SI_U:[null,null,null,null,5940.0,16212.0,-7501.0,13114.0,7258.0,3179.0,19368.0,10273.0,null,null,null,null,null,12720.0,1011.0,null], SI_S:[null,null,null,null,12619.53,35579.42,-16295.39,28786.7,15904.97,6962.08,42609.6,22600.6,null,null,null,null,null,27946.27,2221.2,null], SO_U:[null,null,null,null,4142.0,2763.0,3879.0,16282.0,9770.0,7446.0,12894.0,4996.0,13134.0,713.0,null,null,null,11740.0,1951.0,208.0], SO_S:[null,null,null,null,5936.21,4769.97,5613.07,22500.07,13624.95,10492.61,18005.43,6970.24,18271.34,1036.97,null,null,null,16207.51,3086.34,446.2] },
+    { name:"GABATINEX 300 300 MG CJA X 30 CAP.", SI_U:[null,null,null,null,619.0,172.0,185.0,199.0,null,36.0,184.0,800.0,199.0,168.0,384.0,700.0,730.0,200.0,54.0,20.0], SI_S:[null,null,null,null,11638.44,3654.22,3929.38,4228.75,null,765.0,3910.0,17000.0,4228.75,3570.0,8160.02,14875.0,15512.5,4250.0,1147.5,425.0], SO_U:[null,null,null,null,148.0,246.0,298.0,128.0,106.0,29.0,335.0,549.0,129.0,187.0,399.0,931.0,1.0,318.0,0.0,429.0], SO_S:[null,null,null,null,2630.44,5355.99,6223.63,2578.16,2371.81,644.89,6223.58,9631.99,2741.17,2750.55,4090.4,13332.83,-5.62,3614.56,115.66,3174.73] },
+    { name:"GAXTROX 20 20 MG CJA X 30 CAP. LIB. RET.", SI_U:[3995.0,null,117.0,488.0,600.0,561.0,1264.0,-96.0,-20.0,null,null,900.0,590.0,960.0,-2.0,360.0,940.0,540.0,240.0,930.0], SI_S:[17826.49,null,522.07,2177.56,2677.32,2812.93,6333.38,-480.96,-100.2,null,null,4509.0,2955.9,4806.11,-10.01,1802.28,4708.08,2703.43,1201.53,4655.9], SO_U:[null,1462.0,544.0,1121.0,314.0,420.0,403.0,217.0,152.0,79.0,805.0,475.0,828.0,459.0,316.0,838.0,364.0,488.0,823.0,796.0], SO_S:[null,7102.66,2609.34,4818.44,1570.86,2329.01,2063.2,1174.67,872.7,420.64,4054.92,2360.51,4492.46,2580.04,1657.98,4001.19,1879.26,2568.09,4065.12,4024.6] },
+    { name:"GAXTROX 40 40 MG CJA X 30 CAP. LIB. RET.", SI_U:[2500.0,772.0,409.0,2386.0,-34.0,479.0,251.0,822.0,null,30.0,269.0,1380.0,-1.0,450.0,330.0,132.0,1540.0,null,178.0,320.0], SI_S:[15294.75,4723.01,2502.23,14597.31,-208.01,3294.08,1726.89,5659.86,null,206.4,1851.48,9494.4,-6.88,3095.67,2270.15,908.06,10594.65,null,1224.5,2201.36], SO_U:[null,2218.0,721.0,1206.0,384.0,177.0,793.0,233.0,224.0,226.0,752.0,341.0,477.0,632.0,521.0,720.0,121.0,553.0,232.0,915.0], SO_S:[null,14402.31,4595.03,7113.9,2128.23,2021.91,5445.26,1720.58,1504.1,1449.41,4896.4,2334.51,3225.18,4256.16,3359.56,11970.39,998.51,3869.47,1594.26,6391.46] },
+    { name:"ITRACOZONE 100 MG CJA X 100 CAP.", SI_U:[null,null,null,null,1510.0,3.0,-6.0,2976.0,54.0,-25.0,-2.0,null,null,null,696.0,313.0,-1.0,648.0,3568.0,340.0], SI_S:[null,null,null,null,88113.03,5359.06,-384.68,190800.27,3461.12,-1597.06,-116.71,null,null,null,44622.64,20067.37,-64.11,48814.13,268778.96,25612.34], SO_U:[null,null,null,null,923.0,326.0,242.0,1413.0,677.0,245.0,273.0,470.0,442.0,25.0,613.0,399.0,2.0,1468.0,2442.0,205.0], SO_S:[null,null,null,null,53616.85,21724.52,13976.29,83279.22,42838.29,15133.54,17574.29,30081.24,28254.49,1758.99,41723.22,27432.13,286.47,103973.52,171895.0,3515.39] },
+    { name:"KETOCLEAR 2% CJA X 1 FCO X 100 ML", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,5032.0,4154.0,197.0,1168.0,2518.0,-7.0,null,null], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,87000.6,71742.51,3405.94,20193.62,43535.59,-121.03,null,null], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,4160.0,1887.0,1210.0,3112.0,207.0,1642.0,811.0,120.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,64096.13,29452.82,19171.65,47229.12,3454.35,25863.61,12693.53,1872.94] },
+    { name:"LEVOTOPLEX 500 500MG CJA X 50 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1046.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,26432.42], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,4.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,118.94] },
+    { name:"LEVOTOPLEX 750 750MG CJA X 50 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,450.0,null,null], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,21454.8,null,null], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,294.0,83.0,123.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11556.55,3019.88,4497.52] },
+    { name:"LEXPRAM 10 MG CJA X 50 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,2100.0,null,440.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,77199.07,null,16175.05], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,338.0,633.0,530.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11202.87,18506.05,15715.4] },
+    { name:"METAPLUS 500 MG CJA 50 TAB. REC.", SI_U:[null,999.0,0.0,-999.0,60.0,68.0,78.0,148.0,-1.0,0.0,null,132.0,120.0,73.0,null,-1.0,100.0,0.0,0.0,null], SI_S:[null,16285.95,9809.44,-26095.39,23998.17,1699.27,1949.22,3698.52,-24.99,0.0,null,3298.68,2998.8,1824.27,null,-24.99,2499.0,0.0,0.0,null], SO_U:[null,23.0,77.0,300.0,22.0,111.0,224.0,17.0,54.0,25.0,53.0,121.0,115.0,108.0,-16.0,21.0,285.0,1.0,-118.0,-5.0], SO_S:[null,760.93,2269.62,5305.98,409.65,2875.64,4271.15,463.77,922.45,734.91,1290.32,2355.8,1722.88,2439.25,-459.06,495.82,4407.19,23.5,-2560.37,-165.23] },
+    { name:"METAPLUS F 1000 MG CJA X 30 TAB. LIB. P.", SI_U:[null,1299.0,180.0,-2223.0,3271.0,69.0,155.0,346.0,133.0,166.0,593.0,673.0,1210.0,2000.0,-9.0,null,100.0,-100.0,null,null], SI_S:[null,24712.65,4899.35,-14401.38,27554.9,1111.03,2496.45,5605.1,2147.96,2680.9,9577.23,10868.95,19540.98,32297.72,-145.35,null,1615.0,-1615.0,null,null], SO_U:[null,372.0,1859.0,557.0,79.0,483.0,441.0,358.0,471.0,119.0,715.0,241.0,1418.0,505.0,162.0,145.0,324.0,60.0,-556.0,-49.0], SO_S:[null,3431.22,14884.16,5912.98,1265.82,6912.06,6312.11,4911.23,6130.14,1666.67,9021.69,4329.24,11801.96,4076.8,1973.28,1805.72,2226.02,806.57,-3900.09,-519.97] },
+    { name:"MUPICARE 2% UNGÜENTO  CJA X 1 TBO X 15G", SI_U:[null,null,null,null,null,null,null,null,null,null,null,-2396.0,-1607.0,null,630.0,null,null,null,null,null], SI_S:[null,null,null,null,null,null,null,null,null,null,null,37382.8,-4405.03,null,3632.39,null,null,null,null,null], SO_U:[null,null,null,null,null,null,null,null,null,null,null,11379.0,212.0,-98.0,730.0,-100.0,100.0,null,null,null], SO_S:[null,null,null,null,null,null,null,null,null,null,null,65294.85,1398.72,-621.6,4724.97,-678.32,678.32,null,null,null] },
+    { name:"MYTEL 80 80 MG CJA X 30 TAB. REC.", SI_U:[null,650.0,412.0,500.0,200.0,722.0,217.0,397.0,400.0,48.0,393.0,474.0,409.0,1102.0,628.0,300.0,820.0,42.0,-82.0,null], SI_S:[null,7022.6,4451.26,5402.0,2160.8,8734.96,2626.54,4847.59,4884.0,586.08,4808.37,5787.54,4993.89,13458.69,7669.74,3663.89,10012.32,512.94,-1001.46,null], SO_U:[null,332.0,544.0,364.0,420.0,196.0,520.0,370.0,621.0,120.0,432.0,448.0,525.0,664.0,459.0,742.0,163.0,265.0,6.0,-1.0], SO_S:[null,3870.66,5733.89,4020.45,4919.25,2410.31,5742.26,4370.89,6673.61,1344.2,4923.36,4910.9,4379.65,5901.44,4866.9,6170.01,2621.71,2402.09,-248.41,-24.75] },
+    { name:"OLANPREX 10MG X 30 TAB REC", SI_U:[399.0,410.0,120.0,null,-472.0,300.0,52.0,30.0,null,-1.0,321.0,54.0,null,null,null,-24.0,null,null,null,null], SI_S:[11928.9,12257.77,3587.64,null,-3709.31,7552.5,1309.1,755.28,null,-25.18,7842.21,1359.72,null,null,null,-608.95,null,null,null,null], SO_U:[null,323.0,91.0,126.0,202.0,127.0,19.0,108.0,147.0,40.0,214.0,163.0,50.0,79.0,12.0,null,null,null,null,null], SO_S:[null,9523.63,2813.91,2930.58,4840.89,3423.21,153.26,2681.07,3681.1,1202.27,5506.63,4064.09,1313.54,2094.66,355.42,null,null,null,null,null] },
+    { name:"OSTECOX 120 120 MG CJA x 7 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,-1.0,477.0,1000.0,3410.0,4360.0,4860.0,1740.0,9349.0,939.0,-400.0,null], SI_S:[null,null,null,null,null,null,null,null,null,-8.82,4207.14,8820.0,30082.38,38471.34,42883.18,15353.24,82487.26,8285.47,-3529.49,null], SO_U:[null,null,null,null,null,null,null,null,null,599.0,372.0,1479.0,2877.0,3976.0,4134.0,1322.0,7941.0,241.0,-382.0,10.0], SO_S:[null,null,null,null,null,null,null,null,null,3458.62,2546.34,9031.92,16193.46,23061.44,28426.2,6457.45,21058.59,-1690.72,-1133.13,11.58] },
+    { name:"OSTECOX 60 60 MG CJA X 14 TAB. REC.", SI_U:[null,null,null,null,330.0,182.0,323.0,240.0,null,0.0,57.0,114.0,90.0,240.0,296.0,-1.0,150.0,258.0,-82.0,-60.0], SI_S:[null,null,null,null,2983.3,1744.07,3094.28,2299.44,null,0.0,546.06,1092.12,862.2,2299.32,2835.82,-9.58,1437.05,2471.77,-785.6,-574.83], SO_U:[null,null,null,null,100.0,232.0,177.0,154.0,35.0,3.0,115.0,113.0,216.0,188.0,105.0,55.0,121.0,124.0,28.0,3.0], SO_S:[null,null,null,null,640.9,2231.46,1312.42,1429.33,347.35,33.83,795.73,825.67,1469.71,1368.68,802.8,411.54,998.05,696.75,180.4,26.55] },
+    { name:"OSTECOX 90 90 MG CJA X 14 TAB. REC.", SI_U:[null,null,null,null,1220.0,309.0,1187.0,990.0,1617.0,1122.0,900.0,1210.0,1140.0,240.0,null,3000.0,1200.0,210.0,-120.0,1140.0], SI_S:[null,null,null,null,12083.49,3227.78,12396.52,10340.56,16886.86,11713.68,9396.0,12632.4,11901.6,2506.78,null,31334.75,12531.68,2193.43,-1253.39,11907.21], SO_U:[null,null,null,null,689.0,265.0,923.0,1094.0,2203.0,718.0,-198.0,2603.0,174.0,331.0,475.0,3605.0,859.0,145.0,-361.0,-46.0], SO_S:[null,null,null,null,5221.59,3226.65,7958.95,7028.98,13591.31,5274.18,-453.29,15947.29,1519.27,2501.04,3139.59,14428.82,4046.47,581.44,-464.64,-566.07] },
+    { name:"PANTOZEX 40 MG CJA X 30 TAB. LIB. PRO.", SI_U:[null,1300.0,2003.0,3273.0,1464.0,467.0,1811.0,1243.0,632.0,1020.0,1380.0,1460.0,1200.0,2692.0,1379.0,null,2100.0,563.0,null,null], SI_S:[null,11798.67,18179.03,29705.41,13287.12,4777.58,18526.8,12715.12,6465.36,10435.62,14117.4,14935.8,12276.0,27541.86,14108.55,null,21483.0,5760.05,null,null], SO_U:[null,1088.0,1801.0,2619.0,443.0,1225.0,1413.0,445.0,2292.0,999.0,1206.0,1592.0,1708.0,1388.0,971.0,1561.0,1615.0,1577.0,613.0,280.0], SO_S:[null,10853.42,16503.59,22035.62,4275.12,12881.97,13572.97,5147.14,17357.72,7789.62,10318.95,15188.25,14948.55,12854.75,9327.85,12941.61,13053.76,16789.8,6436.23,2116.24] },
+    { name:"PREGAZONE 75 75MG CJA X 50 CAP.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,790.0,219.0,62.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,22688.8,6289.68,1780.64], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,411.0,295.0,361.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,9453.49,7506.92,9043.13] },
+    { name:"REUMAX 100MG CJA X 100 TAB. LIB. PROL.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,480.0,null,30.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,33634.91,null,2102.18], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,52.0,83.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3055.72,4837.33] },
+    { name:"ROSUMAX 10 10 MG CJA X 30 TAB. REC.", SI_U:[96.0,608.0,656.0,60.0,null,65.0,176.0,90.0,50.0,null,288.0,270.0,null,270.0,12.0,58.0,100.0,180.0,312.0,null], SI_S:[1887.46,11953.89,12897.62,1179.66,null,1432.47,3879.4,1983.78,1101.98,null,6347.52,5950.8,null,5951.44,264.51,1278.45,2204.07,3967.63,6877.22,null], SO_U:[null,250.0,336.0,168.0,119.0,9.0,308.0,109.0,45.0,78.0,260.0,237.0,66.0,168.0,88.0,136.0,235.0,234.0,18.0,71.0], SO_S:[null,5071.68,6975.68,3376.99,2407.38,679.29,5945.57,2504.4,1202.22,1617.55,4764.44,5132.35,1392.63,3719.57,2103.19,2802.46,5141.98,4812.96,599.36,1794.39] },
+    { name:"ROSUMAX 20 20MG CJA X 30 TAB REC ", SI_U:[null,null,null,1304.0,-28.0,716.0,389.0,513.0,191.0,22.0,828.0,960.0,639.0,970.0,499.0,-3.0,null,null,null,null], SI_S:[null,null,null,31565.93,-677.79,19440.83,10564.16,14081.97,5187.34,597.46,22488.48,26073.6,17355.24,26342.07,13551.23,-81.47,null,null,null,null], SO_U:[null,null,null,710.0,318.0,293.0,605.0,328.0,225.0,167.0,1147.0,568.0,378.0,1086.0,301.0,825.0,119.0,null,null,null], SO_S:[null,null,null,16782.91,8141.96,8500.77,15489.61,8929.59,6028.43,4264.27,27460.81,14427.5,9697.95,24740.63,8131.24,20694.99,3384.38,null,null,null] },
+    { name:"SILDEZONE 100 100 MG CJA x 1 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,0.0,-1.0,11064.0,27990.0,32000.0,27664.0,40432.0,22640.0,null,null,null], SI_S:[null,null,null,null,null,null,null,null,null,0.0,-1.08,11949.12,30274.92,34681.61,29982.24,43820.21,24508.93,null,null,null], SO_U:[null,null,null,null,null,null,null,null,null,1617.0,1198.0,11064.0,14188.0,28646.0,37996.0,18176.0,19468.0,29935.0,2526.0,78.0], SO_S:[null,null,null,null,null,null,null,null,null,1170.83,1092.68,7946.72,10214.85,20781.58,27756.39,13368.74,14049.42,21623.39,1894.88,99.45] },
+    { name:"SILDEZONE 50 50 MG CJA x 1 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,-1.0,null,6064.0,20215.0,6365.0,1062.0,4926.0,13832.0,12884.0,15272.0,8512.0], SI_S:[null,null,null,null,null,null,null,null,null,-1.01,null,6124.64,20422.35,6433.12,1073.36,4978.71,13975.52,13021.86,15434.65,8602.65], SO_U:[null,null,null,null,null,null,null,null,null,1604.0,535.0,6144.0,9863.0,4783.0,6831.0,10055.0,6384.0,23277.0,2904.0,8576.0], SO_S:[null,null,null,null,null,null,null,null,null,887.72,554.33,3640.01,5467.59,2675.19,3885.6,5561.03,3716.74,11248.85,1721.2,4822.36] },
+    { name:"TADALAZONE 20 20 MG CJA x 4 TAB. REC.", SI_U:[null,null,null,null,null,null,null,null,null,0.0,-6.0,592.0,2560.0,1619.0,1164.0,1663.0,5852.0,2760.0,1350.0,180.0], SI_S:[null,null,null,null,null,null,null,null,null,0.0,-48.0,4736.0,20480.0,12952.0,9312.0,13304.0,46816.0,22080.0,10796.71,1439.56], SO_U:[null,null,null,null,null,null,null,null,null,310.0,525.0,1036.0,2349.0,935.0,1683.0,1618.0,5082.0,1688.0,580.0,1005.0], SO_S:[null,null,null,null,null,null,null,null,null,1630.48,3073.77,5616.2,12583.97,5258.18,9096.24,8530.89,17729.35,5940.97,3530.02,6673.82] },
+    { name:"TAMSUNAX 0.4 MG CAJA X 30 CAP DE LIB PRO", SI_U:[null,null,null,null,1548.0,1880.0,1928.0,2036.0,1895.0,60.0,900.0,7195.0,6972.0,8900.0,2797.0,2998.0,10498.0,484.0,-1000.0,338.0], SI_S:[null,null,null,null,15555.85,21123.67,21670.72,22939.61,21352.16,676.2,10141.64,81087.65,78574.44,100272.98,31512.75,33777.35,118304.04,5453.04,-11266.63,3810.94], SO_U:[null,null,null,null,855.0,2406.0,631.0,2648.0,1744.0,663.0,1523.0,6234.0,4664.0,8221.0,-134.0,8076.0,2350.0,347.0,-733.0,1011.0], SO_S:[null,null,null,null,8732.18,24557.8,6952.09,20902.25,12862.11,5156.02,10929.21,34019.09,28125.07,42691.31,217.74,37610.13,9021.52,1935.57,-2259.25,5069.85] },
+    { name:"VERTILUX 16MG CJA X 50 TAB.", SI_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,720.0,350.0,31.0], SI_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,22743.26,11055.76,979.22], SO_U:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,97.0,750.0,179.0], SO_S:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,2617.06,18994.48,3458.07] },
+    { name:"WALSARTEX 80 MG CJA X 30 TAB. REC.", SI_U:[null,550.0,224.0,null,-550.0,null,null,null,null,0.0,null,24.0,202.0,60.0,18.0,18.0,10.0,null,null,null], SI_S:[null,19203.8,7821.18,null,-9064.11,null,null,null,null,0.0,null,582.72,4904.56,1456.52,436.96,436.96,242.8,null,null,null], SO_U:[null,32.0,56.0,59.0,30.0,60.0,70.0,48.0,40.0,3.0,163.0,63.0,180.0,1.0,35.0,30.0,3.0,4.0,-113.0,-98.0], SO_S:[null,1246.24,1938.12,1349.74,716.97,1375.86,1633.02,1313.98,1028.55,85.65,3718.07,1512.51,2287.26,23.17,794.77,574.8,85.65,13.81,-3011.52,-2340.25] },
   ];
 
-  /* ============================================================
-     HELPERS
-     ============================================================ */
   function fmtNum(v) {
     if (v === null || v === undefined) return '—';
     return v.toLocaleString('es-PE', {maximumFractionDigits: 0});
@@ -1319,10 +988,10 @@
 
   let headMesHTML = '<th rowspan="2" class="sticky-prod">Producto</th>';
   headMesHTML += meses.map((m, i) => `<th colspan="5" class="mes-col" data-mes="${m}">${mesLabel[i]}</th>`).join('');
-  headMesHTML += '<th colspan="5" class="total-col">TOTAL PERIODO</th>';
+  headMesHTML += '<th colspan="5" class="total-col" id="siem-total-head">TOTAL ACUMULADO · TODO</th>';
   headMes.innerHTML = headMesHTML;
 
-  const subLabels = ['SI-U','SI-S/','SO-U','SO-S/','%'];
+  const subLabels = ['SI-U','SI-S/','SO-U','SO-S/','SO/SI %'];
   let headSubHTML = '';
   for (let i = 0; i < meses.length; i++) {
     headSubHTML += subLabels.map(l => `<th class="sub" data-mes="${meses[i]}">${l}</th>`).join('');
@@ -1333,22 +1002,40 @@
   /* ============================================================
      BODY
      ============================================================ */
-  function buildRow(p) {
+  let filtroActual = 'todo';
+
+  const reglasFiltro = {
+    'todo':   () => true,
+    '2025':   m => m.startsWith('2025'),
+    '2026h1': m => m.startsWith('2026') && parseInt(m.split('-')[1], 10) <= 6,
+    '2026h2': m => m.startsWith('2026') && parseInt(m.split('-')[1], 10) >= 7
+  };
+  const etiquetasFiltro = {
+    todo: 'TODO',
+    '2025': '2025',
+    '2026h1': '2026 H1',
+    '2026h2': '2026 H2'
+  };
+
+  function indicesSeleccionados() {
+    const regla = reglasFiltro[filtroActual] || reglasFiltro.todo;
+    return meses.map((m, i) => regla(m) ? i : -1).filter(i => i >= 0);
+  }
+
+  function buildRow(p, indicesTotal) {
     let cells = '';
     let totSI_U = 0, totSI_S = 0, totSO_U = 0, totSO_S = 0;
+    let hasSI_U = false, hasSI_S = false, hasSO_U = false, hasSO_S = false;
 
     for (let i = 0; i < meses.length; i++) {
-      const siU = p.SI_U[i];
-      const siS = p.SI_S[i];
-      const soU = p.SO_U[i];
-      const soS = p.SO_S[i];
+      const siU = p.SI_U[i], siS = p.SI_S[i], soU = p.SO_U[i], soS = p.SO_S[i];
 
-      if (siU !== null && siU !== undefined) totSI_U += siU;
-      if (siS !== null && siS !== undefined) totSI_S += siS;
-      if (soU !== null && soU !== undefined) totSO_U += soU;
-      if (soS !== null && soS !== undefined) totSO_S += soS;
+      if (siU !== null && siU !== undefined) { if (indicesTotal.includes(i)) totSI_U += siU; hasSI_U ||= indicesTotal.includes(i); }
+      if (siS !== null && siS !== undefined) { if (indicesTotal.includes(i)) totSI_S += siS; hasSI_S ||= indicesTotal.includes(i); }
+      if (soU !== null && soU !== undefined) { if (indicesTotal.includes(i)) totSO_U += soU; hasSO_U ||= indicesTotal.includes(i); }
+      if (soS !== null && soS !== undefined) { if (indicesTotal.includes(i)) totSO_S += soS; hasSO_S ||= indicesTotal.includes(i); }
 
-      const sinDatos = (siU === null && siS === null && soU === null && soS === null);
+      const sinDatos = (siU == null && siS == null && soU == null && soS == null);
       if (sinDatos) {
         cells += '<td data-mes="'+meses[i]+'">—</td><td data-mes="'+meses[i]+'">—</td>'
                + '<td data-mes="'+meses[i]+'">—</td><td data-mes="'+meses[i]+'">—</td>'
@@ -1357,10 +1044,7 @@
       }
 
       let pct = null;
-      if (siS !== null && siS !== 0 && soS !== null) {
-        pct = Math.round((soS / siS) * 100);
-      }
-
+      if (siS != null && siS !== 0 && soS != null) pct = Math.round((soS / siS) * 100);
       const cls = pctClass(pct);
       cells += `<td data-mes="${meses[i]}" class="${siU < 0 ? 'neg' : ''}">${fmtNum(siU)}</td>`
              + `<td data-mes="${meses[i]}" class="${siS < 0 ? 'neg' : ''}">${fmtS(siS)}</td>`
@@ -1369,85 +1053,114 @@
              + `<td data-mes="${meses[i]}"><span class="pct-badge ${cls}">${pctText(pct)}</span></td>`;
     }
 
-    let totPct = null;
-    if (totSI_S !== 0) totPct = Math.round((totSO_S / totSI_S) * 100);
-    const totCls = pctClass(totPct);
-
-    cells += `<td><b>${fmtNum(totSI_U)}</b></td>`
-           + `<td><b>${fmtS(totSI_S)}</b></td>`
-           + `<td><b>${fmtNum(totSO_U)}</b></td>`
-           + `<td><b>${fmtS(totSO_S)}</b></td>`
-           + `<td><span class="pct-badge ${totCls}">${pctText(totPct)}</span></td>`;
+    const totPct = (hasSI_S && totSI_S !== 0 && hasSO_S) ? Math.round((totSO_S / totSI_S) * 100) : null;
+    cells += `<td class="total-sub"><b>${hasSI_U ? fmtNum(totSI_U) : '—'}</b></td>`
+           + `<td class="total-sub"><b>${hasSI_S ? fmtS(totSI_S) : '—'}</b></td>`
+           + `<td class="total-sub"><b>${hasSO_U ? fmtNum(totSO_U) : '—'}</b></td>`
+           + `<td class="total-sub"><b>${hasSO_S ? fmtS(totSO_S) : '—'}</b></td>`
+           + `<td class="total-sub"><span class="pct-badge ${pctClass(totPct)}">${pctText(totPct)}</span></td>`;
 
     return `<tr><td class="prod-name" title="${p.name}">${p.name}</td>${cells}</tr>`;
   }
 
-  document.getElementById('siem-body').innerHTML = productos.map(buildRow).join('');
+  function renderTablaSeleccionada() {
+    const indices = indicesSeleccionados();
+    const regla = reglasFiltro[filtroActual] || reglasFiltro.todo;
+    document.getElementById('siem-body').innerHTML = productos.map(p => buildRow(p, indices)).join('');
 
-  /* ============================================================
-     FOOTER: TOTALES POR MES (suma de todos los productos)
-     ============================================================ */
-  const footer = document.getElementById('siem-footer');
-  let footCells = '';
-  let granSI_U = 0, granSI_S = 0, granSO_U = 0, granSO_S = 0;
+    // Ocultar/mostrar celdas del body según filtro
+    document.querySelectorAll('#siem-body [data-mes]').forEach(el => {
+      el.style.display = regla(el.dataset.mes) ? '' : 'none';
+    });
 
-  for (let i = 0; i < meses.length; i++) {
     let mSI_U = 0, mSI_S = 0, mSO_U = 0, mSO_S = 0;
-    let tiene = false;
-    for (const p of productos) {
-      if (p.SI_U[i] !== null && p.SI_U[i] !== undefined) { mSI_U += p.SI_U[i]; tiene = true; }
-      if (p.SI_S[i] !== null && p.SI_S[i] !== undefined) { mSI_S += p.SI_S[i]; tiene = true; }
-      if (p.SO_U[i] !== null && p.SO_U[i] !== undefined) { mSO_U += p.SO_U[i]; tiene = true; }
-      if (p.SO_S[i] !== null && p.SO_S[i] !== undefined) { mSO_S += p.SO_S[i]; tiene = true; }
-    }
-    granSI_U += mSI_U; granSI_S += mSI_S; granSO_U += mSO_U; granSO_S += mSO_S;
+    let hasSI_U = false, hasSI_S = false, hasSO_U = false, hasSO_S = false;
 
-    if (!tiene) {
-      footCells += `<td data-mes="${meses[i]}">—</td><td data-mes="${meses[i]}">—</td>`
-                 + `<td data-mes="${meses[i]}">—</td><td data-mes="${meses[i]}">—</td>`
-                 + `<td data-mes="${meses[i]}"><span class="pct-badge pct-na" style="background:#fff;color:#0a4d8c;">—</span></td>`;
-      continue;
+    // Acumulados globales para las tarjetas de arriba
+    for (const i of indices) {
+      for (const p of productos) {
+        if (p.SI_U[i] != null) { mSI_U += p.SI_U[i]; hasSI_U = true; }
+        if (p.SI_S[i] != null) { mSI_S += p.SI_S[i]; hasSI_S = true; }
+        if (p.SO_U[i] != null) { mSO_U += p.SO_U[i]; hasSO_U = true; }
+        if (p.SO_S[i] != null) { mSO_S += p.SO_S[i]; hasSO_S = true; }
+      }
     }
-    let mpct = (mSI_S !== 0) ? Math.round((mSO_S / mSI_S) * 100) : null;
-    const mcls = pctClass(mpct);
-    footCells += `<td data-mes="${meses[i]}">${fmtNum(mSI_U)}</td>`
-               + `<td data-mes="${meses[i]}">${fmtS(mSI_S)}</td>`
-               + `<td data-mes="${meses[i]}">${fmtNum(mSO_U)}</td>`
-               + `<td data-mes="${meses[i]}">${fmtS(mSO_S)}</td>`
-               + `<td data-mes="${meses[i]}"><span class="pct-badge ${mcls}" style="background:#fff;color:#0a4d8c;">${pctText(mpct)}</span></td>`;
+
+    const granPct = (hasSI_S && mSI_S !== 0 && hasSO_S) ? Math.round((mSO_S / mSI_S) * 100) : null;
+    const put = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+    put('siem-sum-si', hasSI_S ? fmtS(mSI_S) : '—');
+    put('siem-sum-so', hasSO_S ? fmtS(mSO_S) : '—');
+    put('siem-sum-siu', hasSI_U ? fmtNum(mSI_U) : '—');
+    put('siem-sum-sou', hasSO_U ? fmtNum(mSO_U) : '—');
+    put('siem-sum-ratio', granPct === null ? '—' : granPct + '%');
+    
+    const summary = document.getElementById('siem-period-summary');
+    if (summary) summary.setAttribute('aria-label', 'Acumulados de ' + etiquetasFiltro[filtroActual]);
+
+    // NUEVO: Calcular los totales de CADA mes para el footer
+    let footerMesesHTML = '';
+    for (let i = 0; i < meses.length; i++) {
+      let cSI_U = 0, cSI_S = 0, cSO_U = 0, cSO_S = 0;
+      let hasM_SI_U = false, hasM_SI_S = false, hasM_SO_U = false, hasM_SO_S = false;
+      
+      for (const p of productos) {
+        if (p.SI_U[i] != null) { cSI_U += p.SI_U[i]; hasM_SI_U = true; }
+        if (p.SI_S[i] != null) { cSI_S += p.SI_S[i]; hasM_SI_S = true; }
+        if (p.SO_U[i] != null) { cSO_U += p.SO_U[i]; hasM_SO_U = true; }
+        if (p.SO_S[i] != null) { cSO_S += p.SO_S[i]; hasM_SO_S = true; }
+      }
+      
+      const cPct = (hasM_SI_S && cSI_S !== 0 && hasM_SO_S) ? Math.round((cSO_S / cSI_S) * 100) : null;
+
+      // Se genera un td para cada subcolumna (SI-U, SI-S, SO-U, SO-S, %)
+      footerMesesHTML += `<td class="footer-total" data-mes="${meses[i]}">${hasM_SI_U ? fmtNum(cSI_U) : '—'}</td>`;
+      footerMesesHTML += `<td class="footer-total" data-mes="${meses[i]}">${hasM_SI_S ? fmtS(cSI_S) : '—'}</td>`;
+      footerMesesHTML += `<td class="footer-total" data-mes="${meses[i]}">${hasM_SO_U ? fmtNum(cSO_U) : '—'}</td>`;
+      footerMesesHTML += `<td class="footer-total" data-mes="${meses[i]}">${hasM_SO_S ? fmtS(cSO_S) : '—'}</td>`;
+      footerMesesHTML += `<td class="footer-total" data-mes="${meses[i]}"><span class="pct-badge ${pctClass(cPct)}">${pctText(cPct)}</span></td>`;
+    }
+
+    const footerCellsTotales =
+      `<td class="total-sub">${hasSI_U ? fmtNum(mSI_U) : '—'}</td>` +
+      `<td class="total-sub">${hasSI_S ? fmtS(mSI_S) : '—'}</td>` +
+      `<td class="total-sub">${hasSO_U ? fmtNum(mSO_U) : '—'}</td>` +
+      `<td class="total-sub">${hasSO_S ? fmtS(mSO_S) : '—'}</td>` +
+      `<td class="total-sub"><span class="pct-badge ${pctClass(granPct)}">${pctText(granPct)}</span></td>`;
+
+    document.getElementById('siem-footer').innerHTML =
+      `<td class="prod-name">TOTAL GENERAL · ${etiquetasFiltro[filtroActual]}</td>${footerMesesHTML}${footerCellsTotales}`;
+
+    // Ocultar/mostrar celdas del footer según filtro
+    document.querySelectorAll('#siem-footer [data-mes]').forEach(el => {
+      el.style.display = regla(el.dataset.mes) ? '' : 'none';
+    });
+
+    const totalHead = document.getElementById('siem-total-head');
+    if (totalHead) totalHead.textContent = `TOTAL ACUMULADO · ${etiquetasFiltro[filtroActual]}`;
   }
 
-  const granPct = (granSI_S !== 0) ? Math.round((granSO_S / granSI_S) * 100) : null;
-  footCells += `<td class="total-sub">${fmtNum(granSI_U)}</td>`
-             + `<td class="total-sub">${fmtS(granSI_S)}</td>`
-             + `<td class="total-sub">${fmtNum(granSO_U)}</td>`
-             + `<td class="total-sub">${fmtS(granSO_S)}</td>`
-             + `<td class="total-sub"><span class="pct-badge pct-good" style="background:#fff;color:#128a5b;">${pctText(granPct)}</span></td>`;
-
-  footer.innerHTML = `<td class="prod-name">TOTAL GENERAL</td>${footCells}`;
-
   /* ============================================================
-     FILTRO POR RANGO
+     FILTRO POR RANGO: actualiza columnas visibles Y acumulados
      ============================================================ */
   window.filterMeses = function(f) {
-    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
-    const rules = {
-      'todo':   () => true,
-      '2025':   m => m.startsWith('2025'),
-      '2026h1': m => m.startsWith('2026') && parseInt(m.split('-')[1]) <= 6,
-      '2026h2': m => m.startsWith('2026') && parseInt(m.split('-')[1]) >= 7
-    };
-    const rule = rules[f] || rules.todo;
-    document.querySelectorAll('.siem-table [data-mes]').forEach(el => {
+    filtroActual = reglasFiltro[f] ? f : 'todo';
+    document.querySelectorAll('.filtro-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.filter === filtroActual)
+    );
+
+    const rule = reglasFiltro[filtroActual];
+    // Encabezados de mes (colspan) y subcolumnas
+    document.querySelectorAll('.siem-table thead [data-mes]').forEach(el => {
       el.style.display = rule(el.dataset.mes) ? '' : 'none';
     });
-    // La fila de meses (mes-row) usa th.mes-col con data-mes
-    document.querySelectorAll('.mes-col').forEach(th => {
-      th.style.display = rule(th.dataset.mes) ? '' : 'none';
-    });
-    // Recalcular top del sub-row tras cambios de layout
+
+    renderTablaSeleccionada(); // ahora también oculta/muestra celdas del body y footer
+    const viewport = document.querySelector('.siem-slide .scroll-box-siem');
+    if (viewport) { viewport.scrollLeft = 0; viewport.scrollTop = 0; }
     ajustarStickySubRow();
   };
+
+  renderTablaSeleccionada();
 
   /* ============================================================
      AJUSTE DINÁMICO DEL STICKY DEL SUB-ROW
@@ -1469,15 +1182,14 @@
   }
 })();
 </script>
-
 <script>
 Chart.register(ChartDataLabels);
 
 // ============ GRÁFICA EVOLUCIÓN MENSUAL ============
-const meses = ['Jun-25','Jul-25','Ago-25','Sep-25','Oct-25','Nov-25','Dic-25','Ene-26','Feb-26','Mar-26','Abr-26','May-26','Jun-26','Jul-26','Ago-26','Sep-26','Oct-26'];
-const sellIn  = [57053, 28559, 96740, 38351, 38907, 57086, 33476, 91454, 46744, 191734, 30398, 148926, 117113, 175877, 196957, 54579, 161812];
-const sellOut = [8695, 24018, 80708, 34046, 31942, 77010, 24358, 64702, 79346, 107027, 92716, 175447, 165333, 201324, 120240, 286796, 270129];
-const ratio = sellIn.map((v,i) => v === 0 ? 0 : +(sellOut[i]/v*100).toFixed(1));
+const meses = ["Mar-25", "Abr-25", "May-25", "Jun-25", "Jul-25", "Ago-25", "Sep-25", "Oct-25", "Nov-25", "Dic-25", "Ene-26", "Feb-26", "Mar-26", "Abr-26", "May-26", "Jun-26", "Jul-26", "Ago-26", "Sep-26", "Oct-26"];
+const sellIn  = [86881.78, 253447.62, 111012.54, 86707.14, 251772.3, 241277.84, 122399.76, 472747.24, 94048.95, 43026.68, 200026.72, 413262.82, 468135.47, 438506.66, 303967.64, 321546.24, 506755.05, 407295.05, 408050.14, 123163.13];
+const sellOut = [null, 106453.02, 105693.07, 139431.86, 165826.18, 175478.12, 184887.75, 275776.83, 197885.86, 96700.12, 207672.94, 310268.87, 303719.22, 265882.02, 264308.03, 344069.48, 140324.59, 343702.83, 278009.15, 138002.97];
+const ratio = sellIn.map((v,i) => (v === 0 || sellOut[i] === null) ? null : +(sellOut[i]/v*100).toFixed(1));
 
 new Chart(document.getElementById('chartEvol').getContext('2d'), {
   type: 'bar',
@@ -1492,7 +1204,7 @@ new Chart(document.getElementById('chartEvol').getContext('2d'), {
         backgroundColor: 'rgba(51,196,162,0.9)', borderRadius: 5,
         datalabels: { anchor:'end', align:'top', color:'#128a5b', font:{size:9, weight:'bold'},
           formatter: v => v >= 1000 ? (v/1000).toFixed(0)+'k' : v } },
-      { label: 'Ratio Rotación (%)', data: ratio, type:'line', yAxisID:'y1',
+      { label: 'Ratio Sell Out / Sell In (%)', data: ratio, type:'line', yAxisID:'y1',
         borderColor:'#c0392b', backgroundColor:'transparent', borderDash:[6,4],
         borderWidth:2, pointRadius:3, tension:.35, datalabels:{ display:false } }
     ]
@@ -1502,8 +1214,8 @@ new Chart(document.getElementById('chartEvol').getContext('2d'), {
     layout:{ padding:{ top:22 } },
     plugins:{
       legend:{ position:'top', labels:{ font:{size:12, weight:'600'}, usePointStyle:true } },
-      tooltip:{ callbacks:{ label: ctx => ctx.dataset.label === 'Ratio Rotación (%)'
-        ? ` Ratio: ${ctx.parsed.y}%`
+      tooltip:{ callbacks:{ label: ctx => ctx.dataset.label === 'Ratio Sell Out / Sell In (%)'
+        ? ` Sell Out / Sell In: ${ctx.parsed.y}%`
         : ` ${ctx.dataset.label}: S/ ${ctx.parsed.y.toLocaleString('es-PE')}` } },
       datalabels:{ display:true }
     },
@@ -1519,9 +1231,9 @@ new Chart(document.getElementById('chartEvol').getContext('2d'), {
 });
 
 // ============ GRÁFICA TOP PRODUCTOS ============
-const topLabels = ['ITRACOZONE','CELOMEX C100','CIPROZONE','GABATINEX','TAMSUNAX 30c','PANTOZEX','ROSUMAX 20','CARVELAN 6.25','DULOX 30','OSTECOX 120'];
-const topData = [191717, 74897, 47849, 84788, 72157, 46115, 46676, 42406, 52039, 41734];
-const topRot = [105.4, 102.1, 75.0, 61.0, 107.4, 139.7, 106.5, 120.8, 93.3, 126.0];
+const topLabels = ["ITRACOZONE", "TAMSUNAX", "BACICLUMAX", "CIPROZONE", "FLAZAFORTE", "PANTOZEX", "OSTECOX", "KETOCLEAR", "DUTAZEX", "ROSUMAX"];
+const topData = [693466.36, 554986.41, 299132.3, 244079.84, 239279.59, 236113.37, 227051.7, 225757.23, 200119.96, 186489.05];
+const topRot = [94.7, 44.4, 86.8, 72.8, 80.9, 95.0, 47.3, 90.3, 67.7, 94.7];
 
 new Chart(document.getElementById('chartTop').getContext('2d'), {
   type:'bar',
@@ -1532,7 +1244,7 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
         backgroundColor:'rgba(10,77,140,0.85)', borderRadius:6,
         datalabels:{ anchor:'end', align:'top', color:'#0a4d8c', font:{size:10, weight:'bold'},
           formatter: v => v >= 1000 ? (v/1000).toFixed(0)+'k' : v } },
-      { label:'Ratio Rotación (%)', data:topRot, type:'line', yAxisID:'y1',
+      { label:'Ratio Sell Out / Sell In (%)', data:topRot, type:'line', yAxisID:'y1',
         borderColor:'#33c4a2', backgroundColor:'rgba(51,196,162,.15)', borderWidth:2.5,
         pointRadius:5, pointBackgroundColor:'#33c4a2', tension:.3,
         datalabels:{ anchor:'end', align:'bottom', color:'#128a5b', font:{size:10, weight:'bold'},
@@ -1544,8 +1256,8 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
     layout:{ padding:{ top:30, right:20 } },
     plugins:{
       legend:{ position:'top', labels:{ font:{size:12, weight:'600'}, usePointStyle:true } },
-      tooltip:{ callbacks:{ label: ctx => ctx.dataset.label === 'Ratio Rotación (%)'
-        ? ` Rotación: ${ctx.parsed.y}%`
+      tooltip:{ callbacks:{ label: ctx => ctx.dataset.label === 'Ratio Sell Out / Sell In (%)'
+        ? ` Ratio: ${ctx.parsed.y}%`
         : ` Sell In: S/ ${ctx.parsed.y.toLocaleString('es-PE')}` } }
     },
     scales:{
@@ -1553,7 +1265,7 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
       y:{ beginAtZero:true, title:{display:true, text:'Sell In (S/)', color:'#5a6b82', font:{size:11, weight:'600'}},
         ticks:{ font:{size:10}, callback: v => v >= 1000 ? (v/1000).toFixed(0)+'k' : v } },
       y1:{ position:'right', beginAtZero:true, max:160,
-        title:{display:true, text:'Rotación (%)', color:'#128a5b', font:{size:11, weight:'600'}},
+        title:{display:true, text:'Ratio (%)', color:'#128a5b', font:{size:11, weight:'600'}},
         grid:{display:false}, ticks:{ color:'#128a5b', font:{size:10}, callback: v => v+'%' } }
     }
   }
@@ -1561,144 +1273,128 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
 </script>
 <!-- ================= SLIDE 13: IQVIA - CRECIMIENTO Y LIDERAZGO ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Posicionamiento IQVIA: Crecimiento y Liderazgo</h1>
-      <div class="sub">Evolución en el mercado total y participación en el mercado de nuevos productos (Julio 2026)</div>
+<div class="slide-header">
+<div>
+<h1>Posicionamiento IQVIA: Crecimiento y Liderazgo</h1>
+<div class="sub">Evolución en el mercado total y participación en el mercado de nuevos productos (Julio 2026)</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<!-- FILA DE KPIs (El "Gancho" Comercial) -->
+<div class="kpi-grid">
+<div class="kpi-card highlight">
+<div class="kpi-title">Ranking General (MAT)</div>
+<div class="kpi-value">#44</div>
+<div class="kpi-trend trend-up">↑ Escalando posiciones</div>
+</div>
+<div class="kpi-card highlight">
+<div class="kpi-title">Crecimiento Unidades (MAT)</div>
+<div class="kpi-value">+1,604%</div>
+<div class="kpi-trend trend-up">De 21K a 358K unidades</div>
+</div>
+<div class="kpi-card highlight bg-gradient">
+<div class="kpi-title" style="color:#e6f1fb;">Líder en Innovación (0-12m)</div>
+<div class="kpi-value" style="color:#fff;">#1</div>
+<div class="kpi-trend" style="color:#a5f3dc;">Top 1 en Unidades</div>
+</div>
+<div class="kpi-card highlight bg-gradient">
+<div class="kpi-title" style="color:#e6f1fb;">Participación Nuevos Prod.</div>
+<div class="kpi-value" style="color:#fff;">17.31%</div>
+<div class="kpi-trend" style="color:#a5f3dc;">Del mercado total (Un)</div>
+</div>
+</div>
+<!-- CONTENIDO PRINCIPAL (2 Columnas) -->
+<div class="iqvia-grid">
+<!-- COLUMNA IZQUIERDA: Evolución y Ranking Total -->
+<div class="panel">
+<div class="panel-header">
+<h3>Evolución de Volumen Total (MAT Unidades)</h3>
+</div>
+<div class="panel-body">
+<!-- Gráfico de Barras CSS (Evolución MAT) -->
+<div class="bar-chart-container">
+<div class="bar-group">
+<div class="bar-value">21K</div>
+<div class="bar-bar bg-gray" style="height: 10%;"></div>
+<div class="bar-label">2025</div>
+</div>
+<div class="bar-group">
+<div class="bar-value" style="color:#128a5b; font-weight:800;">358K</div>
+<div class="bar-bar bg-green-gradient" style="height: 90%;"></div>
+<div class="bar-label">2026</div>
+</div>
+</div>
+<div class="insight-box">
+<p><b>Salto Cuántico:</b> Hemos multiplicado por 17 nuestro volumen de ventas, pasando de ser un jugador incipiente a mover más de 358 mil unidades anuales.</p>
+</div>
+</div>
+</div>
+<!-- COLUMNA DERECHA: Podio de Innovación -->
+<div class="panel">
+<div class="panel-header">
+<h3>Top 5 Corporaciones con Nuevos Productos</h3>
+<span class="badge-time">0-12 Meses · Unidades</span>
+</div>
+<div class="panel-body">
+<div class="ranking-list">
+<!-- 1er Puesto (CSP) -->
+<div class="rank-row rank-first">
+<div class="rank-pos">1</div>
+<div class="rank-name">CSP LIFESCIENCES</div>
+<div class="rank-bar-bg">
+<div class="rank-bar bg-gold" style="width: 100%;"></div>
+</div>
+<div class="rank-value">46,534</div>
+</div>
+<!-- 2do Puesto -->
+<div class="rank-row">
+<div class="rank-pos">2</div>
+<div class="rank-name">PHARMED CORP</div>
+<div class="rank-bar-bg">
+<div class="rank-bar bg-blue" style="width: 50.8%;"></div>
+</div>
+<div class="rank-value">23,636</div>
+</div>
+<!-- 3er Puesto -->
+<div class="rank-row">
+<div class="rank-pos">3</div>
+<div class="rank-name">HUMANOVA LAB CORP</div>
+<div class="rank-bar-bg">
+<div class="rank-bar bg-blue" style="width: 45.0%;"></div>
+</div>
+<div class="rank-value">20,968</div>
+</div>
+<!-- 4to Puesto -->
+<div class="rank-row">
+<div class="rank-pos">4</div>
+<div class="rank-name">ADIUM PHARMA</div>
+<div class="rank-bar-bg">
+<div class="rank-bar bg-blue" style="width: 36.7%;"></div>
+</div>
+<div class="rank-value">17,090</div>
+</div>
+<!-- 5to Puesto -->
+<div class="rank-row">
+<div class="rank-pos">5</div>
+<div class="rank-name">CORPOL CORP</div>
+<div class="rank-bar-bg">
+<div class="rank-bar bg-blue" style="width: 23.9%;"></div>
+</div>
+<div class="rank-value">11,143</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BANNER INFERIOR: El Producto Estrella -->
+<div class="star-product-banner">
+<div class="star-icon">⭐</div>
+<div class="star-text">
+<strong>Best Seller de Innovación:</strong> <b>BACICLUMAX</b> se posiciona en el Top 6 del Mercado Popular en el ranking de nuevos productos (0-12 meses) de IQVIA.
     </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <!-- FILA DE KPIs (El "Gancho" Comercial) -->
-  <div class="kpi-grid">
-    <div class="kpi-card highlight">
-      <div class="kpi-title">Ranking General (MAT)</div>
-      <div class="kpi-value">#44</div>
-      <div class="kpi-trend trend-up">↑ Escalando posiciones</div>
-    </div>
-    <div class="kpi-card highlight">
-      <div class="kpi-title">Crecimiento Unidades (MAT)</div>
-      <div class="kpi-value">+1,604%</div>
-      <div class="kpi-trend trend-up">De 21K a 358K unidades</div>
-    </div>
-    <div class="kpi-card highlight bg-gradient">
-      <div class="kpi-title" style="color:#e6f1fb;">Líder en Innovación (0-12m)</div>
-      <div class="kpi-value" style="color:#fff;">#1</div>
-      <div class="kpi-trend" style="color:#a5f3dc;">Top 1 en Unidades</div>
-    </div>
-    <div class="kpi-card highlight bg-gradient">
-      <div class="kpi-title" style="color:#e6f1fb;">Participación Nuevos Prod.</div>
-      <div class="kpi-value" style="color:#fff;">17.31%</div>
-      <div class="kpi-trend" style="color:#a5f3dc;">Del mercado total (Un)</div>
-    </div>
-  </div>
-
-  <!-- CONTENIDO PRINCIPAL (2 Columnas) -->
-  <div class="iqvia-grid">
-    
-    <!-- COLUMNA IZQUIERDA: Evolución y Ranking Total -->
-    <div class="panel">
-      <div class="panel-header">
-        <h3>Evolución de Volumen Total (MAT Unidades)</h3>
-      </div>
-      <div class="panel-body">
-        
-        <!-- Gráfico de Barras CSS (Evolución MAT) -->
-        <div class="bar-chart-container">
-          <div class="bar-group">
-            <div class="bar-value">21K</div>
-            <div class="bar-bar bg-gray" style="height: 10%;"></div>
-            <div class="bar-label">2025</div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-value" style="color:#128a5b; font-weight:800;">358K</div>
-            <div class="bar-bar bg-green-gradient" style="height: 90%;"></div>
-            <div class="bar-label">2026</div>
-          </div>
-        </div>
-        
-        <div class="insight-box">
-          <p><b>Salto Cuántico:</b> Hemos multiplicado por 17 nuestro volumen de ventas, pasando de ser un jugador incipiente a mover más de 358 mil unidades anuales.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- COLUMNA DERECHA: Podio de Innovación -->
-    <div class="panel">
-      <div class="panel-header">
-        <h3>Top 5 Corporaciones con Nuevos Productos</h3>
-        <span class="badge-time">0-12 Meses · Unidades</span>
-      </div>
-      <div class="panel-body">
-        
-        <div class="ranking-list">
-          <!-- 1er Puesto (CSP) -->
-          <div class="rank-row rank-first">
-            <div class="rank-pos">1</div>
-            <div class="rank-name">CSP LIFESCIENCES</div>
-            <div class="rank-bar-bg">
-              <div class="rank-bar bg-gold" style="width: 100%;"></div>
-            </div>
-            <div class="rank-value">46,534</div>
-          </div>
-          
-          <!-- 2do Puesto -->
-          <div class="rank-row">
-            <div class="rank-pos">2</div>
-            <div class="rank-name">PHARMED CORP</div>
-            <div class="rank-bar-bg">
-              <div class="rank-bar bg-blue" style="width: 50.8%;"></div>
-            </div>
-            <div class="rank-value">23,636</div>
-          </div>
-
-          <!-- 3er Puesto -->
-          <div class="rank-row">
-            <div class="rank-pos">3</div>
-            <div class="rank-name">HUMANOVA LAB CORP</div>
-            <div class="rank-bar-bg">
-              <div class="rank-bar bg-blue" style="width: 45.0%;"></div>
-            </div>
-            <div class="rank-value">20,968</div>
-          </div>
-
-          <!-- 4to Puesto -->
-          <div class="rank-row">
-            <div class="rank-pos">4</div>
-            <div class="rank-name">ADIUM PHARMA</div>
-            <div class="rank-bar-bg">
-              <div class="rank-bar bg-blue" style="width: 36.7%;"></div>
-            </div>
-            <div class="rank-value">17,090</div>
-          </div>
-
-          <!-- 5to Puesto -->
-          <div class="rank-row">
-            <div class="rank-pos">5</div>
-            <div class="rank-name">CORPOL CORP</div>
-            <div class="rank-bar-bg">
-              <div class="rank-bar bg-blue" style="width: 23.9%;"></div>
-            </div>
-            <div class="rank-value">11,143</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- BANNER INFERIOR: El Producto Estrella -->
-  <div class="star-product-banner">
-    <div class="star-icon">⭐</div>
-    <div class="star-text">
-      <strong>Best Seller de Innovación:</strong> <b>BACICLUMAX</b> se posiciona en el Top 6 del Mercado Popular en el ranking de nuevos productos (0-12 meses) de IQVIA.
-    </div>
-  </div>
-
-  <div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>13</span></div>
+</div>
+<div class="slide-footer"><span>CSP Lifesciences Perú · Confidencial</span><span>13</span></div>
 </section>
-
 <style>
   /* Estilos específicos de la Slide 13 */
   
@@ -1926,193 +1622,177 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
 </style>
 <!-- ================= SLIDE 14: DATA IQVIA (TABLAS COMPACTAS) ================= -->
 <section class="slide">
-  <div class="slide-header">
-    <div>
-      <h1>Reporte IQVIA IMS: Rankings de Mercado</h1>
-      <div class="sub">Top 10 de principales laboratorios · Nuevos productos (0-12m / 0-24m) · Julio 2026</div>
-    </div>
-    <div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
-  </div>
-
-  <div class="tables-grid">
-    
-    <!-- TABLA 1: Nuevos Productos (0-24 Meses) Valores -->
-    <div class="table-card">
-      <div class="table-header">
-        <h3>Nuevos Productos 0-24 Meses</h3>
-        <span>Valores (U$D)</span>
-      </div>
-      <div class="table-scroll">
-        <table class="ims-table">
-          <thead>
-            <tr>
-              <th class="text-center" style="width: 35px;">Rnk</th>
-              <th>Laboratorio</th>
-              <th class="text-right">U$D</th>
-              <th class="text-right">%</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="total-row">
-              <td></td>
-              <td>Total Nuevos Productos</td>
-              <td class="text-right">11,605,357</td>
-              <td class="text-right">100%</td>
-            </tr>
-            <tr><td class="text-center">1</td><td>ADIUM</td><td class="text-right">3,437,898</td><td class="text-right">29.62</td></tr>
-            <tr><td class="text-center">2</td><td>NOVO NORDISK</td><td class="text-right">1,148,619</td><td class="text-right">9.90</td></tr>
-            <tr><td class="text-center">3</td><td>MEDIFARMA</td><td class="text-right">750,018</td><td class="text-right">6.46</td></tr>
-            <tr><td class="text-center">4</td><td>MEAD JOHNSON</td><td class="text-right">743,059</td><td class="text-right">6.40</td></tr>
-            <tr><td class="text-center">5</td><td>ORDESA</td><td class="text-right">449,476</td><td class="text-right">3.87</td></tr>
-            <tr><td class="text-center">6</td><td>ABBOTT</td><td class="text-right">336,427</td><td class="text-right">2.90</td></tr>
-            <tr><td class="text-center">7</td><td>PHARMED</td><td class="text-right">313,010</td><td class="text-right">2.70</td></tr>
-            <tr><td class="text-center">8</td><td>LA ROCHE POSAY</td><td class="text-right">286,448</td><td class="text-right">2.47</td></tr>
-            <tr><td class="text-center">9</td><td>IQ FARMA</td><td class="text-right">196,078</td><td class="text-right">1.69</td></tr>
-            <tr><td class="text-center">10</td><td>SANULAC</td><td class="text-right">169,099</td><td class="text-right">1.46</td></tr>
-            
-            <!-- Salto visual -->
-            <tr class="dots-row"><td colspan="4">...</td></tr>
-            
-            <!-- CSP Destacado -->
-            <tr class="highlight-csp"><td class="text-center">25</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">83,737</td><td class="text-right">0.72</td></tr>
-            <tr><td></td><td>Otros nuevos productos</td><td class="text-right">2,035,365</td><td class="text-right">17.54</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TABLA 2: Nuevos Productos (0-12 Meses) Valores -->
-    <div class="table-card">
-      <div class="table-header">
-        <h3>Nuevos Productos 0-12 Meses</h3>
-        <span>Valores (U$D)</span>
-      </div>
-      <div class="table-scroll">
-        <table class="ims-table">
-          <thead>
-            <tr>
-              <th class="text-center" style="width: 35px;">Rnk</th>
-              <th>Laboratorio</th>
-              <th class="text-right">U$D</th>
-              <th class="text-right">%</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="total-row">
-              <td></td>
-              <td>Total Nuevos Productos</td>
-              <td class="text-right">6,457,903</td>
-              <td class="text-right">100%</td>
-            </tr>
-            <tr><td class="text-center">1</td><td>ADIUM</td><td class="text-right">2,901,747</td><td class="text-right">44.93</td></tr>
-            <tr><td class="text-center">2</td><td>NOVO NORDISK</td><td class="text-right">1,148,619</td><td class="text-right">17.79</td></tr>
-            <tr><td class="text-center">3</td><td>LA ROCHE POSAY</td><td class="text-right">194,575</td><td class="text-right">3.01</td></tr>
-            <tr><td class="text-center">4</td><td>PHARMED</td><td class="text-right">181,204</td><td class="text-right">2.81</td></tr>
-            <tr><td class="text-center">5</td><td>MEDIFARMA</td><td class="text-right">168,522</td><td class="text-right">2.61</td></tr>
-            <tr><td class="text-center">6</td><td>SANULAC</td><td class="text-right">158,200</td><td class="text-right">2.45</td></tr>
-            <tr><td class="text-center">7</td><td>ABBOTT NEURO</td><td class="text-right">124,566</td><td class="text-right">1.93</td></tr>
-            <tr><td class="text-center">8</td><td>UNIMED</td><td class="text-right">120,960</td><td class="text-right">1.87</td></tr>
-            <tr><td class="text-center">9</td><td>MEAD JOHNSON</td><td class="text-right">108,024</td><td class="text-right">1.67</td></tr>
-            <tr><td class="text-center">10</td><td>IQ FARMA</td><td class="text-right">106,502</td><td class="text-right">1.65</td></tr>
-            
-            <tr class="dots-row"><td colspan="4">...</td></tr>
-            
-            <tr class="highlight-csp"><td class="text-center">20</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">39,349</td><td class="text-right">0.61</td></tr>
-            <tr><td></td><td>Otros nuevos productos</td><td class="text-right">470,393</td><td class="text-right">7.28</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TABLA 3: Nuevos Productos (0-24 Meses) Unidades -->
-    <div class="table-card">
-      <div class="table-header">
-        <h3>Nuevos Productos 0-24 Meses</h3>
-        <span>Unidades (UN)</span>
-      </div>
-      <div class="table-scroll">
-        <table class="ims-table">
-          <thead>
-            <tr>
-              <th class="text-center" style="width: 35px;">Rnk</th>
-              <th>Laboratorio</th>
-              <th class="text-right">UN</th>
-              <th class="text-right">%</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="total-row">
-              <td></td>
-              <td>Total Nuevos Productos</td>
-              <td class="text-right">853,656</td>
-              <td class="text-right">100%</td>
-            </tr>
-            <tr><td class="text-center">1</td><td>MEDIFARMA</td><td class="text-right">161,105</td><td class="text-right">18.87</td></tr>
-            <tr class="highlight-csp"><td class="text-center">2</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">70,396</td><td class="text-right">8.25</td></tr>
-            <tr><td class="text-center">3</td><td>ABBOTT</td><td class="text-right">35,885</td><td class="text-right">4.20</td></tr>
-            <tr><td class="text-center">4</td><td>ADIUM</td><td class="text-right">31,602</td><td class="text-right">3.70</td></tr>
-            <tr><td class="text-center">5</td><td>BONAPHARM</td><td class="text-right">30,648</td><td class="text-right">3.59</td></tr>
-            <tr><td class="text-center">6</td><td>DCI-AC</td><td class="text-right">27,894</td><td class="text-right">3.27</td></tr>
-            <tr><td class="text-center">7</td><td>MEAD JOHNSON</td><td class="text-right">27,615</td><td class="text-right">3.23</td></tr>
-            <tr><td class="text-center">8</td><td>IQ FARMA</td><td class="text-right">24,163</td><td class="text-right">2.83</td></tr>
-            <tr><td class="text-center">9</td><td>PHARMED</td><td class="text-right">22,630</td><td class="text-right">2.65</td></tr>
-            <tr><td class="text-center">10</td><td>MARKOS</td><td class="text-right">20,716</td><td class="text-right">2.43</td></tr>
-            
-            <tr class="dots-row"><td colspan="4">...</td></tr>
-            
-            <tr><td></td><td>Otros nuevos productos</td><td class="text-right">220,966</td><td class="text-right">25.88</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TABLA 4: Nuevos Productos (0-12 Meses) Unidades -->
-    <div class="table-card">
-      <div class="table-header">
-        <h3>Nuevos Productos 0-12 Meses</h3>
-        <span>Unidades (UN)</span>
-      </div>
-      <div class="table-scroll">
-        <table class="ims-table">
-          <thead>
-            <tr>
-              <th class="text-center" style="width: 35px;">Rnk</th>
-              <th>Laboratorio</th>
-              <th class="text-right">UN</th>
-              <th class="text-right">%</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="total-row">
-              <td></td>
-              <td>Total Nuevos Productos</td>
-              <td class="text-right">268,765</td>
-              <td class="text-right">100%</td>
-            </tr>
-            <tr class="highlight-csp"><td class="text-center">1</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">46,534</td><td class="text-right">17.31</td></tr>
-            <tr><td class="text-center">2</td><td>MEDIFARMA</td><td class="text-right">19,746</td><td class="text-right">7.35</td></tr>
-            <tr><td class="text-center">3</td><td>ADIUM</td><td class="text-right">17,090</td><td class="text-right">6.36</td></tr>
-            <tr><td class="text-center">4</td><td>PHARMED</td><td class="text-right">15,071</td><td class="text-right">5.61</td></tr>
-            <tr><td class="text-center">5</td><td>MARKOS</td><td class="text-right">8,918</td><td class="text-right">3.32</td></tr>
-            <tr><td class="text-center">6</td><td>UNIMED</td><td class="text-right">8,774</td><td class="text-right">3.26</td></tr>
-            <tr><td class="text-center">7</td><td>GENERION PHARMA</td><td class="text-right">8,565</td><td class="text-right">3.19</td></tr>
-            <tr><td class="text-center">8</td><td>SIEGFRIED</td><td class="text-right">7,129</td><td class="text-right">2.65</td></tr>
-            <tr><td class="text-center">9</td><td>SEVEN PHARMA</td><td class="text-right">6,602</td><td class="text-right">2.46</td></tr>
-            <tr><td class="text-center">10</td><td>OQPHARMACEUTICAL</td><td class="text-right">6,473</td><td class="text-right">2.41</td></tr>
-
-            <tr class="dots-row"><td colspan="4">...</td></tr>
-
-            <tr><td></td><td>Otros nuevos productos</td><td class="text-right">48,082</td><td class="text-right">17.89</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="slide-footer"><span>Fuente: IQVIA IMS · Julio 2026 · *Mostrando Top 10 y posición de CSP</span><span>14</span></div>
+<div class="slide-header">
+<div>
+<h1>Reporte IQVIA IMS: Rankings de Mercado</h1>
+<div class="sub">Top 10 de principales laboratorios · Nuevos productos (0-12m / 0-24m) · Julio 2026</div>
+</div>
+<div class="brand"><strong>CSP LIFESCIENCES</strong>Perú · Business Review</div>
+</div>
+<div class="tables-grid">
+<!-- TABLA 1: Nuevos Productos (0-24 Meses) Valores -->
+<div class="table-card">
+<div class="table-header">
+<h3>Nuevos Productos 0-24 Meses</h3>
+<span>Valores (U$D)</span>
+</div>
+<div class="table-scroll">
+<table class="ims-table">
+<thead>
+<tr>
+<th class="text-center" style="width: 35px;">Rnk</th>
+<th>Laboratorio</th>
+<th class="text-right">U$D</th>
+<th class="text-right">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="total-row">
+<td></td>
+<td>Total Nuevos Productos</td>
+<td class="text-right">11,605,357</td>
+<td class="text-right">100%</td>
+</tr>
+<tr><td class="text-center">1</td><td>ADIUM</td><td class="text-right">3,437,898</td><td class="text-right">29.62</td></tr>
+<tr><td class="text-center">2</td><td>NOVO NORDISK</td><td class="text-right">1,148,619</td><td class="text-right">9.90</td></tr>
+<tr><td class="text-center">3</td><td>MEDIFARMA</td><td class="text-right">750,018</td><td class="text-right">6.46</td></tr>
+<tr><td class="text-center">4</td><td>MEAD JOHNSON</td><td class="text-right">743,059</td><td class="text-right">6.40</td></tr>
+<tr><td class="text-center">5</td><td>ORDESA</td><td class="text-right">449,476</td><td class="text-right">3.87</td></tr>
+<tr><td class="text-center">6</td><td>ABBOTT</td><td class="text-right">336,427</td><td class="text-right">2.90</td></tr>
+<tr><td class="text-center">7</td><td>PHARMED</td><td class="text-right">313,010</td><td class="text-right">2.70</td></tr>
+<tr><td class="text-center">8</td><td>LA ROCHE POSAY</td><td class="text-right">286,448</td><td class="text-right">2.47</td></tr>
+<tr><td class="text-center">9</td><td>IQ FARMA</td><td class="text-right">196,078</td><td class="text-right">1.69</td></tr>
+<tr><td class="text-center">10</td><td>SANULAC</td><td class="text-right">169,099</td><td class="text-right">1.46</td></tr>
+<!-- Salto visual -->
+<tr class="dots-row"><td colspan="4">...</td></tr>
+<!-- CSP Destacado -->
+<tr class="highlight-csp"><td class="text-center">25</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">83,737</td><td class="text-right">0.72</td></tr>
+<tr><td></td><td>Otros nuevos productos</td><td class="text-right">2,035,365</td><td class="text-right">17.54</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- TABLA 2: Nuevos Productos (0-12 Meses) Valores -->
+<div class="table-card">
+<div class="table-header">
+<h3>Nuevos Productos 0-12 Meses</h3>
+<span>Valores (U$D)</span>
+</div>
+<div class="table-scroll">
+<table class="ims-table">
+<thead>
+<tr>
+<th class="text-center" style="width: 35px;">Rnk</th>
+<th>Laboratorio</th>
+<th class="text-right">U$D</th>
+<th class="text-right">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="total-row">
+<td></td>
+<td>Total Nuevos Productos</td>
+<td class="text-right">6,457,903</td>
+<td class="text-right">100%</td>
+</tr>
+<tr><td class="text-center">1</td><td>ADIUM</td><td class="text-right">2,901,747</td><td class="text-right">44.93</td></tr>
+<tr><td class="text-center">2</td><td>NOVO NORDISK</td><td class="text-right">1,148,619</td><td class="text-right">17.79</td></tr>
+<tr><td class="text-center">3</td><td>LA ROCHE POSAY</td><td class="text-right">194,575</td><td class="text-right">3.01</td></tr>
+<tr><td class="text-center">4</td><td>PHARMED</td><td class="text-right">181,204</td><td class="text-right">2.81</td></tr>
+<tr><td class="text-center">5</td><td>MEDIFARMA</td><td class="text-right">168,522</td><td class="text-right">2.61</td></tr>
+<tr><td class="text-center">6</td><td>SANULAC</td><td class="text-right">158,200</td><td class="text-right">2.45</td></tr>
+<tr><td class="text-center">7</td><td>ABBOTT NEURO</td><td class="text-right">124,566</td><td class="text-right">1.93</td></tr>
+<tr><td class="text-center">8</td><td>UNIMED</td><td class="text-right">120,960</td><td class="text-right">1.87</td></tr>
+<tr><td class="text-center">9</td><td>MEAD JOHNSON</td><td class="text-right">108,024</td><td class="text-right">1.67</td></tr>
+<tr><td class="text-center">10</td><td>IQ FARMA</td><td class="text-right">106,502</td><td class="text-right">1.65</td></tr>
+<tr class="dots-row"><td colspan="4">...</td></tr>
+<tr class="highlight-csp"><td class="text-center">20</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">39,349</td><td class="text-right">0.61</td></tr>
+<tr><td></td><td>Otros nuevos productos</td><td class="text-right">470,393</td><td class="text-right">7.28</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- TABLA 3: Nuevos Productos (0-24 Meses) Unidades -->
+<div class="table-card">
+<div class="table-header">
+<h3>Nuevos Productos 0-24 Meses</h3>
+<span>Unidades (UN)</span>
+</div>
+<div class="table-scroll">
+<table class="ims-table">
+<thead>
+<tr>
+<th class="text-center" style="width: 35px;">Rnk</th>
+<th>Laboratorio</th>
+<th class="text-right">UN</th>
+<th class="text-right">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="total-row">
+<td></td>
+<td>Total Nuevos Productos</td>
+<td class="text-right">853,656</td>
+<td class="text-right">100%</td>
+</tr>
+<tr><td class="text-center">1</td><td>MEDIFARMA</td><td class="text-right">161,105</td><td class="text-right">18.87</td></tr>
+<tr class="highlight-csp"><td class="text-center">2</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">70,396</td><td class="text-right">8.25</td></tr>
+<tr><td class="text-center">3</td><td>ABBOTT</td><td class="text-right">35,885</td><td class="text-right">4.20</td></tr>
+<tr><td class="text-center">4</td><td>ADIUM</td><td class="text-right">31,602</td><td class="text-right">3.70</td></tr>
+<tr><td class="text-center">5</td><td>BONAPHARM</td><td class="text-right">30,648</td><td class="text-right">3.59</td></tr>
+<tr><td class="text-center">6</td><td>DCI-AC</td><td class="text-right">27,894</td><td class="text-right">3.27</td></tr>
+<tr><td class="text-center">7</td><td>MEAD JOHNSON</td><td class="text-right">27,615</td><td class="text-right">3.23</td></tr>
+<tr><td class="text-center">8</td><td>IQ FARMA</td><td class="text-right">24,163</td><td class="text-right">2.83</td></tr>
+<tr><td class="text-center">9</td><td>PHARMED</td><td class="text-right">22,630</td><td class="text-right">2.65</td></tr>
+<tr><td class="text-center">10</td><td>MARKOS</td><td class="text-right">20,716</td><td class="text-right">2.43</td></tr>
+<tr class="dots-row"><td colspan="4">...</td></tr>
+<tr><td></td><td>Otros nuevos productos</td><td class="text-right">220,966</td><td class="text-right">25.88</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- TABLA 4: Nuevos Productos (0-12 Meses) Unidades -->
+<div class="table-card">
+<div class="table-header">
+<h3>Nuevos Productos 0-12 Meses</h3>
+<span>Unidades (UN)</span>
+</div>
+<div class="table-scroll">
+<table class="ims-table">
+<thead>
+<tr>
+<th class="text-center" style="width: 35px;">Rnk</th>
+<th>Laboratorio</th>
+<th class="text-right">UN</th>
+<th class="text-right">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="total-row">
+<td></td>
+<td>Total Nuevos Productos</td>
+<td class="text-right">268,765</td>
+<td class="text-right">100%</td>
+</tr>
+<tr class="highlight-csp"><td class="text-center">1</td><td><b>CSP LIFESCIENCES</b></td><td class="text-right">46,534</td><td class="text-right">17.31</td></tr>
+<tr><td class="text-center">2</td><td>MEDIFARMA</td><td class="text-right">19,746</td><td class="text-right">7.35</td></tr>
+<tr><td class="text-center">3</td><td>ADIUM</td><td class="text-right">17,090</td><td class="text-right">6.36</td></tr>
+<tr><td class="text-center">4</td><td>PHARMED</td><td class="text-right">15,071</td><td class="text-right">5.61</td></tr>
+<tr><td class="text-center">5</td><td>MARKOS</td><td class="text-right">8,918</td><td class="text-right">3.32</td></tr>
+<tr><td class="text-center">6</td><td>UNIMED</td><td class="text-right">8,774</td><td class="text-right">3.26</td></tr>
+<tr><td class="text-center">7</td><td>GENERION PHARMA</td><td class="text-right">8,565</td><td class="text-right">3.19</td></tr>
+<tr><td class="text-center">8</td><td>SIEGFRIED</td><td class="text-right">7,129</td><td class="text-right">2.65</td></tr>
+<tr><td class="text-center">9</td><td>SEVEN PHARMA</td><td class="text-right">6,602</td><td class="text-right">2.46</td></tr>
+<tr><td class="text-center">10</td><td>OQPHARMACEUTICAL</td><td class="text-right">6,473</td><td class="text-right">2.41</td></tr>
+<tr class="dots-row"><td colspan="4">...</td></tr>
+<tr><td></td><td>Otros nuevos productos</td><td class="text-right">48,082</td><td class="text-right">17.89</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="slide-footer"><span>Fuente: IQVIA IMS · Julio 2026 · *Mostrando Top 10 y posición de CSP</span><span>14</span></div>
 </section>
-
 <style>
   /* Estilos para las Tablas IMS Compactas */
   .tables-grid {
@@ -2217,5 +1897,51 @@ new Chart(document.getElementById('chartTop').getContext('2d'), {
   .text-center { text-align: center !important; }
   .text-right { text-align: right !important; }
 </style>
+
+<script>
+(function () {
+  function ajustarSlides() {
+    document.querySelectorAll('.slide').forEach(slide => {
+      slide.classList.remove('compact', 'ultra-compact');
+      const footer = slide.querySelector('.slide-footer');
+      if (!footer) return;
+      const evaluar = () => {
+        const footerTop = footer.getBoundingClientRect().top;
+        const slideTop = slide.getBoundingClientRect().top;
+        let maxBottom = slideTop;
+        Array.from(slide.children).forEach(el => {
+          if (el === footer || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+          const r = el.getBoundingClientRect();
+          if (r.height && r.width) maxBottom = Math.max(maxBottom, r.bottom);
+        });
+        const limite = footerTop - 12;
+        if (maxBottom > limite) slide.classList.add('compact');
+        requestAnimationFrame(() => {
+          let bottom2 = slideTop;
+          Array.from(slide.children).forEach(el => {
+            if (el === footer || el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+            const r = el.getBoundingClientRect();
+            if (r.height && r.width) bottom2 = Math.max(bottom2, r.bottom);
+          });
+          if (bottom2 > footer.getBoundingClientRect().top - 10) slide.classList.add('ultra-compact');
+        });
+      };
+      evaluar();
+    });
+  }
+  window.addEventListener('load', ajustarSlides);
+  window.addEventListener('resize', ajustarSlides);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarSlides);
+})();
+</script>
+
+
+<script>
+window.addEventListener('load', function () {
+  const viewport = document.querySelector('.siem-slide .scroll-box-siem');
+  if (viewport) { viewport.scrollLeft = 0; viewport.scrollTop = 0; }
+});
+</script>
+
 </body>
 </html>
